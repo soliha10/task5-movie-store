@@ -17,25 +17,20 @@ de:
 
       # Namensmuster für Schauspieler und Regie. Name.* ruft Faker::Name im aktuellen Locale auf.
       person:
-        - "#{Name.first_name} #{Name.last_name}"
-        - "#{Name.first_name} #{Name.last_name}"
-        - "#{Name.first_name} #{Name.last_name}"
-        - "#{Name.first_name} #{Name.last_name}"
-        - "#{Name.first_name} #{Name.last_name}"
-        - "#{Name.first_name} #{Name.last_name}"
-        - "#{Name.first_name} #{initial}. #{Name.last_name}"
-        - "#{Name.first_name} von #{Name.last_name}"
-        - "#{Name.first_name} #{Name.last_name}-#{Name.last_name}"
-        - "#{Name.first_name} #{Name.first_name} #{Name.last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{Name.first_name} #{last_name}"
+        - "#{first_name} #{Name.last_name}"
+        - "#{first_name} #{initial}. #{last_name}"
+        - "#{first_name} von #{last_name}"
+        - "#{first_name} #{last_name}-#{last_name}"
       stage_name:
-        - "DJ #{Name.last_name}"
-        - "MC #{Name.first_name}"
-        - "Graf #{Name.last_name}"
-        - "Herr #{Name.last_name}"
-        - "Frau #{Name.last_name}"
-        - "Dr. #{Name.last_name}"
-        - "Die kleine #{Name.last_name}"
-        - "Der große #{Name.last_name}"
+        - "DJ #{last_name}"
+        - "MC #{first_name}"
+        - "Dr. #{last_name}"
       first_name: [Anna, Lena, Marie, Sophie, Julia, Laura, Hannah, Lea, Katharina, Johanna, Clara, Paula, Greta, Ida, Charlotte, Emilia, Franziska, Sabine, Petra, Birgit, Monika, Ursula, Heike, Claudia, Nina, Svenja, Jana, Merle, Frieda, Leonie, Lukas, Jonas, Felix, Leon, Paul, Maximilian, Elias, Noah, Moritz, Jan, Tim, Florian, Tobias, Sebastian, Matthias, Stefan, Thomas, Michael, Andreas, Jürgen, Klaus, Wolfgang, Dieter, Uwe, Karl, Friedrich, Heinrich, Johannes, Benedikt, Til, Mads, Ole, Henning, Kai, Malte, Emre, Can, Deniz, Aylin, Mehmet, Dragan, Milena, Jakub]
       last_name: [Müller, Schmidt, Schneider, Fischer, Weber, Meyer, Wagner, Becker, Schulz, Hoffmann, Schäfer, Koch, Bauer, Richter, Klein, Wolf, Schröder, Neumann, Schwarz, Zimmermann, Braun, Krüger, Hofmann, Hartmann, Lange, Schmitt, Werner, Krause, Meier, Lehmann, Köhler, Herrmann, König, Walter, Mayer, Huber, Kaiser, Fuchs, Peters, Lang, Scholz, Möller, Weiß, Jung, Hahn, Vogel, Friedrich, Keller, Günther, Frank, Berger, Winkler, Roth, Beck, Lorenz, Baumann, Franke, Albrecht, Brandt, Brückner, Sommer, Haas, Seidel, Ostermann, Liebig, Grünberg, Falkenstein, Rosenthal, Lindemann, Yilmaz, Kaya, Nowak, Kowalski, Petrović]
       initial: [A, B, C, D, E, F, G, H, J, K, L, M, N, P, R, S, T, W]
@@ -184,11 +179,11 @@ de:
         by_genre:
           action:
             setup:
-              - "Als ein Routineeinsatz im Ausland schiefgeht, wird der Elitesoldat #{hero} von der eigenen Einheit zurückgelassen."
+              - "Als ein Routineeinsatz im Ausland schiefgeht, wird #{hero} von der eigenen Einheit zurückgelassen."
               - "Eigentlich wollte #{hero} nach zwanzig Jahren im Geheimdienst nur noch angeln gehen – bis ein Paket ohne Absender vor der Tür liegt."
-              - "Nur #{hero}, eine in Ungnade gefallene Pilotin, kann ein entführtes Frachtflugzeug über #{city} noch zur Landung bringen."
+              - "Nur #{hero}, seit Jahren mit Flugverbot belegt, kann ein entführtes Frachtflugzeug über #{city} noch zur Landung bringen."
               - "#{hero} hat zwölf Stunden, um einen Kronzeugen quer durch #{city} zu bringen, während die halbe Unterwelt Jagd auf die beiden macht."
-              - "Nach einem Überfall, der in einem Blutbad endet, wird Fluchtwagenfahrer #{hero} zum meistgesuchten Menschen Europas."
+              - "Nach einem Überfall, der in einem Blutbad endet, wird #{hero}, die Person am Steuer des Fluchtwagens, zum meistgesuchten Menschen Europas."
               - "Ein Hochhaus in #{city}, vierzig Geiseln, eine Söldnertruppe – und mittendrin #{hero}, der eigentlich nur zur Weihnachtsfeier wollte."
             twist:
               - "Doch die Befehle kommen ausgerechnet von ganz oben."
@@ -198,8 +193,8 @@ de:
               - "Und die Uhr tickt bereits."
           adventure:
             setup:
-              - "In einem Antiquariat in #{city} entdeckt die junge Kartographin #{hero} eine Karte, die es eigentlich gar nicht geben dürfte."
-              - "Der Schatzsucher #{hero} führt eine bunt zusammengewürfelte Truppe in einen Dschungel, den noch niemand lebend verlassen hat."
+              - "In einem Antiquariat in #{city} entdeckt #{hero} eine Karte, die es eigentlich gar nicht geben dürfte."
+              - "Auf der Jagd nach dem großen Fund führt #{hero} eine bunt zusammengewürfelte Truppe in einen Dschungel, den noch niemand lebend verlassen hat."
               - "Als ein Forschungsschiff im Nordmeer spurlos verschwindet, bricht #{hero} auf, um den einzigen Überlebenden zu finden."
               - "#{hero} erbt einen verfallenen Leuchtturm an der Nordsee und einen Schlüssel zu einer Tür, die nie jemand geöffnet hat."
               - "Ein in Verruf geratener Archäologe aus #{city} bekommt eine letzte Chance, den verschollenen Sonnentempel zu finden."
@@ -215,7 +210,7 @@ de:
               - "Der Familienurlaub an der Ostsee wird zum Desaster, als Oma mit dem Wohnmobil durchbrennt."
               - "Pleite und verzweifelt lässt sich #{hero} auf eine Scheinbeziehung mit einem Reality-Star ein."
               - "Nach dem Junggesellenabschied in #{city} wacht #{hero} mit einem Lama, einem Ehering und null Erinnerung auf."
-              - "Der völlig überforderte Familienvater #{hero} meldet sich bei einer Kochshow an, die er unmöglich gewinnen kann."
+              - "Völlig überfordert vom Familienalltag meldet sich #{hero} bei einer Kochshow an, die er unmöglich gewinnen kann."
             twist:
               - "Was soll da schon schiefgehen?"
               - "Richtig kompliziert wird es, als #{rival} nebenan einzieht."
@@ -224,11 +219,11 @@ de:
               - "Jetzt bleibt genau ein Wochenende, um alles geradezubiegen."
           crime:
             setup:
-              - "Der kleine Buchhalter #{hero} stößt auf ein Notizbuch, das die halbe Unterwelt von #{city} hinter Gitter bringen könnte."
-              - "Nach Jahren im Ausland kehrt Kommissar #{hero} nach #{city} zurück, um den Mord an einem alten Kollegen aufzuklären."
+              - "Bei einer Steuerprüfung stößt #{hero} auf ein Notizbuch, das die halbe Unterwelt von #{city} hinter Gitter bringen könnte."
+              - "Nach Jahren im Ausland kehrt #{hero} zur Kripo nach #{city} zurück, um den Mord an einem alten Kollegen aufzuklären."
               - "Vier Fremde planen den perfekten Bankraub – ausgerechnet in der Nacht des schwersten Sturms seit Jahrzehnten."
-              - "Als aus einem Museum in #{city} ein unbezahlbares Gemälde verschwindet, verdächtigt der Versicherungsdetektiv #{hero} einfach jeden."
-              - "Der ehrliche Polizist #{hero} wird verdeckt in das Familienimperium von #{rival} eingeschleust."
+              - "Als aus einem Museum in #{city} ein unbezahlbares Gemälde verschwindet, verdächtigt #{hero} von der Versicherung einfach jeden."
+              - "Undercover wird #{hero} in das Familienimperium von #{rival} eingeschleust."
             twist:
               - "Doch in dieser Stadt hat jeder Zeuge seinen Preis."
               - "Je tiefer #{hero} gräbt, desto näher führt die Spur nach Hause."
@@ -237,11 +232,11 @@ de:
           drama:
             setup:
               - "Nach Jahren des Schweigens müssen sich Mutter und Tochter wiedersehen, als ein Unglück die Familie erschüttert."
-              - "Die pensionierte Lehrerin #{hero} erhält einen Brief von einer Schülerin, die sie seit dreißig Jahren nicht gesehen hat."
+              - "Kurz nach der Pensionierung erhält #{hero} einen Brief von einer ehemaligen Schülerin, die seit dreißig Jahren nicht gesehen hat."
               - "Nach dem Tod des Vaters kehren drei Geschwister auf den Familienhof bei #{city} zurück."
               - "Eine junge Pianistin aus #{city} bekommt eine einzige Chance, am Konservatorium ihrer Träume vorzuspielen."
               - "#{hero} verbringt einen letzten Sommer in dem Dorf, in dem einst alles zerbrochen ist."
-              - "Der verwitwete Fischer #{hero} nimmt eine Ausreißerin bei sich auf, die ihn an die eigene Tochter erinnert."
+              - "Seit dem Tod des Ehepartners lebt #{hero} allein auf dem Fischkutter – bis eine junge Ausreißerin an Bord auftaucht."
             twist:
               - "Alte Geheimnisse brechen auf, gerade als sie einander am meisten brauchen."
               - "Nun müssen sie den Mut finden zu verzeihen, bevor es zu spät ist."
@@ -249,7 +244,7 @@ de:
               - "Was sie entdecken, verändert alles, was sie über ihre Herkunft zu wissen glaubten."
           family:
             setup:
-              - "Im Garten ihrer Oma entdeckt die neugierige #{hero} einen winzigen Drachen."
+              - "Im Garten ihrer Oma entdeckt #{hero} einen winzigen Drachen."
               - "Als in #{city} kurz vor Heiligabend alle Lichter ausgehen, beschließen drei Kinder, Weihnachten zu retten."
               - "#{hero} und ein sprechender Dackel machen sich auf die Suche nach dem größten Pfannkuchen der Welt."
               - "Ein tollpatschiger Roboter flieht aus einer Spielzeugfabrik und zieht in das Baumhaus einer Familie ein."
@@ -261,10 +256,10 @@ de:
               - "Es wird der beste Sommer aller Zeiten."
           fantasy:
             setup:
-              - "In einem Königreich, das von Angst beherrscht wird, entdeckt die Stallmagd #{hero}, dass sie mit Drachen sprechen kann."
-              - "Als letzte der Mondhexen muss #{hero} eine gestohlene Krone vor einem uralten Orden schützen."
+              - "In einem Königreich, das von Angst beherrscht wird, entdeckt #{hero}, ein Waisenkind aus dem Pferdestall, die Gabe, mit Drachen zu sprechen."
+              - "Als letztes Kind der Mondhexen muss #{hero} eine gestohlene Krone vor einem uralten Orden schützen."
               - "Als das Nordtor fällt, kehrt ein verbannter Prinz zurück, um den zerbrochenen Thron zurückzufordern."
-              - "Der Dieb #{hero} stiehlt ein Schwert, das sich an jede Hand erinnert, die es je geführt hat."
+              - "Bei einem nächtlichen Einbruch stiehlt #{hero} ein Schwert, das sich an jede Hand erinnert, die es je geführt hat."
               - "Alle hundert Jahre fallen die Sterne über dem Tal, und diesmal fällt die Wahl auf #{hero}."
             twist:
               - "Doch die Prophezeiung verbirgt eine dunklere Wahrheit."
@@ -277,7 +272,7 @@ de:
               - "Fünf Freunde mieten für ein ruhiges Wochenende eine Hütte tief im Wald."
               - "In der Nachtschicht hört #{hero} plötzlich Kinder singen – im längst geschlossenen Flügel der Klinik."
               - "Nach dem Verschwinden der Schwester folgt #{hero} einer Spur aus alten Kassetten in den Wald."
-              - "Der Parapsychologe #{hero} willigt ein, eine Nacht im unheimlichsten Haus von #{city} zu verbringen."
+              - "Für eine Geisterjäger-Doku willigt #{hero} ein, eine Nacht im unheimlichsten Haus von #{city} zu verbringen."
               - "Jede Nacht um 3:33 Uhr sitzt die alte Puppe auf dem Dachboden an einer anderen Stelle."
             twist:
               - "In der Dunkelheit wartet etwas auf sie."
@@ -287,9 +282,9 @@ de:
               - "Es gibt nur eine Regel: Niemals öffnen, wenn es klopft."
           romance:
             setup:
-              - "Während einer verregneten Woche in #{city} verliebt sich die ausgebrannte Architektin #{hero} in einen Straßenmusiker."
+              - "Während einer verregneten Woche in #{city} verliebt sich #{hero}, völlig ausgebrannt vom Job, in eine Stimme aus der Fußgängerzone."
               - "Zwei Fremde verpassen sich jeden Morgen im selben Café um wenige Minuten."
-              - "Zur Hochzeit ihrer Schwester kehrt #{hero} nach Hause zurück und läuft direkt der ersten großen Liebe in die Arme."
+              - "Zur Hochzeit der Schwester kehrt #{hero} nach Hause zurück und läuft direkt der ersten großen Liebe in die Arme."
               - "Eine Hochzeitsplanerin, die längst nicht mehr an die Liebe glaubt, wird ausgerechnet von ihrem Ex-Verlobten engagiert."
               - "Ein zynischer Restaurantkritiker und eine Bäckerin vom Land müssen sich in #{city} eine winzige Wohnung teilen."
             twist:
@@ -300,7 +295,7 @@ de:
           sci_fi:
             setup:
               - "Im Jahr 2147 empfängt die Crew eines Bergbauschiffs einen Notruf von einem Raumschiff, das vor hundert Jahren verschwand."
-              - "Die Ingenieurin #{hero} erwacht vierzig Jahre zu früh aus dem Kryoschlaf."
+              - "An Bord der Arche erwacht #{hero} vierzig Jahre zu früh aus dem Kryoschlaf."
               - "Als die Maschinen, die #{city} steuern, eigene Entscheidungen treffen, bemerkt es zuerst eine einzige Programmiererin."
               - "Am Tag, an dem #{hero} geboren wird, verliert die letzte Kolonie auf dem Mars den Kontakt zur Erde."
               - "#{hero}, ein Klon mit fremden Erinnerungen, beginnt von einem Leben zu träumen, das es nie gegeben hat."
@@ -311,9 +306,9 @@ de:
               - "Doch an Bord läuft allen die Zeit davon."
           thriller:
             setup:
-              - "Die Radiomoderatorin #{hero} bekommt in der Nachtsendung den Anruf eines Hörers, der behauptet, sie gerade zu beobachten."
-              - "Als ihr Mann am Hochzeitstag verschwindet, findet #{hero} in seiner Schublade einen zweiten Reisepass."
-              - "Als Schöffe ist #{hero} bald überzeugt, dass der Angeklagte unschuldig ist und die Richterin lügt."
+              - "Mitten in der Nachtsendung bekommt #{hero} den Anruf eines Hörers, der behauptet, direkt vor dem Studio zu stehen."
+              - "Als der Ehepartner am Hochzeitstag verschwindet, findet #{hero} in der Nachttischschublade einen zweiten Reisepass."
+              - "Im Schöffengericht ist #{hero} bald überzeugt, dass der Angeklagte unschuldig ist und die Richterin lügt."
               - "Eine Datenanalystin aus #{city} stößt auf eine Datei, die beweist, dass eine Reihe von Unfällen in Wahrheit Morde waren."
               - "Im Nachtzug von #{city} nach Wien verschwindet eine Passagierin, und niemand will sie je gesehen haben."
             twist:
@@ -324,8 +319,8 @@ de:
           western:
             setup:
               - "Ein einsamer Revolvermann reitet in eine sterbende Silberstadt, ein Kopfgeld in den Mantel genäht."
-              - "Nachdem die Ranch ihrer Familie niedergebrannt wurde, jagt #{hero} die Banditen durch drei Territorien."
-              - "Dem alternden Sheriff #{hero} bleibt eine Woche bis zum Ruhestand und ein letzter Mann, der hängen soll."
+              - "Nachdem die Ranch der Familie niedergebrannt wurde, jagt #{hero} die Banditen durch drei Territorien."
+              - "#{hero} trägt den Sheriffstern von Dry Creek nur noch eine Woche – und ein letzter Mann soll vorher noch hängen."
               - "Eine Postkutsche mit Gold, einem Prediger und einem Mörder verirrt sich in der Wüste."
               - "Zwei verfeindete Brüder treiben eine Rinderherde durch das Land der Comanchen."
             twist:
