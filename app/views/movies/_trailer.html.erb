@@ -1,12 +1,14 @@
-<div class="trailer" data-controller="trailer"
-     data-trailer-spec-value="<%= movie.trailer.to_json %>"
-     data-trailer-title-value="<%= movie.title %>">
+<div class="trailer" data-controller="trailer" data-trailer-spec-value="<%= movie.trailer.to_json %>">
   <div class="trailer-stage" data-trailer-target="stage">
     <%= render "movies/poster", movie: movie %>
   </div>
-  <button type="button" class="trailer-play" data-trailer-target="play" data-action="trailer#play"
-          aria-label="<%= state.region.labels["play"] %>">
+  <button type="button" class="trailer-play" data-action="trailer#play" aria-label="<%= region_label(:play) %>">
     <i class="bi bi-play-fill"></i>
   </button>
   <div class="trailer-status small" data-trailer-target="status"></div>
+  <div class="trailer-controls" data-trailer-target="controls"></div>
+  <template data-trailer-target="controlsTemplate">
+    <button type="button" data-action="trailer#play" title="Replay"><i class="bi bi-arrow-counterclockwise"></i></button>
+    <button type="button" data-action="trailer#toggleMute" title="Mute"><i class="bi bi-volume-up-fill" data-trailer-target="muteIcon"></i></button>
+  </template>
 </div>

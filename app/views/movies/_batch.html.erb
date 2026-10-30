@@ -1,7 +1,4 @@
-<% movies.each do |movie| %>
-  <%= render "movies/card", movie: movie %>
-<% end %>
-<%= turbo_frame_tag "batch_#{page + 1}", src: movies_batch_path(state.query(page: page + 1)),
-      loading: :lazy, class: "batch-frame" do %>
+<%= render partial: "movies/card", collection: movies, as: :movie %>
+<%= turbo_frame_tag "batch_#{page + 1}", src: next_batch_path(page), loading: :lazy, class: "batch-frame" do %>
   <div class="gallery-loader"><div class="spinner-border spinner-border-sm"></div></div>
 <% end %>

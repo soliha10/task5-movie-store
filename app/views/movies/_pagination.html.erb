@@ -1,19 +1,10 @@
-<% page = state.page %>
 <nav aria-label="Pages">
   <ul class="pagination pagination-sm mb-0">
-    <li class="page-item <%= "disabled" if page == 1 %>">
-      <%= link_to "«", root_path(state.query(page: 1)), class: "page-link", title: "First page" %>
-    </li>
-    <li class="page-item <%= "disabled" if page == 1 %>">
-      <%= link_to "‹", root_path(state.query(page: [page - 1, 1].max)), class: "page-link", title: "Previous" %>
-    </li>
-    <% ([page - 2, 1].max..page + 2).each do |n| %>
-      <li class="page-item <%= "active" if n == page %>">
-        <%= link_to n, root_path(state.query(page: n)), class: "page-link" %>
-      </li>
+    <%= page_item GenerationState::FIRST_PAGE, text: "«", title: "First page", disabled: state.first_page? %>
+    <%= page_item [state.page - 1, GenerationState::FIRST_PAGE].max, text: "‹", title: "Previous", disabled: state.first_page? %>
+    <% nearby_page_numbers.each do |page_number| %>
+      <%= page_item page_number %>
     <% end %>
-    <li class="page-item">
-      <%= link_to "›", root_path(state.query(page: page + 1)), class: "page-link", title: "Next" %>
-    </li>
+    <%= page_item state.page + 1, text: "›", title: "Next" %>
   </ul>
 </nav>

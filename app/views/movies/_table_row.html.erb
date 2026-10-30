@@ -1,0 +1,17 @@
+<tr class="movie-row" data-action="click->table#toggle" data-table-target="row" aria-expanded="false">
+  <td class="chev-col"><i class="bi bi-chevron-down"></i></td>
+  <td class="idx-col fw-semibold"><%= movie.index %></td>
+  <td class="genre-col"><%= movie.genre_name %></td>
+  <td class="title-cell">
+    <%= movie.title %>
+    <% if movie.series? %><span class="badge text-bg-light border ms-1"><%= region_label(:series) %></span><% end %>
+  </td>
+  <td class="cast-cell"><%= cast_names(movie) %></td>
+  <td class="text-end year-col"><%= movie.year %></td>
+</tr>
+<tr class="details-row d-none">
+  <td colspan="6">
+    <template><%= render "movies/details", movie: movie %></template>
+    <div class="details-slot"></div>
+  </td>
+</tr>

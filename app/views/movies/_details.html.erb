@@ -1,9 +1,8 @@
-<% labels = state.region.labels %>
 <div class="movie-details row g-4">
   <div class="col-md-5 col-xl-4">
     <%= render "movies/trailer", movie: movie %>
-    <div class="mt-2 d-flex align-items-center gap-2">
-      <span class="badge rounded-pill text-bg-primary likes-badge" title="<%= labels["likes"] %>">
+    <div class="mt-2">
+      <span class="badge rounded-pill text-bg-primary likes-badge" title="<%= region_label(:likes) %>">
         <%= movie.likes %> <i class="bi bi-hand-thumbs-up-fill"></i>
       </span>
     </div>
@@ -15,28 +14,16 @@
     </h4>
     <div class="d-flex flex-wrap align-items-center gap-2 mb-2 small">
       <% movie.badges.each do |badge| %>
-        <span class="badge text-bg-secondary"><%= labels.dig("badges", badge.to_s) %></span>
+        <span class="badge text-bg-secondary"><%= region_label(:badges, badge) %></span>
       <% end %>
-      <% if movie.series? %>
-        <span class="text-body-secondary"><%= movie.seasons %> <%= labels["seasons"] %> · <%= movie.episodes %> <%= labels["episodes"] %> · <%= movie.runtime %> <%= labels["minutes"] %></span>
-      <% else %>
-        <span class="text-body-secondary"><%= movie.runtime %> <%= labels["minutes"] %></span>
-      <% end %>
+      <span class="text-body-secondary"><%= runtime_summary(movie) %></span>
       <span class="fw-bold fst-italic"><%= movie.age_rating %></span>
     </div>
-    <p class="small mb-1"><span class="text-body-secondary"><%= labels["cast"] %>:</span> <em><%= movie.cast.join(", ") %></em></p>
-    <p class="small mb-2"><span class="text-body-secondary"><%= labels["director"] %>:</span> <em><%= movie.director %></em></p>
+    <p class="small mb-1"><span class="text-body-secondary"><%= region_label(:cast) %>:</span> <em><%= cast_names(movie) %></em></p>
+    <p class="small mb-2"><span class="text-body-secondary"><%= region_label(:director) %>:</span> <em><%= movie.director %></em></p>
     <p class="small mb-3"><%= movie.plot %></p>
 
-    <h6 class="text-body-secondary small text-uppercase mb-2"><%= labels["reviews"] %> (<%= movie.reviews.size %>)</h6>
-    <% if movie.reviews.empty? %>
-      <p class="small text-body-secondary"><%= labels["no_reviews"] %></p>
-    <% end %>
-    <% movie.reviews.each do |review| %>
-      <figure class="review review-<%= review.sentiment %> small mb-2">
-        <blockquote class="mb-1"><%= review.text %></blockquote>
-        <figcaption class="text-body-secondary">— <%= review.author %>, <em><%= review.publication %></em></figcaption>
-      </figure>
-    <% end %>
+    <h6 class="text-body-secondary small text-uppercase mb-2"><%= region_label(:reviews) %> (<%= movie.reviews.size %>)</h6>
+    <%= render(partial: "movies/review", collection: movie.reviews) || tag.p(region_label(:no_reviews), class: "small text-body-secondary") %>
   </div>
 </div>

@@ -2,15 +2,11 @@
 
 <main class="container-xxl px-3 py-3">
   <%= turbo_frame_tag "results", data: { turbo_action: "advance" } do %>
-    <% if state.view == "gallery" %>
-      <%= render "movies/gallery", movies: @movies %>
-    <% else %>
-      <%= render "movies/table", movies: @movies %>
-    <% end %>
+    <%= render state.gallery? ? "movies/gallery" : "movies/table", movies: @movies %>
   <% end %>
 </main>
 
-<div class="modal fade" id="movie-modal" tabindex="-1" aria-hidden="true" data-gallery-target="modal">
+<div class="modal fade" id="movie-modal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header border-0 pb-0">
