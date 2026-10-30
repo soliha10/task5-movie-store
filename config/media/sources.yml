@@ -1,0 +1,45 @@
+# Where `bin/rails media:fetch` collects free-license footage and audio (https://mixkit.co/license/).
+# Each genre lists Mixkit tags; clips whose title matches an `exclude` word are skipped for that genre.
+clips:
+  per_genre: 42
+  genres:
+    action:    { tags: [explosion, fire, police, motorcycle, helicopter, sparks, smoke, car, running, city], exclude: [smiling, happy, cute, birthday, cake, kitten, puppy] }
+    adventure: { tags: [jungle, mountain, waterfall, cave, canyon, island, ship, desert, aerial, ocean], exclude: [office, laptop, party] }
+    comedy:    { tags: [party, dog, funny, celebration, dancing, cat, friends, birthday], exclude: [sad, dark, crying, lonely] }
+    crime:     { tags: [police, money, night, rain, city, smoke, car, phone], exclude: [cute, kitten, birthday, smiling, beach] }
+    drama:     { tags: [rain, clouds, sad, window, field, sunset, road, ocean], exclude: [party, funny, explosion] }
+    family:    { tags: [kids, dog, cat, christmas, snow, family, park, birthday], exclude: [sad, dark, smoke, police] }
+    fantasy:   { tags: [castle, forest, magic, fog, moon, stars, candle, mountain], exclude: [office, laptop, car, phone] }
+    horror:    { tags: [fog, halloween, candle, abandoned, storm, lightning, forest, moon, shadow], exclude: [smiling, happy, sunny, party, cute, laughing, christmas] }
+    romance:   { tags: [couple, love, kiss, wedding, flowers, paris, beach, sunset], exclude: [explosion, police, sad, dark] }
+    sci_fi:    { tags: [space, galaxy, robot, laboratory, neon, earth, planet, technology], exclude: [cake, birthday, beach, flowers] }
+    thriller:  { tags: [night, rain, train, phone, shadow, city, storm, abandoned], exclude: [cute, kitten, birthday, smiling, party] }
+    western:   { tags: [horse, desert, canyon, sunset, field, mountain, road], exclude: [city, office, laptop, phone, neon, car] }
+
+music:
+  per_genre: 7
+  genres:
+    action:    [action, trailer, epic, dramatic]
+    adventure: [adventure, orchestral, cinematic]
+    comedy:    [funny, happy]
+    crime:     [dark, electronic, dramatic]
+    drama:     [sad, piano, dramatic]
+    family:    [children, christmas, happy]
+    fantasy:   [orchestral, cinematic, ambient]
+    horror:    [horror, dark]
+    romance:   [romantic, piano]
+    sci_fi:    [electronic, ambient, cinematic]
+    thriller:  [dramatic, dark, cinematic]
+    western:   [country]
+
+sfx:
+  per_kind: 6
+  kinds:
+    hit:       [impact, hit, boom]
+    whoosh:    [whoosh, swoosh, transition]
+    riser:     [riser, suspense]
+    thunder:   [thunder]
+    explosion: [explosion]
+    horror:    [horror]
+    heartbeat: [heartbeat]
+    drum:      [drum, cinematic]

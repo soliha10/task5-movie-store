@@ -1,0 +1,22 @@
+// Small seeded PRNG (mulberry32). The trailer spec carries a seed from the server, so even
+// purely visual details (letter order, glitch offsets, grain) replay identically for a seed.
+export function seededRandom(seed) {
+  let a = seed >>> 0
+  const next = () => {
+    a = (a + 0x6d2b79f5) >>> 0
+    let t = a
+    t = Math.imul(t ^ (t >>> 15), t | 1)
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  }
+  next.range = (min, max) => min + next() * (max - min)
+  next.shuffle = (list) => {
+    const copy = [...list]
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(next() * (i + 1))
+      ;[copy[i], copy[j]] = [copy[j], copy[i]]
+    }
+    return copy
+  }
+  return next
+}

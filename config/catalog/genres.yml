@@ -1,14 +1,117 @@
-# Language-neutral genre catalog: how often a genre appears and how its trailer looks/sounds.
+# Language-neutral genre catalog: how often a genre appears and how its trailer looks and sounds.
 # Display names live in the locale files (movie_store.genres.<id>).
-action:    { weight: 12, ratings: [2, 6] }
-adventure: { weight: 7,  ratings: [1, 4] }
-comedy:    { weight: 12, ratings: [1, 5] }
-crime:     { weight: 8,  ratings: [3, 6] }
-drama:     { weight: 12, ratings: [1, 6] }
-family:    { weight: 6,  ratings: [0, 2] }
-fantasy:   { weight: 7,  ratings: [1, 4] }
-horror:    { weight: 9,  ratings: [4, 6] }
-romance:   { weight: 8,  ratings: [1, 4] }
-sci_fi:    { weight: 9,  ratings: [2, 5] }
-thriller:  { weight: 8,  ratings: [3, 6] }
-western:   { weight: 4,  ratings: [2, 5] }
+#   ratings:     index range into the region's age_ratings list
+#   grades:      colour grade presets (config/catalog/grades.yml)
+#   text_styles: typography animations implemented by the browser player
+#   title_colors: colours for the title card
+#   bpm:         tempo range used to place cuts on the beat
+#   sfx:         sound-effect kinds used for hits / transitions / atmosphere
+#   transitions: cut types between shots
+action:
+  weight: 12
+  ratings: [2, 6]
+  grades: [teal_orange, steel, punchy, desert_heat]
+  text_styles: [slam, letter_spacing, glitch, split, wipe, zoom_through]
+  title_colors: ["#ffffff", "#f5f5f5", "#ffcc33", "#ff4d2e"]
+  bpm: [100, 132]
+  sfx: { hit: [hit, explosion, drum], cut: [whoosh], atmosphere: [riser] }
+  transitions: [cut, cut, flash, zoom_blur, whip, glitch, dip_black]
+adventure:
+  weight: 7
+  ratings: [1, 4]
+  grades: [golden_hour, teal_orange, vivid, emerald]
+  text_styles: [letter_spacing, fade_up, shine, wipe, zoom_slow]
+  title_colors: ["#ffffff", "#ffd97a", "#f3e1b5"]
+  bpm: [84, 112]
+  sfx: { hit: [hit, drum], cut: [whoosh], atmosphere: [riser] }
+  transitions: [dissolve, cut, flash, dip_black, whip]
+comedy:
+  weight: 12
+  ratings: [1, 5]
+  grades: [vivid, warm_pop, clean]
+  text_styles: [bounce, pop_letters, typewriter, slam, fade_up]
+  title_colors: ["#ffffff", "#ffe14d", "#ff6fb1", "#5ce1ff"]
+  bpm: [104, 128]
+  sfx: { hit: [drum, hit], cut: [whoosh], atmosphere: [] }
+  transitions: [cut, cut, whip, dip_white, zoom_blur]
+crime:
+  weight: 8
+  ratings: [3, 6]
+  grades: [noir, teal_orange, sodium, bleach]
+  text_styles: [typewriter, letter_spacing, wipe, flicker, split]
+  title_colors: ["#ffffff", "#e8d9b0", "#d63a2f"]
+  bpm: [82, 108]
+  sfx: { hit: [hit, drum], cut: [whoosh], atmosphere: [heartbeat, riser] }
+  transitions: [cut, dip_black, dissolve, glitch, flash]
+drama:
+  weight: 12
+  ratings: [1, 6]
+  grades: [noir, faded, golden_hour, cold_blue, bleach]
+  text_styles: [fade_up, letter_spacing, per_letter, blur_in, zoom_slow]
+  title_colors: ["#ffffff", "#f4ede1", "#e9d8b4"]
+  bpm: [66, 92]
+  sfx: { hit: [drum, hit], cut: [], atmosphere: [riser] }
+  transitions: [dissolve, dissolve, dip_black, cut, light_leak]
+family:
+  weight: 6
+  ratings: [0, 2]
+  grades: [vivid, warm_pop, golden_hour, clean]
+  text_styles: [bounce, pop_letters, shine, fade_up]
+  title_colors: ["#ffffff", "#ffe14d", "#7ee0ff", "#ffb3d9"]
+  bpm: [96, 122]
+  sfx: { hit: [drum], cut: [whoosh], atmosphere: [] }
+  transitions: [dissolve, whip, dip_white, cut, light_leak]
+fantasy:
+  weight: 7
+  ratings: [1, 4]
+  grades: [mystic, emerald, golden_hour, moonlight]
+  text_styles: [shine, blur_in, letter_spacing, per_letter, zoom_slow]
+  title_colors: ["#f6e7b4", "#ffffff", "#d9c27a", "#bfe3ff"]
+  bpm: [72, 100]
+  sfx: { hit: [hit, drum], cut: [whoosh], atmosphere: [riser, thunder] }
+  transitions: [dissolve, flash, light_leak, dip_black]
+horror:
+  weight: 9
+  ratings: [4, 6]
+  grades: [horror_green, bleach, moonlight, noir, blood]
+  text_styles: [flicker, glitch, per_letter, blur_in, slam]
+  title_colors: ["#ffffff", "#e8e8e8", "#c4161c", "#b8ffcf"]
+  bpm: [60, 90]
+  sfx: { hit: [hit, horror, thunder], cut: [horror], atmosphere: [heartbeat, horror, riser] }
+  transitions: [cut, dip_black, glitch, flash, flicker]
+romance:
+  weight: 8
+  ratings: [1, 4]
+  grades: [warm_pop, golden_hour, rose, faded]
+  text_styles: [fade_up, blur_in, letter_spacing, shine, per_letter]
+  title_colors: ["#ffffff", "#ffe3ec", "#ffd9a8"]
+  bpm: [70, 98]
+  sfx: { hit: [drum], cut: [], atmosphere: [] }
+  transitions: [dissolve, dissolve, light_leak, dip_white, cut]
+sci_fi:
+  weight: 9
+  ratings: [2, 5]
+  grades: [cold_blue, neon, steel, matrix]
+  text_styles: [glitch, letter_spacing, scan, wipe, zoom_through, split]
+  title_colors: ["#ffffff", "#9be7ff", "#7cffc4", "#c9b6ff"]
+  bpm: [90, 124]
+  sfx: { hit: [hit, explosion], cut: [whoosh], atmosphere: [riser] }
+  transitions: [glitch, cut, flash, zoom_blur, dip_black]
+thriller:
+  weight: 8
+  ratings: [3, 6]
+  grades: [cold_blue, bleach, steel, sodium, noir]
+  text_styles: [glitch, typewriter, letter_spacing, flicker, split, wipe]
+  title_colors: ["#ffffff", "#e4e9ef", "#ff3b30"]
+  bpm: [84, 116]
+  sfx: { hit: [hit, drum], cut: [whoosh], atmosphere: [heartbeat, riser] }
+  transitions: [cut, glitch, dip_black, flash, whip]
+western:
+  weight: 4
+  ratings: [2, 5]
+  grades: [desert_heat, sepia, golden_hour, faded]
+  text_styles: [letter_spacing, slam, fade_up, wipe, zoom_slow]
+  title_colors: ["#f3dfb2", "#ffffff", "#e0a95c"]
+  bpm: [76, 104]
+  sfx: { hit: [hit, drum], cut: [whoosh], atmosphere: [thunder] }
+  transitions: [dissolve, cut, dip_black, whip, light_leak]

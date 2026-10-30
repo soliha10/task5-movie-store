@@ -1,0 +1,1029 @@
+---
+- id: m51
+  kind: music
+  file: music/51.mp3
+  duration: 11.0
+  title: Sports Highlights
+  artist: Ahjay Stelino
+  license: Mixkit Stock Music Free License
+  moods:
+  - action
+  - thriller
+- id: m676
+  kind: music
+  file: music/676.mp3
+  duration: 11.0
+  title: Epical Drums 01
+  artist: Grigoriy Nuzhny
+  license: Mixkit Stock Music Free License
+  moods:
+  - action
+  - adventure
+  - thriller
+- id: m680
+  kind: music
+  file: music/680.mp3
+  duration: 11.0
+  title: Epical Drums 05
+  artist: Grigoriy Nuzhny
+  license: Mixkit Stock Music Free License
+  moods:
+  - action
+  - adventure
+  - fantasy
+  - thriller
+- id: m677
+  kind: music
+  file: music/677.mp3
+  duration: 11.0
+  title: Epical Drums 02
+  artist: Grigoriy Nuzhny
+  license: Mixkit Stock Music Free License
+  moods:
+  - action
+  - adventure
+- id: m126
+  kind: music
+  file: music/126.mp3
+  duration: 11.0
+  title: Trap Electro Vibes
+  artist: Alejandro Magaña (A. M.)
+  license: Mixkit Stock Music Free License
+  moods:
+  - action
+  - sci_fi
+- id: m1068
+  kind: music
+  file: music/1068.mp3
+  duration: 11.0
+  title: K.O.
+  artist: Michael Ramir C.
+  license: Mixkit Stock Music Free License
+  moods:
+  - action
+- id: m706
+  kind: music
+  file: music/706.mp3
+  duration: 11.0
+  title: Games Music
+  artist: Grigoriy Nuzhny
+  license: Mixkit Stock Music Free License
+  moods:
+  - action
+- id: m871
+  kind: music
+  file: music/871.mp3
+  duration: 11.0
+  title: Fright Night
+  artist: Michael Ramir C.
+  license: Mixkit Stock Music Free License
+  moods:
+  - adventure
+  - thriller
+- id: m679
+  kind: music
+  file: music/679.mp3
+  duration: 11.0
+  title: Epical Drums 04
+  artist: Grigoriy Nuzhny
+  license: Mixkit Stock Music Free License
+  moods:
+  - adventure
+  - fantasy
+- id: m678
+  kind: music
+  file: music/678.mp3
+  duration: 11.0
+  title: Epical Drums 03
+  artist: Grigoriy Nuzhny
+  license: Mixkit Stock Music Free License
+  moods:
+  - adventure
+  - fantasy
+- id: m686
+  kind: music
+  file: music/686.mp3
+  duration: 11.0
+  title: Epical Drums 06
+  artist: Grigoriy Nuzhny
+  license: Mixkit Stock Music Free License
+  moods:
+  - adventure
+- id: m595
+  kind: music
+  file: music/595.mp3
+  duration: 11.0
+  title: Secret Garden
+  artist:
+  license: Mixkit Stock Music Free License
+  moods:
+  - comedy
+- id: m5
+  kind: music
+  file: music/5.mp3
+  duration: 11.0
+  title: Feeling Happy
+  artist:
+  license: Mixkit Stock Music Free License
+  moods:
+  - comedy
+  - family
+- id: m644
+  kind: music
+  file: music/644.mp3
+  duration: 11.0
+  title: Upbeat Jazz
+  artist:
+  license: Mixkit Stock Music Free License
+  moods:
+  - comedy
+- id: m466
+  kind: music
+  file: music/466.mp3
+  duration: 11.0
+  title: Games Worldbeat
+  artist:
+  license: Mixkit Stock Music Free License
+  moods:
+  - comedy
+- id: m2
+  kind: music
+  file: music/2.mp3
+  duration: 11.0
+  title: Comical
+  artist:
+  license: Mixkit Stock Music Free License
+  moods:
+  - comedy
+  - family
+- id: m613
+  kind: music
+  file: music/613.mp3
+  duration: 11.0
+  title: Sicilian Coffee
+  artist:
+  license: Mixkit Stock Music Free License
+  moods:
+  - comedy
+- id: m15
+  kind: music
+  file: music/15.mp3
+  duration: 11.0
+  title: Keep Smiling
+  artist:
+  license: Mixkit Stock Music Free License
+  moods:
+  - comedy
+- id: m188
+  kind: music
+  file: music/188.mp3
+  duration: 11.0
+  title: Echoes
+  artist: Andrew Ev
+  license: Mixkit Stock Music Free License
+  moods:
+  - crime
+  - horror
+- id: m565
+  kind: music
+  file: music/565.mp3
+  duration: 11.0
+  title: Fallen (Asper)
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - crime
+- id: m140
+  kind: music
+  file: music/140.mp3
+  duration: 11.0
+  title: Cyberpunk City
+  artist: Alejandro Magaña (A. M.)
+  license: Mixkit Stock Music Free License
+  moods:
+  - crime
+- id: m612
+  kind: music
+  file: music/612.mp3
+  duration: 11.0
+  title: Selpan
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - crime
+  - horror
+- id: m605
+  kind: music
+  file: music/605.mp3
+  duration: 11.0
+  title: Delirium
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - crime
+- id: m76
+  kind: music
+  file: music/76.mp3
+  duration: 11.0
+  title: Epic Games
+  artist: Ahjay Stelino
+  license: Mixkit Stock Music Free License
+  moods:
+  - crime
+- id: m283
+  kind: music
+  file: music/283.mp3
+  duration: 11.0
+  title: Trapanomics
+  artist: Arulo
+  license: Mixkit Stock Music Free License
+  moods:
+  - crime
+- id: m614
+  kind: music
+  file: music/614.mp3
+  duration: 11.0
+  title: Silent Descent
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - drama
+  - thriller
+- id: m580
+  kind: music
+  file: music/580.mp3
+  duration: 11.0
+  title: Sun and His Daughter
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - drama
+- id: m601
+  kind: music
+  file: music/601.mp3
+  duration: 11.0
+  title: Skyline
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - drama
+  - romance
+  - thriller
+- id: m22
+  kind: music
+  file: music/22.mp3
+  duration: 11.0
+  title: Piano Reflections
+  artist: Ahjay Stelino
+  license: Mixkit Stock Music Free License
+  moods:
+  - drama
+- id: m688
+  kind: music
+  file: music/688.mp3
+  duration: 11.0
+  title: Classical vibes 5
+  artist: Grigoriy Nuzhny
+  license: Mixkit Stock Music Free License
+  moods:
+  - drama
+- id: m714
+  kind: music
+  file: music/714.mp3
+  duration: 11.0
+  title: Classical 7
+  artist: Jonny S.
+  license: Mixkit Stock Music Free License
+  moods:
+  - drama
+- id: m168
+  kind: music
+  file: music/168.mp3
+  duration: 11.0
+  title: Staring at the Night Sky
+  artist: Alejandro Magaña (A. M.)
+  license: Mixkit Stock Music Free License
+  moods:
+  - drama
+- id: m682
+  kind: music
+  file: music/682.mp3
+  duration: 11.0
+  title: Classical vibes 2
+  artist: Grigoriy Nuzhny
+  license: Mixkit Stock Music Free License
+  moods:
+  - family
+- id: m897
+  kind: music
+  file: music/897.mp3
+  duration: 11.0
+  title: A Very Happy Christmas
+  artist: Michael Ramir C.
+  license: Mixkit Stock Music Free License
+  moods:
+  - family
+- id: m1076
+  kind: music
+  file: music/1076.mp3
+  duration: 11.0
+  title: Smile
+  artist: Michael Ramir C.
+  license: Mixkit Stock Music Free License
+  moods:
+  - family
+- id: m1072
+  kind: music
+  file: music/1072.mp3
+  duration: 11.0
+  title: Owies Ukulele
+  artist: Michael Ramir C.
+  license: Mixkit Stock Music Free License
+  moods:
+  - family
+- id: m621
+  kind: music
+  file: music/621.mp3
+  duration: 11.0
+  title: BRIDGE N° 98
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - family
+- id: m587
+  kind: music
+  file: music/587.mp3
+  duration: 11.0
+  title: Discover
+  artist:
+  license: Mixkit Stock Music Free License
+  moods:
+  - fantasy
+- id: m543
+  kind: music
+  file: music/543.mp3
+  duration: 11.0
+  title: A New Life
+  artist:
+  license: Mixkit Stock Music Free License
+  moods:
+  - fantasy
+- id: m724
+  kind: music
+  file: music/724.mp3
+  duration: 11.0
+  title: PlaceIt World 01
+  artist:
+  license: Mixkit Stock Music Free License
+  moods:
+  - fantasy
+- id: m606
+  kind: music
+  file: music/606.mp3
+  duration: 11.0
+  title: Drawing the Sky
+  artist:
+  license: Mixkit Stock Music Free License
+  moods:
+  - fantasy
+- id: m671
+  kind: music
+  file: music/671.mp3
+  duration: 11.0
+  title: Piano Horror
+  artist: Francisco Alvear
+  license: Mixkit Stock Music Free License
+  moods:
+  - horror
+- id: m588
+  kind: music
+  file: music/588.mp3
+  duration: 11.0
+  title: Feedback Dreams
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - horror
+- id: m615
+  kind: music
+  file: music/615.mp3
+  duration: 11.0
+  title: Tapis
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - horror
+- id: m464
+  kind: music
+  file: music/464.mp3
+  duration: 11.0
+  title: Sci-Fi Score
+  artist: Arulo
+  license: Mixkit Stock Music Free License
+  moods:
+  - horror
+  - sci_fi
+- id: m64
+  kind: music
+  file: music/64.mp3
+  duration: 11.0
+  title: Dark Shadows
+  artist: Ahjay Stelino
+  license: Mixkit Stock Music Free License
+  moods:
+  - horror
+- id: m493
+  kind: music
+  file: music/493.mp3
+  duration: 11.0
+  title: Beautiful Dream
+  artist: Diego Nava
+  license: Mixkit Stock Music Free License
+  moods:
+  - romance
+  - thriller
+- id: m659
+  kind: music
+  file: music/659.mp3
+  duration: 11.0
+  title: Romantic
+  artist: Francisco Alvear
+  license: Mixkit Stock Music Free License
+  moods:
+  - romance
+- id: m39
+  kind: music
+  file: music/39.mp3
+  duration: 11.0
+  title: Latin Lovers
+  artist: Ahjay Stelino
+  license: Mixkit Stock Music Free License
+  moods:
+  - romance
+- id: m599
+  kind: music
+  file: music/599.mp3
+  duration: 11.0
+  title: Possible Dreams
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - romance
+- id: m683
+  kind: music
+  file: music/683.mp3
+  duration: 11.0
+  title: Classical vibes 3
+  artist: Grigoriy Nuzhny
+  license: Mixkit Stock Music Free License
+  moods:
+  - romance
+- id: m711
+  kind: music
+  file: music/711.mp3
+  duration: 11.0
+  title: Classical 4
+  artist: Jonny S.
+  license: Mixkit Stock Music Free License
+  moods:
+  - romance
+- id: m175
+  kind: music
+  file: music/175.mp3
+  duration: 11.0
+  title: Digital Clouds
+  artist: Alejandro Magaña (A. M.)
+  license: Mixkit Stock Music Free License
+  moods:
+  - sci_fi
+- id: m729
+  kind: music
+  file: music/729.mp3
+  duration: 11.0
+  title: Pop Track 03
+  artist: Lily J
+  license: Mixkit Stock Music Free License
+  moods:
+  - sci_fi
+- id: m440
+  kind: music
+  file: music/440.mp3
+  duration: 11.0
+  title: Infinity
+  artist: Arulo
+  license: Mixkit Stock Music Free License
+  moods:
+  - sci_fi
+- id: m726
+  kind: music
+  file: music/726.mp3
+  duration: 11.0
+  title: Uplifting Bass
+  artist: Lily J
+  license: Mixkit Stock Music Free License
+  moods:
+  - sci_fi
+- id: m102
+  kind: music
+  file: music/102.mp3
+  duration: 11.0
+  title: Stylz
+  artist: Ahjay Stelino
+  license: Mixkit Stock Music Free License
+  moods:
+  - sci_fi
+- id: m1063
+  kind: music
+  file: music/1063.mp3
+  duration: 11.0
+  title: Fun at the Farm
+  artist: Michael Ramir C.
+  license: Mixkit Stock Music Free License
+  moods:
+  - western
+- id: m617
+  kind: music
+  file: music/617.mp3
+  duration: 11.0
+  title: Wind Leaves
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - western
+- id: m859
+  kind: music
+  file: music/859.mp3
+  duration: 11.0
+  title: Under the Sun
+  artist: Michael Ramir C.
+  license: Mixkit Stock Music Free License
+  moods:
+  - western
+- id: m23
+  kind: music
+  file: music/23.mp3
+  duration: 11.0
+  title: Relaxing Country
+  artist: Ahjay Stelino
+  license: Mixkit Stock Music Free License
+  moods:
+  - western
+- id: m805
+  kind: music
+  file: music/805.mp3
+  duration: 11.0
+  title: I Will Marry That Cowgirl
+  artist: Michael Ramir C.
+  license: Mixkit Stock Music Free License
+  moods:
+  - western
+- id: m1028
+  kind: music
+  file: music/1028.mp3
+  duration: 11.0
+  title: Fifth of February
+  artist: Michael Ramir C.
+  license: Mixkit Stock Music Free License
+  moods:
+  - western
+- id: m547
+  kind: music
+  file: music/547.mp3
+  duration: 11.0
+  title: West Side Of Flo'
+  artist: Eugenio Mininni
+  license: Mixkit Stock Music Free License
+  moods:
+  - western
+- id: s1143
+  kind: sfx
+  file: sfx/1143.mp3
+  duration: 4.0
+  title: Cinematic whoosh deep impact
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - hit
+- id: s788
+  kind: sfx
+  file: sfx/788.mp3
+  duration: 4.0
+  title: Big cinematic impact
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - hit
+- id: s2908
+  kind: sfx
+  file: sfx/2908.mp3
+  duration: 4.0
+  title: Movie trailer epic impact
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - hit
+- id: s2198
+  kind: sfx
+  file: sfx/2198.mp3
+  duration: 3.03
+  title: Strong punches to the body
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - hit
+- id: s2782
+  kind: sfx
+  file: sfx/2782.mp3
+  duration: 4.0
+  title: Epic impact afar explosion
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - hit
+- id: s498
+  kind: sfx
+  file: sfx/498.mp3
+  duration: 3.47
+  title: Deep heartbeat impact
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - hit
+- id: s1489
+  kind: sfx
+  file: sfx/1489.mp3
+  duration: 2.32
+  title: Air woosh
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - whoosh
+- id: s1492
+  kind: sfx
+  file: sfx/1492.mp3
+  duration: 1.33
+  title: Cinematic whoosh fast transition
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - whoosh
+- id: s1491
+  kind: sfx
+  file: sfx/1491.mp3
+  duration: 1.1
+  title: Arrow whoosh
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - whoosh
+- id: s1714
+  kind: sfx
+  file: sfx/1714.mp3
+  duration: 4.0
+  title: Fast rocket whoosh
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - whoosh
+- id: s1490
+  kind: sfx
+  file: sfx/1490.mp3
+  duration: 1.76
+  title: Fast whoosh transition
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - whoosh
+- id: s1486
+  kind: sfx
+  file: sfx/1486.mp3
+  duration: 4.0
+  title: Cinematic tunnel reverb woosh
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - whoosh
+- id: s790
+  kind: sfx
+  file: sfx/790.mp3
+  duration: 2.57
+  title: Cinematic trailer riser
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - riser
+- id: s1144
+  kind: sfx
+  file: sfx/1144.mp3
+  duration: 4.0
+  title: Short space stutter intro riser
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - riser
+- id: s2719
+  kind: sfx
+  file: sfx/2719.mp3
+  duration: 4.0
+  title: Cinematic riser helicopter engine
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - riser
+- id: s632
+  kind: sfx
+  file: sfx/632.mp3
+  duration: 4.0
+  title: Cinematic drama riser
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - riser
+- id: s645
+  kind: sfx
+  file: sfx/645.mp3
+  duration: 4.0
+  title: Cinematic synth riser
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - riser
+- id: s794
+  kind: sfx
+  file: sfx/794.mp3
+  duration: 4.0
+  title: Tech choir cinematic riser
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - riser
+- id: s2390
+  kind: sfx
+  file: sfx/2390.mp3
+  duration: 4.0
+  title: Rain and thunder storm
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - thunder
+- id: s1287
+  kind: sfx
+  file: sfx/1287.mp3
+  duration: 4.0
+  title: Cinematic laser gun thunder
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - thunder
+- id: s2415
+  kind: sfx
+  file: sfx/2415.mp3
+  duration: 4.0
+  title: Calm thunderstorm in the jungle
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - thunder
+- id: s2395
+  kind: sfx
+  file: sfx/2395.mp3
+  duration: 4.0
+  title: Thunder rumble during a storm
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - thunder
+- id: s1704
+  kind: sfx
+  file: sfx/1704.mp3
+  duration: 4.0
+  title: Explosion hit
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - thunder
+- id: s1278
+  kind: sfx
+  file: sfx/1278.mp3
+  duration: 4.0
+  title: Distant thunder explosion
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - thunder
+- id: s2782
+  kind: sfx
+  file: sfx/2782.mp3
+  duration: 4.0
+  title: Epic impact afar explosion
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - explosion
+- id: s1687
+  kind: sfx
+  file: sfx/1687.mp3
+  duration: 4.0
+  title: Dramatic metal explosion impact
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - explosion
+- id: s1704
+  kind: sfx
+  file: sfx/1704.mp3
+  duration: 4.0
+  title: Explosion hit
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - explosion
+- id: s1278
+  kind: sfx
+  file: sfx/1278.mp3
+  duration: 4.0
+  title: Distant thunder explosion
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - explosion
+- id: s2804
+  kind: sfx
+  file: sfx/2804.mp3
+  duration: 4.0
+  title: Bomb drop impact
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - explosion
+- id: s351
+  kind: sfx
+  file: sfx/351.mp3
+  duration: 4.0
+  title: Trailer screaming people annihilation
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - explosion
+- id: s1143
+  kind: sfx
+  file: sfx/1143.mp3
+  duration: 4.0
+  title: Cinematic whoosh deep impact
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - horror
+- id: s2485
+  kind: sfx
+  file: sfx/2485.mp3
+  duration: 4.0
+  title: Wolves at scary forest
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - horror
+- id: s2484
+  kind: sfx
+  file: sfx/2484.mp3
+  duration: 4.0
+  title: Terror transition
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - horror
+- id: s2630
+  kind: sfx
+  file: sfx/2630.mp3
+  duration: 4.0
+  title: Terror sweep of darkness
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - horror
+- id: s2482
+  kind: sfx
+  file: sfx/2482.mp3
+  duration: 4.0
+  title: Horror ambience
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - horror
+- id: s1775
+  kind: sfx
+  file: sfx/1775.mp3
+  duration: 4.0
+  title: Wolf howling
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - horror
+- id: s488
+  kind: sfx
+  file: sfx/488.mp3
+  duration: 4.0
+  title: Cinematic transition swoosh heartbeat trailer
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - heartbeat
+- id: s492
+  kind: sfx
+  file: sfx/492.mp3
+  duration: 4.0
+  title: Cinematic mystery heartbeat transition
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - heartbeat
+- id: s565
+  kind: sfx
+  file: sfx/565.mp3
+  duration: 4.0
+  title: Hard horror hit drum
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - heartbeat
+- id: s497
+  kind: sfx
+  file: sfx/497.mp3
+  duration: 4.0
+  title: Cinematic heartbeat ambience
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - heartbeat
+- id: s489
+  kind: sfx
+  file: sfx/489.mp3
+  duration: 4.0
+  title: Cinematic horror heartbeat transition
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - heartbeat
+- id: s490
+  kind: sfx
+  file: sfx/490.mp3
+  duration: 1.1
+  title: Human single heart beat
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - heartbeat
+- id: s488
+  kind: sfx
+  file: sfx/488.mp3
+  duration: 4.0
+  title: Cinematic transition swoosh heartbeat trailer
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - drum
+- id: s2909
+  kind: sfx
+  file: sfx/2909.mp3
+  duration: 4.0
+  title: Cool impact movie trailer
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - drum
+- id: s492
+  kind: sfx
+  file: sfx/492.mp3
+  duration: 4.0
+  title: Cinematic mystery heartbeat transition
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - drum
+- id: s565
+  kind: sfx
+  file: sfx/565.mp3
+  duration: 4.0
+  title: Hard horror hit drum
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - drum
+- id: s2299
+  kind: sfx
+  file: sfx/2299.mp3
+  duration: 1.1
+  title: Short bass hit
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - drum
+- id: s546
+  kind: sfx
+  file: sfx/546.mp3
+  duration: 4.0
+  title: Cinematic mystery trailer drum hit
+  artist:
+  license: Mixkit Sound Effects Free License
+  moods:
+  - drum

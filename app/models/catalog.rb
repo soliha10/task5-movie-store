@@ -6,6 +6,10 @@ module Catalog
     @genres ||= YAML.load_file(Rails.root.join("config/catalog/genres.yml"))
   end
 
+  def grades
+    @grades ||= YAML.load_file(Rails.root.join("config/catalog/grades.yml"))
+  end
+
   def genre_ids
     genres.keys
   end

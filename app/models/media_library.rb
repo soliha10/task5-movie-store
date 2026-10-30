@@ -29,6 +29,6 @@ module MediaLibrary
 
   def load(name)
     file = Rails.root.join("config/media/#{name}.yml")
-    File.exist?(file) ? YAML.load_file(file) : []
+    File.exist?(file) ? YAML.load_file(file, aliases: true) : []
   end
 end
