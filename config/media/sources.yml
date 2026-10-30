@@ -2,13 +2,19 @@
 # Each genre lists Mixkit tags; clips whose title matches an `exclude` word are skipped for that genre.
 clips:
   per_genre: 42
+  # Abstract loops, VFX overlays and motion graphics are not footage — skipped for every genre.
+  exclude_everywhere: [abstract, "vj", "loop video", particle, tunnel, render, "2d animation", forex, "stock market",
+                       "rotating background", "smoke effect", "smoke in motion", "smoke on", "smoke with", "smoke abundantly",
+                       "smoke slowly", "smoke rising", "smoke flows", "smoke rapidly", "plume of smoke", "blue smoke",
+                       "trail of smoke", "sparkles of neon", "light rings", "neon frames", "lines of", "overlapping",
+                       "light leak", "bokeh", "glitter", "confetti falling"]
   genres:
     action:    { tags: [explosion, fire, police, motorcycle, helicopter, sparks, smoke, car, running, city], exclude: [smiling, happy, cute, birthday, cake, kitten, puppy] }
     adventure: { tags: [jungle, mountain, waterfall, cave, canyon, island, ship, desert, aerial, ocean], exclude: [office, laptop, party] }
     comedy:    { tags: [party, dog, funny, celebration, dancing, cat, friends, birthday], exclude: [sad, dark, crying, lonely] }
     crime:     { tags: [police, money, night, rain, city, smoke, car, phone], exclude: [cute, kitten, birthday, smiling, beach] }
     drama:     { tags: [rain, clouds, sad, window, field, sunset, road, ocean], exclude: [party, funny, explosion] }
-    family:    { tags: [kids, dog, cat, christmas, snow, family, park, birthday], exclude: [sad, dark, smoke, police] }
+    family:    { tags: [kids, dog, cat, christmas, snow, family, park, birthday, children, baby, playground, picnic, balloons, farm, puppy], exclude: [sad, dark, smoke, police] }
     fantasy:   { tags: [castle, forest, magic, fog, moon, stars, candle, mountain], exclude: [office, laptop, car, phone] }
     horror:    { tags: [fog, halloween, candle, abandoned, storm, lightning, forest, moon, shadow], exclude: [smiling, happy, sunny, party, cute, laughing, christmas] }
     romance:   { tags: [couple, love, kiss, wedding, flowers, paris, beach, sunset], exclude: [explosion, police, sad, dark] }

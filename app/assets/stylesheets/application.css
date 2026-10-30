@@ -67,7 +67,8 @@ body { background: #fff; color: #1f2937; font-size: 0.92rem; }
 
 /* Gallery ----------------------------------------------------------------- */
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.1rem; }
-.batch-frame { display: contents; }
+.batch-frame { display: block; grid-column: 1 / -1; min-height: 60px; }
+.batch-frame[complete], turbo-frame.batch-frame:not([src]) { display: contents; }
 .gallery-loader { grid-column: 1 / -1; text-align: center; padding: 1.5rem; color: #6b7280; }
 .movie-card { cursor: pointer; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.12); transition: transform .15s, box-shadow .15s; }
 .movie-card:hover, .movie-card:focus { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(0,0,0,.16); outline: none; }

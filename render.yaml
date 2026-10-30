@@ -1,0 +1,14 @@
+# Render blueprint: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: reelforge
+    runtime: docker
+    plan: free
+    healthCheckPath: /up
+    envVars:
+      - key: SECRET_KEY_BASE
+        generateValue: true
+      - key: EXPORT_WORKERS
+        value: "2"
+      - key: RAILS_LOG_LEVEL
+        value: info

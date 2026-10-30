@@ -40,6 +40,10 @@ export default class extends Controller {
 
   submitted() {
     // Any parameter change restarts the gallery from the top (the table returns to page 1 by itself).
-    window.scrollTo({ top: 0 })
+    window.scrollTo({ top: 0, behavior: "instant" })
+  }
+
+  rendered(event) {
+    if (event.target.id === "results") window.scrollTo({ top: 0, behavior: "instant" })
   }
 }

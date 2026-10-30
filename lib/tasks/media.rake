@@ -114,7 +114,7 @@ module MediaFetch
     chosen = Hash.new { |h, k| h[k] = [] }
 
     config["genres"].each do |genre, spec|
-      excluded = Regexp.union(spec["exclude"].map { |w| /\b#{w}/i })
+      excluded = Regexp.union((spec["exclude"] + config["exclude_everywhere"]).map { |w| /\b#{Regexp.escape(w)}/i })
       per_tag = spec["tags"].map { |tag| video_items(tag).reject { |v| v[:title].match?(excluded) } }
       # Round-robin over tags so every genre gets a mix of subjects.
       until chosen[genre].size >= config["per_genre"] || per_tag.all?(&:empty?)

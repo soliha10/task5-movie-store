@@ -4,7 +4,7 @@ require "zip"
 class ExportsController < ApplicationController
   include GenerationParams
 
-  WORKERS = 4
+  WORKERS = ENV.fetch("EXPORT_WORKERS", 3).to_i
 
   def show
     movies = generator.page(state.page)

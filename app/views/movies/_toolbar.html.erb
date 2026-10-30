@@ -1,7 +1,7 @@
 <%= form_with url: root_path, method: :get, id: "toolbar",
       class: "toolbar sticky-top border-bottom",
       data: { controller: "toolbar", turbo_frame: "results", turbo_action: "advance",
-              action: "change->toolbar#changed submit->toolbar#submitted" } do %>
+              action: "change->toolbar#changed submit->toolbar#submitted turbo:before-frame-render@document->toolbar#rendered" } do %>
   <div class="container-xxl px-3 py-2 d-flex flex-wrap flex-lg-nowrap align-items-end gap-2 gap-lg-3">
     <div class="brand d-none d-xl-flex align-items-center me-1">
       <i class="bi bi-film"></i><span>ReelForge</span>

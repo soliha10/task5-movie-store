@@ -248,7 +248,7 @@ export class TrailerPlayer {
         this.playing = false
         this.videos.forEach((v) => v.pause())
         // Rest on the title card instead of the final black frame.
-        this.tl.seek(Math.max(0, this.spec.duration - 0.7), false)
+        this.tl.seek(Math.max(0, this.spec.duration - 0.52), false)
         this.app.render()
         onEnd?.()
         return
@@ -270,7 +270,7 @@ export class TrailerPlayer {
     const shots = this.spec.shots
     shots.forEach((shot, i) => {
       const v = shot.video
-      if (!v) return
+      if (!v || v.readyState < 2 || !Number.isFinite(v.duration)) return
       const next = shots[i + 1]
       const end = next ? next.start + (next.transition?.duration || 0) + 0.1 : this.spec.duration + 1
       const active = t >= shot.start - 0.05 && t < end

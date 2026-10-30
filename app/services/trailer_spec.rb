@@ -65,7 +65,7 @@ class TrailerSpec
 
       if kind == :title
         texts << title_text(t, duration)
-        texts << card_text(card, t + duration * 0.55, duration * 0.45, small: true) if card
+        texts << card_text(card, t + duration * 0.4, duration * 0.6, small: true) if card
       elsif card
         lead = kind == :black ? 0.15 : rand_in([0.2, 0.6])
         texts << card_text(card, t + lead, duration - lead - 0.1)

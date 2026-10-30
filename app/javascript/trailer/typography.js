@@ -36,8 +36,14 @@ export function buildText(spec, card, timeline, rng) {
   const animate = STYLES[card.style] || STYLES.fade_up
   timeline.set(root, { alpha: 1 }, start)
   animate({ root, inner, letters, timeline, start, end, rng, card, W, H, style })
-  if (!card.title) timeline.to(root, { alpha: 0, duration: 0.3, ease: "power1.in" }, end - 0.3)
-  return root
+
+  // The exit fade lives on its own wrapper so it never fights an entrance tween that is still running.
+  const outer = new Container()
+  outer.addChild(root)
+  if (!card.title) {
+    timeline.fromTo(outer, { alpha: 1 }, { alpha: 0, duration: 0.3, ease: "power1.in", immediateRender: false }, end - 0.3)
+  }
+  return outer
 }
 
 function layout(card, W, H) {
