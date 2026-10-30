@@ -29,3 +29,6 @@
 
 /vendor/bundle
 /tmp/media
+
+# Local working notes
+/PROMPT.md
