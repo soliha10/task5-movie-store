@@ -1,8 +1,8 @@
 require "test_helper"
 
 class TrailerSpecTest < ActiveSupport::TestCase
-  def trailer(seed: 1, index: 1, locale: "en-US")
-    MovieGenerator.new(region: Region.find(locale), seed: seed).movie(index).trailer
+  def trailer(seed: 1, index: 1)
+    build_generator(seed: seed).movie(index).trailer
   end
 
   test "trailers are reproducible and differ between seeds" do
@@ -11,18 +11,16 @@ class TrailerSpecTest < ActiveSupport::TestCase
   end
 
   test "trailers do not depend on likes or reviews" do
-    a = MovieGenerator.new(region: Region.find("en-US"), seed: 5, likes: 0, reviews: 0).movie(3).trailer
-    b = MovieGenerator.new(region: Region.find("en-US"), seed: 5, likes: 9, reviews: 9).movie(3).trailer
-    assert_equal a, b
+    assert_equal build_generator(seed: 5, likes: 0, reviews: 0).movie(3).trailer,
+                 build_generator(seed: 5, likes: 9, reviews: 9).movie(3).trailer
   end
 
   test "every trailer shows the movie title and fits 7-10 seconds" do
-    gen = MovieGenerator.new(region: Region.find("de-DE"), seed: 99)
-    gen.page(1).each do |movie|
+    build_generator(locale: "de-DE", seed: 99).page(1).each do |movie|
       spec = movie.trailer
-      assert spec[:texts].any? { |t| t[:title] && t[:text].casecmp?(movie.title) }, movie.title
+      assert spec[:texts].any? { |text_card| text_card[:title] && text_card[:text].casecmp?(movie.title) }, movie.title
       assert_in_delta 8.5, spec[:duration], 1.5
-      assert_in_delta spec[:duration], spec[:shots].sum { _1[:duration] }, 0.05
+      assert_in_delta spec[:duration], spec[:shots].sum { |shot| shot[:duration] }, 0.05
     end
   end
 end

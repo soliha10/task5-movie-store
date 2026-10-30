@@ -26,13 +26,19 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
   test "trailer spec endpoint" do
     get movie_trailer_path(5, seed: 1)
     assert_response :success
-    body = response.parsed_body
-    assert body["duration"].positive?
-    assert body["texts"].any? { _1["title"] }
+    trailer_spec = response.parsed_body
+    assert trailer_spec["duration"].positive?
+    assert trailer_spec["texts"].any? { |text_card| text_card["title"] }
   end
 
   test "invalid parameters fall back to defaults" do
     get root_path(seed: "hello", likes: "lots", reviews: "-4", locale: "xx")
     assert_response :success
+  end
+
+  test "credits page lists the media library" do
+    get credits_path
+    assert_response :success
+    assert_select ".credit-list li", minimum: 1
   end
 end
