@@ -2,22 +2,23 @@ module Catalog
   module_function
 
   def genres
-    @genres ||= YAML.load_file(Rails.root.join("config/catalog/genres.yml"))
+    @genres ||= YamlConfig.load("config/catalog/genres.yml")
   end
 
   def grades
-    @grades ||= YAML.load_file(Rails.root.join("config/catalog/grades.yml"))
+    @grades ||= YamlConfig.load("config/catalog/grades.yml")
   end
 
-  def genre_ids
-    genres.keys
+  def genre_style(genre_id)
+    genres.fetch(genre_id)
   end
 
-  def weighted_genre(rng)
-    total = genres.sum { |_, g| g["weight"] }
-    roll = rng.rand(total)
-    genres.each do |id, g|
-      return id if (roll -= g["weight"]).negative?
+  def weighted_genre(random)
+    total_weight = genres.sum { |_genre_id, genre| genre["weight"] }
+    remaining_weight = random.rand(total_weight)
+    genres.each do |genre_id, genre|
+      remaining_weight -= genre["weight"]
+      return genre_id if remaining_weight.negative?
     end
   end
 end

@@ -1,0 +1,11 @@
+<main class="container-xxl px-3 py-4">
+  <h1 class="h4 mb-3">Media credits</h1>
+  <p class="text-body-secondary">
+    Trailer footage, music and sound effects come from <a href="https://mixkit.co/license/">Mixkit</a>
+    and are used under the Mixkit free licenses.
+  </p>
+  <%= render "pages/credit_list", title: "Footage (#{@clips.size})", items: @clips %>
+  <%= render "pages/credit_list", title: "Music (#{@music_tracks.size})", items: @music_tracks %>
+  <%= render "pages/credit_list", title: "Sound effects (#{@sound_effects.size})", items: @sound_effects %>
+  <%= link_to "Back to the movie store", root_path, class: "btn btn-sm btn-outline-primary mt-3" %>
+</main>

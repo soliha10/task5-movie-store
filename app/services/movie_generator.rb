@@ -25,7 +25,7 @@ class MovieGenerator
   private
 
   def build(page_seed, index, pos)
-    stream = ->(name) { Seeding.record_seed(page_seed, pos, region.salt, name) }
+    stream = ->(name) { Seeding.record_seed(page_seed, pos, region.seed_salt, name) }
     core = with_faker(stream.call("core")) { |rng| core_fields(rng) }
     trailer = with_faker(stream.call("trailer")) { |rng| TrailerSpec.new(core, region, rng).build }
     Movie.new(index: index, **core,

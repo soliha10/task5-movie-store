@@ -1,0 +1,6 @@
+<h2 class="h6 mt-4"><%= title %></h2>
+<ul class="small credit-list">
+  <% items.each do |item| %>
+    <li><%= item["title"] %><% if item["artist"] %> — <%= item["artist"] %><% end %> <span class="text-body-secondary">(<%= item["license"] %>)</span></li>
+  <% end %>
+</ul>

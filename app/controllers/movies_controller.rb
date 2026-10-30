@@ -2,11 +2,11 @@ class MoviesController < ApplicationController
   include GenerationParams
 
   def index
-    @movies = generator.page(state.page)
+    @movies = current_page_movies
   end
 
   def batch
-    @movies = generator.page(state.page)
+    @movies = current_page_movies
     render layout: false
   end
 end

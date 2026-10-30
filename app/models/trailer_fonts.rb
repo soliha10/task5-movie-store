@@ -1,19 +1,18 @@
 module TrailerFonts
+  GOOGLE_FONTS_URL = "https://fonts.googleapis.com/css2"
+
   module_function
 
   def all
-    @all ||= YAML.load_file(Rails.root.join("config/catalog/fonts.yml")).uniq { |f| f["family"] }
+    @all ||= YamlConfig.load("config/catalog/fonts.yml").uniq { |font| font["family"] }
   end
 
   def for_genre(genre)
-    matching = all.select { |f| f["moods"].include?(genre.to_s) }
-    matching.presence || all
+    all.select { |font| font["moods"].include?(genre.to_s) }.presence || all
   end
 
   def stylesheet_url
-    families = all.map do |f|
-      "family=#{f["family"].tr(" ", "+")}:wght@#{f["weights"].join(";")}"
-    end
-    "https://fonts.googleapis.com/css2?#{families.join("&")}&display=swap"
+    families = all.map { |font| "family=#{font["family"].tr(" ", "+")}:wght@#{font["weights"].join(";")}" }
+    "#{GOOGLE_FONTS_URL}?#{families.join("&")}&display=swap"
   end
 end
