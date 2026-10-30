@@ -135,7 +135,7 @@ class TrailerRenderer
     File.write(file, card[:text])
     font = FONTS.join("#{card[:font]}.ttf")
     font = FONTS.join("Oswald.ttf") unless File.exist?(font)
-    size = [card[:size].to_f * @h, (@w * 0.86) / (card[:text].length * 0.58)].min.round
+    size = [card[:size].to_f * @h, (@w * 0.84) / (card[:text].length * 0.7)].min.round
     s = card[:start].to_f
     e = s + card[:duration].to_f
     fade_out = card[:title] ? "1" : "max(0,(#{e}-t)/0.3)"

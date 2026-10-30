@@ -58,7 +58,7 @@ class TrailerSpec
 
     structure.each_with_index do |(kind, beats, card), i|
       duration = (beats * @beat * scale).round(2)
-      shot = kind == :black || (kind == :title && @rng.rand < 0.35) ? black_shot(duration) : clip_shot(duration, kind == :title)
+      shot = kind == :black || (kind == :title && @rng.rand < 0.2) ? black_shot(duration) : clip_shot(duration, kind == :title)
       shot[:start] = t.round(2)
       shot[:transition] = i.zero? ? { type: "fade_in", duration: 0.5 } : transition
       shots << shot
@@ -123,7 +123,7 @@ class TrailerSpec
 
   def title_text(start, duration)
     text = @movie[:title]
-    script = @font["family"].match?(/Script|Lobster/)
+    script = script?(@font)
     {
       title: true,
       text: script || @rng.rand < 0.2 ? text : text.upcase,
@@ -146,6 +146,7 @@ class TrailerSpec
            else Faker::MovieStore.trailer_card(kind, context: card_context)
            end
     font = small || @rng.rand < 0.6 ? @font : pick(TrailerFonts.for_genre(@genre))
+    font = pick(TrailerFonts.for_genre(@genre).reject { script?(_1) }.presence || TrailerFonts.all.reject { script?(_1) }) if script?(font)
     {
       title: false,
       text: text.upcase,
@@ -218,6 +219,11 @@ class TrailerSpec
       title_style: title && "font-family: '#{title[:font]}', sans-serif; font-weight: #{title[:weight]}; color: #{title[:color]}; letter-spacing: #{title[:tracking]}em;" \
                             "#{" text-transform: none;" if title[:text] != title[:text].upcase}"
     }
+  end
+
+  # Handwritten fonts look wrong in capitals, so they are only used for mixed-case titles.
+  def script?(font)
+    font["family"].match?(/Script|Lobster/)
   end
 
   def pick(list)
