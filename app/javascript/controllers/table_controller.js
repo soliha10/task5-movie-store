@@ -1,30 +1,35 @@
 import { Controller } from "@hotwired/stimulus"
+import { renderTemplate } from "helpers/template"
 
 export default class extends Controller {
   static targets = ["row"]
 
   toggle(event) {
-    const row = event.currentTarget
-    const open = row.getAttribute("aria-expanded") === "true"
-    this.rowTargets.forEach((r) => { if (r !== row) this.collapse(r) })
-    open ? this.collapse(row) : this.expand(row)
+    const clickedRow = event.currentTarget
+    const wasExpanded = isExpanded(clickedRow)
+    this.rowTargets.forEach((row) => this.collapse(row))
+    if (!wasExpanded) this.expand(clickedRow)
   }
 
   expand(row) {
-    const details = row.nextElementSibling
-    const slot = details.querySelector(".details-slot")
-    slot.replaceChildren(details.querySelector("template").content.cloneNode(true))
-    details.classList.remove("d-none")
-    row.setAttribute("aria-expanded", "true")
-    row.classList.add("expanded")
+    const detailsRow = row.nextElementSibling
+    renderTemplate(detailsRow.querySelector("template"), detailsRow.querySelector(".details-slot"))
+    this.setExpanded(row, true)
   }
 
   collapse(row) {
-    if (row.getAttribute("aria-expanded") !== "true") return
-    const details = row.nextElementSibling
-    details.querySelector(".details-slot").replaceChildren()
-    details.classList.add("d-none")
-    row.setAttribute("aria-expanded", "false")
-    row.classList.remove("expanded")
+    if (!isExpanded(row)) return
+    row.nextElementSibling.querySelector(".details-slot").replaceChildren()
+    this.setExpanded(row, false)
   }
+
+  setExpanded(row, expanded) {
+    row.setAttribute("aria-expanded", String(expanded))
+    row.classList.toggle("expanded", expanded)
+    row.nextElementSibling.classList.toggle("d-none", !expanded)
+  }
+}
+
+function isExpanded(row) {
+  return row.getAttribute("aria-expanded") === "true"
 }

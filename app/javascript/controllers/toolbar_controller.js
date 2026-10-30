@@ -1,46 +1,46 @@
 import { Controller } from "@hotwired/stimulus"
 
+const DEBOUNCE_MS = 300
+const RESULTS_FRAME_ID = "results"
+const RANDOM_SEED_HIGH_BITS_MASK = 0x1fffff
+const NUMERIC_SEED = /^\d+$/
+
 export default class extends Controller {
   static targets = ["seed", "likes", "likesOutput"]
 
-  changed(event) {
-    if (event.target === this.seedTarget || event.target.name === "reviews" || event.target === this.likesTarget) return
-    this.submit()
-  }
-
-  debounced() {
-    clearTimeout(this.timer)
-    this.timer = setTimeout(() => this.submit(), 300)
+  submitLater() {
+    clearTimeout(this.submitTimer)
+    this.submitTimer = setTimeout(() => this.submit(), DEBOUNCE_MS)
   }
 
   likesMoved() {
     this.likesOutputTarget.textContent = Number(this.likesTarget.value).toFixed(1)
-    this.debounced()
+    this.submitLater()
   }
 
   randomSeed() {
-    const parts = new Uint32Array(2)
-    crypto.getRandomValues(parts)
-    const seed = (BigInt(parts[0] & 0x1fffff) << 32n) | BigInt(parts[1])
-    this.seedTarget.value = seed.toString()
+    this.seedTarget.value = randomSeedValue()
     this.submit()
   }
 
   submit() {
-    clearTimeout(this.timer)
-    if (!/^\d+$/.test(this.seedTarget.value.trim())) {
-      this.seedTarget.classList.add("is-invalid")
-      return
-    }
-    this.seedTarget.classList.remove("is-invalid")
-    this.element.requestSubmit()
+    clearTimeout(this.submitTimer)
+    const seedIsValid = NUMERIC_SEED.test(this.seedTarget.value.trim())
+    this.seedTarget.classList.toggle("is-invalid", !seedIsValid)
+    if (seedIsValid) this.element.requestSubmit()
   }
 
-  submitted() {
+  scrollToTop() {
     window.scrollTo({ top: 0, behavior: "instant" })
   }
 
-  rendered(event) {
-    if (event.target.id === "results") window.scrollTo({ top: 0, behavior: "instant" })
+  resultsWillRender(event) {
+    if (event.target.id === RESULTS_FRAME_ID) this.scrollToTop()
   }
+}
+
+function randomSeedValue() {
+  const randomParts = new Uint32Array(2)
+  crypto.getRandomValues(randomParts)
+  return ((BigInt(randomParts[0] & RANDOM_SEED_HIGH_BITS_MASK) << 32n) | BigInt(randomParts[1])).toString()
 }

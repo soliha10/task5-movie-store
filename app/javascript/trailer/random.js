@@ -1,20 +1,23 @@
+const MULBERRY_INCREMENT = 0x6d2b79f5
+const UINT32_RANGE = 4294967296
+
 export function seededRandom(seed) {
-  let a = seed >>> 0
-  const next = () => {
-    a = (a + 0x6d2b79f5) >>> 0
-    let t = a
-    t = Math.imul(t ^ (t >>> 15), t | 1)
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  let state = seed >>> 0
+  const nextRandom = () => {
+    state = (state + MULBERRY_INCREMENT) >>> 0
+    let mixed = state
+    mixed = Math.imul(mixed ^ (mixed >>> 15), mixed | 1)
+    mixed ^= mixed + Math.imul(mixed ^ (mixed >>> 7), mixed | 61)
+    return ((mixed ^ (mixed >>> 14)) >>> 0) / UINT32_RANGE
   }
-  next.range = (min, max) => min + next() * (max - min)
-  next.shuffle = (list) => {
-    const copy = [...list]
-    for (let i = copy.length - 1; i > 0; i--) {
-      const j = Math.floor(next() * (i + 1))
-      ;[copy[i], copy[j]] = [copy[j], copy[i]]
+  nextRandom.range = (minimum, maximum) => minimum + nextRandom() * (maximum - minimum)
+  nextRandom.shuffle = (items) => {
+    const shuffled = [...items]
+    for (let index = shuffled.length - 1; index > 0; index--) {
+      const swapIndex = Math.floor(nextRandom() * (index + 1))
+      ;[shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]]
     }
-    return copy
+    return shuffled
   }
-  return next
+  return nextRandom
 }

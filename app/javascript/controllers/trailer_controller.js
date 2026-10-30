@@ -1,8 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
+import { renderTemplate } from "helpers/template"
 
 export default class extends Controller {
-  static targets = ["stage", "play", "status"]
-  static values = { spec: Object, title: String }
+  static targets = ["stage", "status", "controls", "controlsTemplate", "muteIcon"]
+  static values = { spec: Object }
 
   disconnect() {
     this.player?.destroy()
@@ -10,44 +11,37 @@ export default class extends Controller {
   }
 
   async play() {
-    if (this.busy) return
-    this.busy = true
+    if (this.isBusy) return
+    this.isBusy = true
     try {
-      if (!this.player) {
-        const { TrailerPlayer } = await import("trailer/player")
-        this.player = new TrailerPlayer(structuredClone(this.specValue), this.stageTarget)
-        this.status("Loading…")
-        await this.player.load((p) => this.status(`Loading… ${Math.round(p * 100)}%`))
-        this.stageTarget.querySelector(".poster")?.remove()
-        this.addControls()
-      }
-      this.status("")
+      if (!this.player) await this.loadPlayer()
+      this.showStatus("")
       this.element.classList.add("playing")
       this.player.play(() => this.element.classList.remove("playing"))
     } catch (error) {
       console.error(error)
-      this.status("Trailer could not be played")
+      this.showStatus("Trailer could not be played")
     } finally {
-      this.busy = false
+      this.isBusy = false
     }
+  }
+
+  async loadPlayer() {
+    const { TrailerPlayer } = await import("trailer/player")
+    this.player = new TrailerPlayer(structuredClone(this.specValue), this.stageTarget)
+    this.showStatus("Loading…")
+    await this.player.load((progress) => this.showStatus(`Loading… ${Math.round(progress * 100)}%`))
+    this.stageTarget.querySelector(".poster")?.remove()
+    renderTemplate(this.controlsTemplateTarget, this.controlsTarget)
   }
 
   toggleMute() {
     if (!this.player) return
-    this.player.setMuted(!this.player.muted)
-    this.muteButton.innerHTML = `<i class="bi bi-volume-${this.player.muted ? "mute" : "up"}-fill"></i>`
+    this.player.setMuted(!this.player.isMuted)
+    this.muteIconTarget.className = `bi bi-volume-${this.player.isMuted ? "mute" : "up"}-fill`
   }
 
-  addControls() {
-    const bar = document.createElement("div")
-    bar.className = "trailer-controls"
-    bar.innerHTML = `<button type="button" data-action="trailer#play" title="Replay"><i class="bi bi-arrow-counterclockwise"></i></button>
-      <button type="button" data-action="trailer#toggleMute" title="Mute"><i class="bi bi-volume-up-fill"></i></button>`
-    this.muteButton = bar.lastElementChild
-    this.element.appendChild(bar)
-  }
-
-  status(text) {
+  showStatus(text) {
     this.statusTarget.textContent = text
   }
 }
