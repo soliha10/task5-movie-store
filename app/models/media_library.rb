@@ -1,4 +1,3 @@
-# Pre-rendered footage clips and audio samples described by manifests in config/media.
 module MediaLibrary
   module_function
 

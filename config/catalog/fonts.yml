@@ -1,5 +1,3 @@
-# Display fonts for trailer typography. All of them cover Latin, Latin-ext and Cyrillic.
-# family: Google Fonts family name; weights: weights to load; mood: genres the font suits.
 - { family: "Oswald", weights: [500, 700], moods: [action, thriller, sci_fi, crime, war, drama] }
 - { family: "Russo One", weights: [400], moods: [action, sci_fi] }
 - { family: "Unbounded", weights: [700, 900], moods: [sci_fi, action, comedy] }

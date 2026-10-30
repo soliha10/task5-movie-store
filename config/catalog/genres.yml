@@ -1,12 +1,3 @@
-# Language-neutral genre catalog: how often a genre appears and how its trailer looks and sounds.
-# Display names live in the locale files (movie_store.genres.<id>).
-#   ratings:     index range into the region's age_ratings list
-#   grades:      colour grade presets (config/catalog/grades.yml)
-#   text_styles: typography animations implemented by the browser player
-#   title_colors: colours for the title card
-#   bpm:         tempo range used to place cuts on the beat
-#   sfx:         sound-effect kinds used for hits / transitions / atmosphere
-#   transitions: cut types between shots
 action:
   weight: 12
   ratings: [2, 6]

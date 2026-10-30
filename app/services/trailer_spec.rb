@@ -1,13 +1,7 @@
-# Builds the deterministic description of one trailer: which footage, how it is cut,
-# graded and zoomed, which text cards appear with which animation, and the sound mix.
-# The browser player (trailer_controller.js) and the ffmpeg exporter (TrailerRenderer)
-# only execute this description; every random decision is made here, on the server.
 class TrailerSpec
   WIDTH = 640
   HEIGHT = 360
 
-  # Trailer structures: each step is [kind, beats, card]. kind :clip shows footage,
-  # :black is a text card on black, :title is the title reveal (over footage or black).
   STRUCTURES = {
     classic: [[:clip, 5, :when], [:black, 3, :hook], [:clip, 4, nil], [:title, 8, :ending]],
     cards:   [[:black, 3, :presents], [:clip, 4, nil], [:clip, 4, :hook], [:black, 3, :starring], [:title, 7, :ending]],
@@ -51,7 +45,7 @@ class TrailerSpec
 
   def timeline
     structure = pick(@movie[:kind] == :series ? STRUCTURES.values + [series_structure] : STRUCTURES.values)
-    scale = rand_in([7.6, 9.4]) / (structure.sum { |step| step[1] } * @beat) # keep trailers 7.5-9.5 s
+    scale = rand_in([7.6, 9.4]) / (structure.sum { |step| step[1] } * @beat)
     t = 0.0
     shots = []
     texts = []
@@ -85,7 +79,7 @@ class TrailerSpec
 
     speed = (@rng.rand < 0.45 ? rand_in([0.55, 0.85]) : rand_in([0.9, 1.25])).round(2)
     usable = clip["duration"].to_f - 0.1
-    speed = [speed, usable / duration].min.round(2) # never run past the end of the footage
+    speed = [speed, usable / duration].min.round(2)
     source = duration * speed
     zoom = [rand_in([1.0, 1.12]), rand_in([1.12, 1.35])]
     zoom.reverse! if @rng.rand < 0.4
@@ -221,7 +215,6 @@ class TrailerSpec
     }
   end
 
-  # Handwritten fonts look wrong in capitals, so they are only used for mixed-case titles.
   def script?(font)
     font["family"].match?(/Script|Lobster/)
   end

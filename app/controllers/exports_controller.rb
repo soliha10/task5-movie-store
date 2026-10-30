@@ -1,4 +1,3 @@
-# ZIP with the rendered trailers of the current table page, one MP4 per movie named after its title.
 class ExportsController < ApplicationController
   include GenerationParams
 

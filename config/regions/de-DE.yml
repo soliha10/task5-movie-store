@@ -1,5 +1,3 @@
-# Regionsmetadaten für Deutschland. Die Texte kommen aus
-# config/locales/faker/movie_store.de.yml.
 code: de-DE
 name: "Deutsch (Deutschland)"
 faker_locale: de

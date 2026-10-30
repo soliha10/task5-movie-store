@@ -15,7 +15,6 @@ en-US:
         thriller: Thriller
         western: Western
 
-      # Patterns for actor / director names. Name.* calls Faker::Name in the current locale.
       person:
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"

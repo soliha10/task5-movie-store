@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Submits the toolbar form (into the "results" turbo-frame) whenever a parameter changes.
 export default class extends Controller {
   static targets = ["seed", "likes", "likesOutput"]
 
@@ -22,7 +21,6 @@ export default class extends Controller {
   randomSeed() {
     const parts = new Uint32Array(2)
     crypto.getRandomValues(parts)
-    // 53 random bits, kept as a BigInt so no precision is lost.
     const seed = (BigInt(parts[0] & 0x1fffff) << 32n) | BigInt(parts[1])
     this.seedTarget.value = seed.toString()
     this.submit()
@@ -39,7 +37,6 @@ export default class extends Controller {
   }
 
   submitted() {
-    // Any parameter change restarts the gallery from the top (the table returns to page 1 by itself).
     window.scrollTo({ top: 0, behavior: "instant" })
   }
 

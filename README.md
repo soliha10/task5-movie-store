@@ -65,4 +65,4 @@ The included `Dockerfile` installs ffmpeg. `render.yaml` deploys the app as a fr
 
 ## Libraries
 
-Rails 8, Turbo, Stimulus, importmap, Faker, rubyzip, Bootstrap 5, Bootstrap Icons, PixiJS 8, pixi-filters 6, GSAP 3, ffmpeg, Google Fonts.
+Rails 8, Turbo, Stimulus, importmap, Faker, rubyzip, Bootstrap 5, Bootstrap Icons, PixiJS 8.9.2, pixi-filters 6.1.0, GSAP 3.13.0 (vendored in `vendor/javascript`), ffmpeg, Google Fonts.

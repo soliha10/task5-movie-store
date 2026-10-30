@@ -1,4 +1,3 @@
-# Render blueprint: https://render.com/docs/blueprint-spec
 services:
   - type: web
     name: reelforge

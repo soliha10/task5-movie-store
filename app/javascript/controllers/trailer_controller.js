@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Shows the poster (freeze frame with the title) and plays the generated trailer on demand.
 export default class extends Controller {
   static targets = ["stage", "play", "status"]
   static values = { spec: Object, title: String }

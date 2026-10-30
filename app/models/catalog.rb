@@ -1,4 +1,3 @@
-# Language-neutral configuration under config/catalog.
 module Catalog
   module_function
 

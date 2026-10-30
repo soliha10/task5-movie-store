@@ -1,4 +1,3 @@
-# Generates one page (batch) of movies purely from the parameters.
 class MovieGenerator
   PER_PAGE = 20
   SERIES_SHARE = 0.15
@@ -75,7 +74,6 @@ class MovieGenerator
     list.first(2)
   end
 
-  # Fractional averages are realised probabilistically: 2.3 -> 2 or 3, with P(3) = 0.3.
   def average_count(average, rng)
     whole = average.floor
     whole + (rng.rand < (average - whole) ? 1 : 0)
@@ -84,7 +82,6 @@ class MovieGenerator
   def build_reviews(core, stream)
     count = with_rng(stream.call("reviews")) { |rng| average_count(reviews, rng) }
     Array.new(count) do |k|
-      # Every review has its own stream, so review #k never changes when the count does.
       with_faker(stream.call("review:#{k}")) { |rng| review(core, rng) }
     end
   end

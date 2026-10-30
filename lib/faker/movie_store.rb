@@ -1,15 +1,6 @@
 require "faker"
 
 module Faker
-  # Faker extension for the movie store. All words live in
-  # config/locales/faker/movie_store.<locale>.yml; this class only knows how to
-  # pick and expand them.
-  #
-  # Templates use the "#{token}" syntax:
-  #   #{Name.first_name}  -> calls Faker::Name.first_name in the current locale
-  #   #{hero}             -> value from the context hash
-  #   #{noun}             -> looked up in the given scopes, e.g.
-  #                          movie_store.title.by_genre.horror.noun, then movie_store.title.noun
   class MovieStore < Base
     TOKEN = /#\{([A-Za-z_][\w.]*)\}/
     MAX_DEPTH = 6
@@ -57,8 +48,6 @@ module Faker
         fetch("movie_store.review.publication")
       end
 
-      # Expands every #{token} in +template+. Values coming from the YAML are
-      # expanded recursively, so pools may reference other pools.
       def expand(template, context: {}, scopes: [], depth: 0)
         return template if depth > MAX_DEPTH
 
@@ -77,7 +66,6 @@ module Faker
 
       private
 
-      # Samples a value from the first scope that defines +key+.
       def pick(key, scopes)
         scopes.each do |scope|
           path = ["faker.movie_store", scope, key].reject(&:empty?).join(".")

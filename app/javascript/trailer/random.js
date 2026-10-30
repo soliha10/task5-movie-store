@@ -1,5 +1,3 @@
-// Small seeded PRNG (mulberry32). The trailer spec carries a seed from the server, so even
-// purely visual details (letter order, glitch offsets, grain) replay identically for a seed.
 export function seededRandom(seed) {
   let a = seed >>> 0
   const next = () => {

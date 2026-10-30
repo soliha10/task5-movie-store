@@ -3,14 +3,6 @@ require "open3"
 require "json"
 require "fileutils"
 
-# Builds the trailer media library from free-license Mixkit footage, music and sound effects.
-#
-#   bin/rails media:fetch          # everything
-#   bin/rails media:clips          # footage only
-#   bin/rails media:audio          # music + sfx only
-#
-# Sources are configured in config/media/sources.yml. Files are normalised with ffmpeg
-# into public/media and described by config/media/clips.yml and config/media/audio.yml.
 module MediaFetch
   ROOT = Rails.root.join("public/media")
   RAW = Rails.root.join("tmp/media")
@@ -32,7 +24,6 @@ module MediaFetch
     ""
   end
 
-  # [{id:, title:, url:}] for every video card on a Mixkit tag page.
   def video_items(tag)
     doc = Nokogiri::HTML(page("free-stock-video/#{tag}/"))
     doc.css(".item-grid-card").filter_map do |card|
@@ -43,7 +34,6 @@ module MediaFetch
     end
   end
 
-  # Audio items come from the JSON-LD block of music / sound effect pages.
   def audio_items(path)
     html = page(path)
     items = html.scan(%r{<script type="application/ld\+json">(.*?)</script>}m).flat_map do |(json)|
@@ -55,7 +45,6 @@ module MediaFetch
     items.uniq { |i| i[:url] }
   end
 
-  # Sound effect pages have no JSON-LD; the preview URL sits on each card's audio player.
   def sfx_cards(html)
     Nokogiri::HTML(html).css(".item-grid-card").filter_map do |card|
       player = card.at_css("[data-audio-player-preview-url-value]") or next
@@ -96,7 +85,6 @@ module MediaFetch
     { duration: json.dig("format", "duration").to_f, width: video&.[]("width"), height: video&.[]("height") }
   end
 
-  # The loudest window of a track, measured with ffmpeg's EBU R128 momentary loudness.
   def loudest_window(file, length)
     out = run("ffmpeg", "-hide_banner", "-nostats", "-i", file.to_s, "-af", "ebur128=peak=none", "-f", "null", "-")
     points = out.scan(/t:\s*([\d.]+)\s+TARGET.*?M:\s*(-?[\d.]+|-inf)/).map { |t, m| [t.to_f, m == "-inf" ? -70.0 : m.to_f] }
@@ -116,7 +104,6 @@ module MediaFetch
     config["genres"].each do |genre, spec|
       excluded = Regexp.union((spec["exclude"] + config["exclude_everywhere"]).map { |w| /\b#{Regexp.escape(w)}/i })
       per_tag = spec["tags"].map { |tag| video_items(tag).reject { |v| v[:title].match?(excluded) } }
-      # Round-robin over tags so every genre gets a mix of subjects.
       until chosen[genre].size >= config["per_genre"] || per_tag.all?(&:empty?)
         per_tag.each do |queue|
           item = queue.shift or next
@@ -145,7 +132,7 @@ module MediaFetch
   def encode_clip(item)
     src = download(item[:url], RAW.join("clips/#{item[:id]}.mp4"))
     info = probe(src)
-    return nil if info[:height].to_i > info[:width].to_i # portrait footage does not fit a trailer
+    return nil if info[:height].to_i > info[:width].to_i
 
     start = [[info[:duration] * 0.2, info[:duration] - CLIP_SECONDS - 0.2].min, 0].max.round(2)
     length = [CLIP_SECONDS, info[:duration] - start].min.round(2)

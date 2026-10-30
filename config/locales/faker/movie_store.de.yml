@@ -15,7 +15,6 @@ de:
         thriller: Thriller
         western: Western
 
-      # Namensmuster für Schauspieler und Regie. Name.* ruft Faker::Name im aktuellen Locale auf.
       person:
         - "#{first_name} #{last_name}"
         - "#{first_name} #{last_name}"
@@ -38,9 +37,6 @@ de:
         - "#{Name.first_name}"
 
       title:
-        # Deutsche Titel brauchen Kongruenz von Artikel, Adjektiv und Nomen.
-        # Deshalb werden nur fertige Nominalphrasen (np), alleinstehende Nomen
-        # (noun) und komplette Titel (full) kombiniert, nie lose Adjektive.
         templates:
           - "#{full}"
           - "#{full}"
@@ -114,7 +110,6 @@ de:
           - "Stunde Null"
         by_genre:
           action:
-            # adj: unflektierte Grundformen, nicht in Vorlagen verwendet (Schlüsselparität mit en-US).
             adj: [schnell, tödlich, eisern, gnadenlos, brennend, stählern, schwarz, letzt, wild, hart]
             np: ["Der letzte Auftrag", "Die eiserne Faust", "Tödliche Stille", "Das schwarze Kommando", "Der lange Weg zurück", "Die rote Linie", "Kalter Stahl", "Das brennende Ufer", "Der stille Jäger", "Die verlorene Einheit", "Blutige Ernte", "Der zweite Schuss", "Die Nacht der Wölfe", "Das letzte Gefecht", "Der Mann ohne Namen", "Die Stunde des Söldners", "Schwarzer Regen", "Der gefährlichste Tag", "Die gnadenlose Jagd", "Das Gesetz der Straße", "Die tödliche Mission", "Heißes Pflaster", "Der Tag der Abrechnung", "Die letzte Patrone", "Das stählerne Herz", "Der Zorn des Kriegers", "Gefährliche Fracht"]
             noun: [Vergeltung, Abrechnung, Feuersturm, Hinterhalt, Ausbruch, Belagerung, Kreuzfeuer, Vollgas, Gegenschlag, Sperrzone, Überfall, Fluchtpunkt, Einsatzbefehl, Todeszone, Blutgeld, Sprengsatz, Zugriff]

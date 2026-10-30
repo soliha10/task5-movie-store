@@ -3,8 +3,6 @@ import { RGBSplitFilter, GlitchFilter } from "pixi-filters"
 
 const MAX_WIDTH = 0.86
 
-// Lays a text card out as individually positioned letters (kerning-aware) and adds its
-// animation to the GSAP timeline. Returns the container that holds the letters.
 export function buildText(spec, card, timeline, rng) {
   const [W, H] = spec.size
   const { lines, style } = layout(card, W, H)
@@ -37,7 +35,6 @@ export function buildText(spec, card, timeline, rng) {
   timeline.set(root, { alpha: 1 }, start)
   animate({ root, inner, letters, timeline, start, end, rng, card, W, H, style })
 
-  // The exit fade lives on its own wrapper so it never fights an entrance tween that is still running.
   const outer = new Container()
   outer.addChild(root)
   if (!card.title) {
@@ -92,7 +89,6 @@ const STYLES = {
     timeline.fromTo(root, { alpha: 0 }, { alpha: 1, duration: 0.8, ease: "power1.out", immediateRender: false }, start)
   },
 
-  // Classic trailer "tracking in": letters drift together from wide spacing.
   letter_spacing({ root, letters, timeline, start, end }) {
     const span = end - start
     letters.forEach((l) => {
@@ -101,7 +97,6 @@ const STYLES = {
     timeline.fromTo(root, { alpha: 0 }, { alpha: 1, duration: 0.7, immediateRender: false }, start)
   },
 
-  // Letters appear one by one in random order ("T IS F LL" -> "THIS FALL").
   per_letter({ letters, timeline, start, end, rng }) {
     const order = rng.shuffle(letters)
     const window = Math.min(1.4, (end - start) * 0.5)
@@ -138,7 +133,6 @@ const STYLES = {
     timeline.set(inner, { filters: [split] }, start + 0.5)
     timeline.to(split.red, { x: 0, duration: 0.4 }, start + 0.5)
     timeline.to(split.blue, { x: 0, duration: 0.4 }, start + 0.5)
-    // A second short glitch burst near the end.
     const t = end - 0.6
     if (t > start + 1) {
       timeline.set(inner, { filters: [glitch] }, t)
@@ -147,7 +141,6 @@ const STYLES = {
     }
   },
 
-  // Huge text slams into place with a camera shake.
   slam({ root, inner, timeline, start }) {
     timeline.fromTo(inner.scale, { x: 2.8, y: 2.8 }, { x: 1, y: 1, duration: 0.22, ease: "power4.in" }, start)
     timeline.fromTo(root, { alpha: 0 }, { alpha: 1, duration: 0.12, immediateRender: false }, start)
@@ -188,7 +181,6 @@ const STYLES = {
     timeline.fromTo(root, { alpha: 0 }, { alpha: 1, duration: 1.2, immediateRender: false }, start)
   },
 
-  // Light sweeps across the letters.
   shine({ root, inner, letters, timeline, start, W, H, style }) {
     timeline.fromTo(root, { alpha: 0 }, { alpha: 1, duration: 0.9, immediateRender: false }, start)
     const sweep = new Sprite(sweepTexture())

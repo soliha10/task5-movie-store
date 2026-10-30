@@ -1,8 +1,5 @@
-# Where `bin/rails media:fetch` collects free-license footage and audio (https://mixkit.co/license/).
-# Each genre lists Mixkit tags; clips whose title matches an `exclude` word are skipped for that genre.
 clips:
   per_genre: 42
-  # Abstract loops, VFX overlays and motion graphics are not footage — skipped for every genre.
   exclude_everywhere: [abstract, "vj", "loop video", particle, tunnel, render, "2d animation", forex, "stock market",
                        "rotating background", "smoke effect", "smoke in motion", "smoke on", "smoke with", "smoke abundantly",
                        "smoke slowly", "smoke rising", "smoke flows", "smoke rapidly", "plume of smoke", "blue smoke",

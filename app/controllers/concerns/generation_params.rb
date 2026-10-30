@@ -1,4 +1,3 @@
-# Reads the generation parameters shared by every endpoint.
 module GenerationParams
   extend ActiveSupport::Concern
 

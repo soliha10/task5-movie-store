@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Expands a table row into its details (rendered from a <template>) and collapses it again.
 export default class extends Controller {
   static targets = ["row"]
 

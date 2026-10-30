@@ -1,9 +1,6 @@
 require "open3"
 require "digest"
 
-# Renders a TrailerSpec into an MP4 with ffmpeg (used by the ZIP export).
-# The browser player has richer typography; this renderer keeps the same footage,
-# timing, zoom/pan, grade, transitions, text cards and sound mix.
 class TrailerRenderer
   CACHE = Rails.root.join("tmp/trailers")
   FONTS = Rails.root.join("vendor/fonts")
@@ -17,7 +14,6 @@ class TrailerRenderer
     @w, @h = @spec[:size]
   end
 
-  # Path of the rendered file (rendered once, then served from the cache).
   def render
     FileUtils.mkdir_p(CACHE)
     out = CACHE.join("#{Digest::SHA256.hexdigest(@spec.to_json)[0, 24]}.mp4")
@@ -62,7 +58,6 @@ class TrailerRenderer
     @sounds ||= [(@spec.dig(:audio, :music)&.merge(t: 0, music: true)), *Array(@spec.dig(:audio, :sfx))].compact
   end
 
-  # "/media/clips/1.mp4" -> public/media/clips/1.mp4; remote URLs are read by ffmpeg directly.
   def local(url)
     url.start_with?("/") ? Rails.root.join("public", url.delete_prefix("/")).to_s : url
   end

@@ -1,4 +1,3 @@
-# Google Fonts used by the trailer typography (config/catalog/fonts.yml).
 module TrailerFonts
   module_function
 

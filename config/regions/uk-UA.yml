@@ -1,5 +1,3 @@
-# Region metadata. Add a new region by adding a file here plus
-# config/locales/faker/movie_store.<faker_locale>.yml — no code changes needed.
 code: uk-UA
 name: "Українська (Україна)"
 faker_locale: uk

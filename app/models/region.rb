@@ -1,4 +1,3 @@
-# A language/region loaded from config/regions/*.yml.
 class Region
   DIR = Rails.root.join("config/regions")
   DEFAULT = "en-US"
