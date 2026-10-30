@@ -38,15 +38,43 @@ To add a region, add these two files. The language dropdown is built from `confi
 
 ## Trailer media
 
-`bin/rails media:fetch` builds the footage and audio library from free-license [Mixkit](https://mixkit.co/license/) footage, music and sound effects. For each genre it searches several tags, filters out clips that don't fit the mood, and normalises the files with ffmpeg:
+`bin/rails media:fetch` (only needed when `public/media` is empty) builds the footage and audio library from free-license [Mixkit](https://mixkit.co/license/) footage, music and sound effects. For each genre it searches several tags, filters out clips that don't fit the mood, and normalises the files with ffmpeg:
 
 - 640×360 clips of about 5 seconds
 - music trimmed to the loudest 11 seconds, loudness-normalised
 - short sound effects
 
-Manifests are written to `config/media/*.yml`. `bin/rails media:fonts` downloads the display fonts as TTF files for the exporter. Every font covers Latin and Cyrillic.
+Manifests are written to `config/media/*.yml`. The same task also downloads the display fonts as TTF files for the exporter (`bin/rails media:fonts` runs only that part). Every font covers Latin and Cyrillic.
 
 There are about 400 clips, 12 genres × 5 structures, 23 grade presets, 9 transitions, 15 text animations, 19 fonts, 84 music beds and 48 sound effects. The combinations run into the millions.
+
+## Code structure
+
+| Area | Files |
+| --- | --- |
+| Parameters | `GenerationState` (`app/models/generation_state.rb`) parses and validates `locale`, `seed`, `likes`, `reviews`, `view` and `page`. The `GenerationParams` concern exposes it to controllers and views. |
+| Configuration | `YamlConfig` loads every YAML file. `Region`, `Catalog`, `TrailerFonts` and `MediaLibrary` wrap the region, genre, font and media data. |
+| Data generation | `Seeding`, `MovieGenerator`, `Faker::MovieStore`. |
+| Trailers | `TrailerSpec` decides what plays. `TrailerRenderer` renders it with ffmpeg. `TrailerBatchRenderer` and `TrailerArchive` build the ZIP export. |
+| Browser player | `app/javascript/trailer/`: `player.js` coordinates the modules below. |
+
+The browser player's modules:
+
+- `scene.js` builds the PixiJS scene and colour grade.
+- `transitions.js` holds one function per transition.
+- `typography.js` holds the text animations.
+- `video_sync.js` keeps the footage on time.
+- `audio_mix.js` schedules music and sound effects.
+- `shapes.js` holds shared rectangles and gradient textures.
+- `random.js` is the seeded PRNG.
+
+`lib/media_library_builder/` builds the media library behind the `media:*` rake tasks: `MixkitClient`, `ClipCollector`, `ClipEncoder`, `AudioCollector`, `AudioEncoder`, `FontDownloader` and `MediaTools`.
+
+## Tests
+
+`bin/rails test` runs the unit, integration and golden snapshot tests.
+
+The golden snapshot test (`test/golden`) compares every generated movie, review and trailer for 3 regions × 3 seeds × 2 pages against `test/fixtures/files/golden_output.json`. Any change to the order of random calls fails it.
 
 ## Running locally
 
@@ -54,7 +82,7 @@ Requires Ruby (see `.ruby-version`) and ffmpeg.
 
 ```sh
 bundle install
-bin/rails media:fetch media:fonts   # only if public/media is empty
+bin/rails media:fetch
 bin/rails server
 bin/rails test
 ```
