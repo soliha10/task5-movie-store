@@ -140,7 +140,7 @@ class TrailerRenderer
       ("hflip" if shot[:flip]),
       grade_filter,
       ("drawbox=color=black@#{shot[:dim]}:t=fill:enable='gte(t,#{DIM_DELAY})'" if shot[:dim].to_f.positive?),
-      "trim=duration=#{length}", "setpts=PTS-STARTPTS", "format=yuv420p", "setsar=1"
+      "trim=duration=#{length}", "setpts=PTS-STARTPTS", "fps=#{FRAMES_PER_SECOND}", "format=yuv420p", "setsar=1"
     ].compact
     "[#{@input_numbers[[:shot, shot_index]]}:v]#{filters.join(",")}[s#{shot_index}]"
   end
