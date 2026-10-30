@@ -1,45 +1,67 @@
 class MovieGenerator
-  PER_PAGE = 20
-  SERIES_SHARE = 0.15
+  MOVIES_PER_PAGE = 20
+  AVERAGE_RANGE = (0.0..10.0)
+  SERIES_CHANCE = 0.15
+  RECENT_YEARS = (2008..2026)
+  CLASSIC_YEARS = (1972..2007)
+  RECENT_MOVIE_CHANCE = 0.75
+  CAST_SIZE = (2..5)
+  STAGE_NAME_CHANCE = 0.06
+  MOVIE_RUNTIME_MINUTES = (82..172)
+  EPISODE_RUNTIME_MINUTES = (38..62)
+  SEASON_COUNT = (1..7)
+  EPISODES_PER_SEASON = (6..13)
+  SCORE_BASE = (25..95)
+  SCORE_BONUS = (0..5)
+  SCORE_SCALE = 10.0
+  BADGE_CHANCES = { top10: 0.12, new: 0.6, award: 0.08, exclusive: 0.07, uhd: 0.2 }.freeze
+  NEW_RELEASE_YEAR = 2025
+  MAX_BADGES = 2
+  REVIEW_MOOD_SPREAD = (-2.5..2.5)
+  POSITIVE_REVIEW_THRESHOLD = 6.5
+  MIXED_REVIEW_THRESHOLD = 4.5
 
   attr_reader :region, :seed, :likes, :reviews
 
   def initialize(region:, seed:, likes: 0, reviews: 0)
     @region = region
     @seed = seed
-    @likes = likes.to_f.clamp(0.0, 10.0)
-    @reviews = reviews.to_f.clamp(0.0, 10.0)
+    @likes = likes.to_f.clamp(AVERAGE_RANGE)
+    @reviews = reviews.to_f.clamp(AVERAGE_RANGE)
   end
 
-  def page(number)
-    number = [number.to_i, 1].max
-    page_seed = Seeding.page_seed(seed, number)
-    (1..PER_PAGE).map { |pos| build(page_seed, (number - 1) * PER_PAGE + pos, pos) }
+  def page(page_number)
+    page_number = [page_number.to_i, 1].max
+    page_seed = Seeding.page_seed(seed, page_number)
+    (1..MOVIES_PER_PAGE).map do |position|
+      build_movie(page_seed, (page_number - 1) * MOVIES_PER_PAGE + position, position)
+    end
   end
 
   def movie(index)
-    number = (index - 1) / PER_PAGE + 1
-    build(Seeding.page_seed(seed, number), index, (index - 1) % PER_PAGE + 1)
+    page_number = (index - 1) / MOVIES_PER_PAGE + 1
+    build_movie(Seeding.page_seed(seed, page_number), index, (index - 1) % MOVIES_PER_PAGE + 1)
   end
 
   private
 
-  def build(page_seed, index, pos)
-    stream = ->(name) { Seeding.record_seed(page_seed, pos, region.seed_salt, name) }
-    core = with_faker(stream.call("core")) { |rng| core_fields(rng) }
-    trailer = with_faker(stream.call("trailer")) { |rng| TrailerSpec.new(core, region, rng).build }
-    Movie.new(index: index, **core,
-              likes: with_rng(stream.call("likes")) { |rng| average_count(likes, rng) },
-              reviews: build_reviews(core, stream),
+  def build_movie(page_seed, index, position)
+    seed_for = ->(stream_name) { Seeding.record_seed(page_seed, position, region.seed_salt, stream_name) }
+    details = with_seeded_faker(seed_for.call("core")) { |random| movie_details(random) }
+    trailer = with_seeded_faker(seed_for.call("trailer")) { |random| TrailerSpec.new(details, region, random).build }
+    Movie.new(index: index, **details,
+              likes: with_random(seed_for.call("likes")) { |random| average_count(likes, random) },
+              reviews: build_reviews(details, seed_for),
               trailer: trailer)
   end
 
-  def core_fields(rng)
-    genre = Catalog.weighted_genre(rng)
-    series = rng.rand < SERIES_SHARE
-    year = series ? rng.rand(2008..2026) : (rng.rand < 0.75 ? rng.rand(2008..2026) : rng.rand(1972..2007))
-    cast = Array.new(rng.rand(2..5)) { rng.rand < 0.06 ? Faker::MovieStore.stage_name : Faker::MovieStore.person }.uniq
-    hero, rival = Faker::MovieStore.character, Faker::MovieStore.character
+  def movie_details(random)
+    genre = Catalog.weighted_genre(random)
+    series = random.rand < SERIES_CHANCE
+    year = release_year(series, random)
+    cast = build_cast(random)
+    hero = Faker::MovieStore.character
+    rival = Faker::MovieStore.character
     {
       kind: series ? :series : :movie,
       genre: genre,
@@ -48,64 +70,86 @@ class MovieGenerator
       year: year,
       cast: cast,
       director: Faker::MovieStore.person,
-      runtime: series ? rng.rand(38..62) : rng.rand(82..172),
-      seasons: series ? rng.rand(1..7) : nil,
-      episodes: series ? rng.rand(6..13) : nil,
-      age_rating: age_rating(genre, rng),
-      badges: badges(year, rng),
+      **running_time(series, random),
+      age_rating: age_rating(genre, random),
+      badges: badges(year, random),
       plot: Faker::MovieStore.plot(genre: genre, context: { hero: hero, rival: rival, city: Faker::Address.city }),
-      score: (rng.rand(25..95) + rng.rand(0..5)) / 10.0
+      score: (random.rand(SCORE_BASE) + random.rand(SCORE_BONUS)) / SCORE_SCALE
     }
   end
 
-  def age_rating(genre, rng)
-    from, to = Catalog.genres.dig(genre, "ratings")
+  def release_year(series, random)
+    return random.rand(RECENT_YEARS) if series
+
+    random.rand < RECENT_MOVIE_CHANCE ? random.rand(RECENT_YEARS) : random.rand(CLASSIC_YEARS)
+  end
+
+  def build_cast(random)
+    Array.new(random.rand(CAST_SIZE)) do
+      random.rand < STAGE_NAME_CHANCE ? Faker::MovieStore.stage_name : Faker::MovieStore.person
+    end.uniq
+  end
+
+  def running_time(series, random)
+    return { runtime: random.rand(MOVIE_RUNTIME_MINUTES), seasons: nil, episodes: nil } unless series
+
+    { runtime: random.rand(EPISODE_RUNTIME_MINUTES), seasons: random.rand(SEASON_COUNT), episodes: random.rand(EPISODES_PER_SEASON) }
+  end
+
+  def age_rating(genre, random)
+    lowest, highest = Catalog.genre_style(genre)["ratings"]
     ratings = region.age_ratings
-    ratings[rng.rand(from..[to, ratings.size - 1].min)]
+    ratings[random.rand(lowest..[highest, ratings.size - 1].min)]
   end
 
-  def badges(year, rng)
-    list = []
-    list << :top10 if rng.rand < 0.12
-    list << :new if year >= 2025 && rng.rand < 0.6
-    list << :award if rng.rand < 0.08
-    list << :exclusive if rng.rand < 0.07
-    list << :uhd if rng.rand < 0.2
-    list.first(2)
+  def badges(year, random)
+    BADGE_CHANCES.select { |badge, chance| badge_allowed?(badge, year) && random.rand < chance }.keys.first(MAX_BADGES)
   end
 
-  def average_count(average, rng)
-    whole = average.floor
-    whole + (rng.rand < (average - whole) ? 1 : 0)
+  def badge_allowed?(badge, year)
+    badge != :new || year >= NEW_RELEASE_YEAR
   end
 
-  def build_reviews(core, stream)
-    count = with_rng(stream.call("reviews")) { |rng| average_count(reviews, rng) }
-    Array.new(count) do |k|
-      with_faker(stream.call("review:#{k}")) { |rng| review(core, rng) }
+  def average_count(average, random)
+    whole_part = average.floor
+    whole_part + (random.rand < (average - whole_part) ? 1 : 0)
+  end
+
+  def build_reviews(details, seed_for)
+    review_count = with_random(seed_for.call("reviews")) { |random| average_count(reviews, random) }
+    Array.new(review_count) do |review_number|
+      with_seeded_faker(seed_for.call("review:#{review_number}")) { |random| build_review(details, random) }
     end
   end
 
-  def review(core, rng)
-    roll = core[:score] + rng.rand(-2.5..2.5)
-    sentiment = roll >= 6.5 ? "positive" : (roll >= 4.5 ? "mixed" : "negative")
-    actors = core[:cast].shuffle(random: rng)
-    context = { title: core[:title], actor: actors[0], actor2: actors[1] || actors[0] }
+  def build_review(details, random)
+    sentiment = review_sentiment(details[:score] + random.rand(REVIEW_MOOD_SPREAD))
+    actors = details[:cast].shuffle(random: random)
+    context = { title: details[:title], actor: actors.first, actor2: actors[1] || actors.first }
     Review.new(author: Faker::MovieStore.person, publication: Faker::MovieStore.publication,
                text: Faker::MovieStore.review(sentiment: sentiment, context: context), sentiment: sentiment)
   end
 
-  def with_rng(seed)
+  def review_sentiment(mood)
+    return "positive" if mood >= POSITIVE_REVIEW_THRESHOLD
+    return "mixed" if mood >= MIXED_REVIEW_THRESHOLD
+
+    "negative"
+  end
+
+  def with_random(seed)
     yield Random.new(seed)
   end
 
-  def with_faker(seed)
-    rng = Random.new(seed)
-    previous = [Faker::Config.random, Faker::Config.own_locale]
-    Faker::Config.random = rng
+  def with_seeded_faker(seed)
+    random = Random.new(seed)
+    previous_random = Faker::Config.random
+    previous_locale = Faker::Config.own_locale
+    Faker::Config.random = random
     Faker::Config.locale = region.faker_locale
-    yield rng
+    yield random
   ensure
-    Faker::Config.random, Faker::Config.locale = previous
+    Faker::Config.random = previous_random
+    Faker::Config.locale = previous_locale
   end
 end
