@@ -1,0 +1,379 @@
+en-US:
+  faker:
+    movie_store:
+      genres:
+        action: Action
+        adventure: Adventure
+        comedy: Comedy
+        crime: Crime
+        drama: Drama
+        family: Family
+        fantasy: Fantasy
+        horror: Horror
+        romance: Romance
+        sci_fi: Sci-Fi
+        thriller: Thriller
+        western: Western
+
+      # Patterns for actor / director names. Name.* calls Faker::Name in the current locale.
+      person:
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{first_name} #{last_name}"
+        - "#{Name.first_name} #{last_name}"
+        - "#{first_name} #{initial}. #{last_name}"
+        - "#{first_name} #{last_name}-#{last_name}"
+        - "#{first_name} #{Name.last_name}"
+      first_name: [John, Lee, Alex, Nina, Lola, Jim, Ray, Kay, Joanna, Paul, Monique, Emma, Olivia, Ava, Sophia, Mia, Isabella, Charlotte, Amelia, Harper, Evelyn, Abigail, Emily, Ella, Grace, Chloe, Zoe, Lily, Hannah, Natalie, Scarlett, Audrey, Claire, Lucy, Anna, Sarah, Jessica, Megan, Rachel, Laura, Julia, Kate, Naomi, Ruby, Vanessa, Diane, Michelle, Tessa, Jenna, Brooke, Maya, Alicia, Rosa, Gloria, Liam, Noah, James, William, Benjamin, Lucas, Henry, Jack, Daniel, Michael, Matthew, Samuel, David, Joseph, Owen, Ryan, Nathan, Ethan, Adam, Chris, Tom, Mark, Steven, Robert, Kevin, Jason, Brian, Eric, Sean, Patrick, Tyler, Aaron, Dylan, Jake, Logan, Marcus, Andre, Carlos, Miguel, Oscar, Victor, Hugo, Leo, Max, Owen, Bill, Joe, Frank, Dennis, Gary, Will, Kurt, Wesley, Keanu, Idris, Mahershala, Viola, Octavia, Zendaya, Lupita, Jamal, Darius, Malik, Priya, Ravi, Kenji, Mei, Hana, Ingrid, Sven, Margot, Florence, Jodie, Reese, Dakota, Riley, Morgan, Jordan, Casey, Quinn]
+      last_name: [Smith, Clare, Simone, Son, Manzarek, Morrison, Low, Ronald, Clark, Johnson, Williams, Brown, Jones, Garcia, Miller, Davis, Rodriguez, Martinez, Hernandez, Lopez, Wilson, Anderson, Thomas, Taylor, Moore, Jackson, Martin, Thompson, White, Harris, Sanchez, Lewis, Robinson, Walker, Young, Allen, King, Wright, Scott, Torres, Nguyen, Hill, Flores, Green, Adams, Nelson, Baker, Hall, Rivera, Campbell, Mitchell, Carter, Roberts, Turner, Phillips, Parker, Evans, Edwards, Collins, Stewart, Morris, Murphy, Cook, Rogers, Morgan, Cooper, Peterson, Reed, Bailey, Bell, Kelly, Howard, Ward, Cox, Richardson, Wood, Watson, Brooks, Bennett, Gray, Hughes, Price, Sanders, Myers, Long, Ross, Foster, Powell, Jenkins, Perry, Russell, Sullivan, Fisher, Hayes, Ford, Graham, Wallace, Hunt, Stone, Black, Holloway, Sterling, Hartley, Whitaker, Langley, McCarthy, O'Connell, Donovan, Fitzgerald, Brennan, Vance, Dalton, Reyes, Vega, Castillo, Moreno, Kim, Park, Chen, Tanaka, Patel, Kapoor, Novak, Kowalski, Lindqvist, Duval, Moreau, Rossi, Bianchi, Okafor, Mensah, Abernathy, Carrington, Blackwood, Ashford, Kingsley, Prescott]
+      stage_name:
+        - "DJ #{Name.last_name}"
+        - "Lil #{Name.first_name}"
+        - "MC #{Name.last_name}"
+      initial: [A, B, C, D, E, F, G, H, J, K, L, M, N, P, R, S, T, W]
+      character:
+        - "#{Name.first_name}"
+
+      title:
+        templates:
+          - "#{full}"
+          - "#{full}"
+          - "#{full}"
+          - "The #{adj} #{noun}"
+          - "The #{adj} #{noun}"
+          - "#{adj} #{noun}"
+          - "#{noun} of #{place}"
+          - "The #{noun} of #{place}"
+          - "#{full}: #{subtitle}"
+          - "#{full} #{sequel}"
+          - "#{noun}"
+          - "#{adj} #{noun} #{sequel}"
+          - "#{noun} #{place_suffix}"
+        sequel: ["2", "II", "III", "Returns", "Reloaded", "Rising", "Forever", "Part Two", "Again", "Begins", "Unleashed", "Legacy"]
+        place:
+          - the North
+          - Tomorrow
+          - Broken Glass
+          - the Lost Coast
+          - Silver Lake
+          - the Last Summer
+          - Ash and Iron
+          - the Deep
+          - Paper Hearts
+          - the Fallen
+          - Neon Streets
+          - Black Water
+          - the Seventh Gate
+          - Small Mercies
+          - the Long Night
+          - Empty Rooms
+          - Red Canyon
+          - Saint Augustine
+          - the Valley
+          - Thunder Road
+        place_suffix: ["at Midnight", "in the Dark", "Down Below", "Across the River", "on Fire", "in Bloom", "After Dark", "Overdrive", "Undercover", "in Paradise"]
+        subtitle:
+          - The Reckoning
+          - Endgame
+          - A New Dawn
+          - Final Hour
+          - The Awakening
+          - Origins
+          - No Way Back
+          - Ghost Protocol
+          - The Lost Chapter
+          - Dead Reckoning
+          - First Blood
+          - The Return
+          - Red Horizon
+          - Into the Fire
+          - Last Light
+          - The Hunt
+          - Blood Moon
+          - Second Chances
+        by_genre:
+          action:
+            adj: [Fast, Bulletproof, Final, Iron, Lethal, Rogue, Burning, Steel, Silent, Crimson, Maximum, Total, Hard, Deadly, Black, Rapid, Savage, Last, Wild, Atomic]
+            noun: [Strike, Protocol, Impact, Velocity, Vendetta, Payback, Fury, Siege, Takedown, Extraction, Showdown, Rampage, Fire, Ricochet, Breakout, Assault, Escape, Contract, Target, Heat]
+            full: [Edge of Fury, Point Blank, Dead Run, Zero Hour, Live Wire, Kill Switch, Overdrive, Blast Radius, Hard Target, Steel Rain, No Mercy, Red Line, Full Throttle, Burnout, Iron Fist, Collateral, Lockdown, Gun Metal Grey, Firestorm, Hostile Ground]
+          adventure:
+            adj: [Lost, Golden, Forgotten, Hidden, Endless, Emerald, Sunken, Wild, Distant, Ancient, Uncharted, Northern, Jade, Secret, Frozen]
+            noun: [Expedition, Kingdom, Map, Treasure, Island, Voyage, Compass, Temple, Odyssey, Horizon, Jungle, Pass, Caravan, Summit, Frontier]
+            full: [The Far Side, Beyond the Reef, The Last Explorer, Kings of the Sand, Sea of Glass, The Sapphire Key, Into the Wild Blue, The Lighthouse Keeper, Across Ten Rivers, The Map Thief, Crown of the Andes, Monsoon, Shipwrecked, The Iron Compass, Seven Summits]
+          comedy:
+            adj: [Crazy, Accidental, Totally, Awkward, Perfect, Lucky, Fake, Very Bad, Super, Unlikely, Happy, Rented, Borrowed, Lazy, Spicy]
+            noun: [Wedding, Roommates, Vacation, Neighbors, Weekend, Groom, Intern, Reunion, Detour, Babysitter, Boss, Road Trip, Family, Plan, Honeymoon]
+            full: ["More Girls, Please", "Where Is My Dude, Dude?", Fast Carrot Plus, Feel Something, Graduation, Dads on Wheels, Not Again, Party Like Grandma, Hold My Llama, Totally Fine, Office Hours, The Worst Best Man, Code, Inc., Bachelor Party Disaster, Free Pizza Friday, Mom's Night Out, Couch Potato, Dumb Luck, Uncle Gary's Boat, Somebody Call Kevin]
+          crime:
+            adj: [Dirty, Cold, Blind, Crooked, Quiet, Black, Midnight, Bitter, Sharp, Hollow, Smoking, Silent, Loaded, Last, Stolen]
+            noun: [Money, Alibi, Witness, Heist, Confession, Ledger, Syndicate, Racket, Hustle, Precinct, Informant, Debt, Verdict, Score, Getaway]
+            full: [Blood Money, The Sixth Floor, Bad Company, Small Town Sins, The Long Con, Kings of Queens Street, Dead Drop, The Fixer, Night Shift, Mile Marker 9, Clean Hands, The Accountant's Wife, Brass Knuckles, Gone by Sunday, Pawnshop, Lucky Thirteen]
+          drama:
+            adj: [Quiet, Broken, Little, Bitter, Lonely, Gentle, Fragile, Distant, Ordinary, Unspoken, Last, Long, Golden, Empty, Paper]
+            noun: [Season, Hearts, Promise, Letters, Daughters, River, Silence, Inheritance, Years, Harvest, House, Window, Goodbye, Snow, Shore]
+            full: [In Rainbows, Nina Simone, After the Rain, The Weight of Water, What We Left Behind, A Thousand Small Things, Northern Lights, The Year of Us, Sunday Morning, Home Again, The Space Between, Still Life, Unfinished Business, Before We Forget, Second Act, The Good Son, Salt and Honey, Long Way Home]
+          family:
+            adj: [Magic, Little, Brave, Flying, Super, Tiny, Clever, Lucky, Fluffy, Giant, Secret, Dancing, Merry, Jolly, Big]
+            noun: [Puppy, Dragon, Adventure, Christmas, Treehouse, Robot, Penguins, Zoo, Holiday, Unicorn, Pirates, Kitten, Snowman, Detectives, Circus]
+            full: [The Great Cookie Caper, My Pet Dinosaur, Operation Pancake, Grandpa's Time Machine, The Lighthouse Kids, Mittens Saves Christmas, Camp Woodchuck, The Moon Bakery, Ollie and the Giant, Backyard Heroes, Spaceship Summer, Muddy Paws, The Snow Day, Rocket Raccoon Club]
+          fantasy:
+            adj: [Shadow, Silver, Eternal, Cursed, Enchanted, Crimson, Elder, Hollow, Iron, Ivory, Starlit, Forsaken, Moonlit, Burning, Obsidian]
+            noun: [Crown, Throne, Sorcerer, Realm, Prophecy, Blade, Witch, Dragon, Oath, Kingdom, Spell, Sigil, Citadel, Grove, Tide]
+            full: [The Ninth Kingdom, Ashborn, The Witch of Thornwood, Children of the Mist, Starfall, The Glass Throne, Wolfsbane, The Last Rune, Heir of Embers, The Wandering Keep, The Song of Ravens, Bloodstone, The Hollow Crown, Moonweaver]
+          horror:
+            adj: [Dead, Hungry, Silent, Pale, Rotten, Unholy, Hollow, Cursed, Grim, Wicked, Crawling, Bleeding, Black, Sleepless, Final]
+            noun: [Night, Basement, Dolls, Ritual, Whispers, Harvest, Asylum, Chapel, Woods, Visitor, Cellar, Mirror, Lullaby, Hour, Teeth]
+            full: [Don't Look Back, It Lives Below, The Nun's Garden, Room 13, They Come at Night, Skin, The Hollowing, Bad Blood, Sleepwalkers, Do Not Disturb, Under the Floorboards, The Thing in the Lake, Hush Little Baby, Knock Twice, Bone Orchard, Lights Out, The Sixth Night]
+          romance:
+            adj: [Sweet, Endless, Summer, Second, Little, Secret, Perfect, Last, Lovely, Lost, Midnight, Golden, Wild, Tender, Paper]
+            noun: [Love, Kiss, Heart, Affair, Promise, Letters, Dance, Romance, Valentine, Wedding, Crush, Dreams, Moonlight, Vows, Proposal]
+            full: [Love in Lisbon, Two Tickets to Paris, Forever Yours, Ten Days of June, The Notebook Thief, Meet Me in Venice, Kiss the Rain, Autumn in New York, Last First Date, Coffee for Two, The Wedding Planner's Mistake, Under the Same Stars, Postcards from Rome, All of Me, Tuesday's Child]
+          sci_fi:
+            adj: [Dark, Infinite, Quantum, Neon, Cold, Red, Binary, Orbital, Synthetic, Hollow, Final, Solar, Silent, Lost, Electric]
+            noun: [Signal, Frontier, Horizon, Colony, Protocol, Machine, Station, Eclipse, Paradox, Singularity, Planet, Echo, Code, Clone, Reactor]
+            full: [Machines Will Rise, Event Horizon, The Last Transmission, Mars Underground, Ghost in the Grid, Year Zero, Exodus 9, Lightyears, Dead Star, Hyperion, The Clone Wars of Tomorrow, Ion Storm, Gravity Well, Proxima, Silicon Dreams, Echoes of Europa]
+          thriller:
+            adj: [Silent, Hidden, Fatal, Dark, Cold, Perfect, Blind, Sleeping, Missing, Final, Burning, Deep, Wrong, Broken, Twisted]
+            noun: [Witness, Truth, Lies, Stranger, Passenger, Game, Motive, Agenda, Pact, Signal, Obsession, Trap, Room, Secret, Shadow]
+            full: [Gone Girl Gone, The Woman Upstairs, Nine Minutes, The Other Side of the Door, Panic Room 2, Trust No One, The Night Train, Black Box, The Perfect Stranger, Vertigo Point, The Silent Patient, Closer Than You Think, Dead Calm, Red Flag, The Hostage, Final Call]
+          western:
+            adj: [Dusty, Iron, Lonesome, Last, Bloody, Golden, Wild, High, Hard, Blind, Hollow, Painted, Bitter, Red, Pale]
+            noun: [Rider, Outlaw, Gun, Bounty, Trail, Creek, Sheriff, Stagecoach, Mesa, Frontier, Gallows, Rodeo, Ranch, Saloon, Drifter]
+            full: [Tombstone Rising, Dead Man's Hand, The Long Ride Home, Six Bullets, Hell's Canyon, Whiskey River, The Good Sheriff, Rattlesnake Pass, Dust Devil, A Fistful of Gold, The Last Stagecoach, Coyote Moon, El Paso Sunrise, Gunsmoke Valley]
+
+      plot:
+        by_genre:
+          action:
+            setup:
+              - "When a routine extraction goes wrong, ex-commando #{hero} is left for dead in a foreign city."
+              - "Retired agent #{hero} is pulled back into the game after a mysterious package arrives at the door."
+              - "A disgraced pilot named #{hero} is the only one who can stop a hijacked cargo jet over #{city}."
+              - "#{hero} has twelve hours to deliver a witness across #{city} while every gun in town is aimed at them."
+              - "After a heist turns into a massacre, getaway driver #{hero} becomes the most wanted person alive."
+              - "An off-duty firefighter, #{hero}, is trapped inside a skyscraper taken over by mercenaries."
+            twist:
+              - "The people giving the orders may be the real enemy."
+              - "Every ally #{hero} trusts turns out to have a price."
+              - "Now the only way out is straight through #{rival}'s private army."
+              - "But the bomb is only the beginning."
+              - "And the clock is already ticking."
+          adventure:
+            setup:
+              - "A young cartographer named #{hero} discovers a map that should not exist."
+              - "Treasure hunter #{hero} leads a reckless crew into an uncharted jungle."
+              - "When a ship vanishes in the northern sea, #{hero} sets out to find the only survivor."
+              - "#{hero} inherits a crumbling lighthouse and a key to a door no one has ever opened."
+              - "A disgraced archaeologist, #{hero}, gets one last chance to find the lost temple of the sun."
+            twist:
+              - "But someone has been following them since the very first step."
+              - "The further they go, the less the map looks like the world they know."
+              - "Their greatest rival, #{rival}, is already one step ahead."
+              - "And the treasure comes with a curse that never forgets."
+          comedy:
+            setup:
+              - "Two best friends accidentally book the same wedding venue on the same day."
+              - "#{hero} lies on a resume and somehow becomes CEO of a tech startup in #{city}."
+              - "A family road trip to #{city} turns into a disaster when grandma steals the car."
+              - "Broke and desperate, #{hero} agrees to fake-date a famous reality TV star."
+              - "#{hero} wakes up after a bachelor party with a llama, a ring and no memory."
+              - "An overworked dad, #{hero}, signs up for a cooking contest he has no chance of winning."
+            twist:
+              - "What could possibly go wrong?"
+              - "Things escalate quickly when #{rival} moves in next door."
+              - "The only problem: nobody can know the truth until Friday."
+              - "Chaos, of course, ensues."
+              - "Now they have one weekend to fix everything before anyone notices."
+          crime:
+            setup:
+              - "A small-time bookkeeper, #{hero}, stumbles on a ledger that could bring down the mob in #{city}."
+              - "Detective #{hero} returns to #{city} to investigate the murder of an old partner."
+              - "Four strangers plan the perfect bank job on the night of the biggest storm in years."
+              - "When a priceless painting disappears, insurance investigator #{hero} suspects everyone."
+              - "An honest cop, #{hero}, goes undercover inside the family business of #{rival}."
+            twist:
+              - "But in this town, every witness has a price."
+              - "The deeper #{hero} digs, the closer the trail leads back home."
+              - "One of them is already working for the police."
+              - "And the money was never the real prize."
+          drama:
+            setup:
+              - "After years apart, a mother and daughter are forced to reunite when tragedy strikes their family."
+              - "A retired teacher, #{hero}, receives a letter from a student she has not seen in thirty years."
+              - "Following the death of their father, three siblings return to the family farm outside #{city}."
+              - "A young pianist from #{city} gets one chance to audition for the conservatory of her dreams."
+              - "#{hero} spends one last summer in the town where everything once fell apart."
+              - "A widowed fisherman, #{hero}, takes in a runaway who reminds him of his late son."
+            twist:
+              - "Old secrets resurface, tearing them apart just when they need each other most."
+              - "Now they must find the courage to forgive before it's too late."
+              - "But some promises are harder to keep than to make."
+              - "What they discover will change everything they believed about home."
+          family:
+            setup:
+              - "A curious girl named #{hero} finds a tiny dragon living in her grandmother's garden."
+              - "When the town's Christmas lights go out, three kids decide to save the holidays."
+              - "#{hero} and his talking dog set off to find the world's biggest pancake."
+              - "A clumsy robot escapes from a toy factory and moves into a family's treehouse."
+              - "The new kid in #{city}, #{hero}, discovers that the school janitor is secretly a wizard."
+            twist:
+              - "Together they learn that friendship is the greatest magic of all."
+              - "But keeping such a big secret is harder than it sounds."
+              - "Now they have to get home before the grown-ups find out."
+              - "It is going to be the best summer ever."
+          fantasy:
+            setup:
+              - "In a kingdom ruled by fear, a stable girl named #{hero} discovers she can speak with dragons."
+              - "The last of the moon-witches, #{hero}, must protect a stolen crown from an ancient order."
+              - "When the northern gate falls, an exiled prince returns to reclaim a broken throne."
+              - "A thief named #{hero} steals a sword that remembers every hand that ever held it."
+              - "Every hundred years the stars fall over the valley, and this year #{hero} is chosen."
+            twist:
+              - "But the prophecy hides a darker truth."
+              - "To win the war, #{hero} must make a pact with #{rival}, the very enemy they swore to destroy."
+              - "And the shadow in the forest is waking up."
+              - "Magic always comes with a price."
+          horror:
+            setup:
+              - "A family moves into a farmhouse outside #{city}, unaware of what sleeps beneath the floorboards."
+              - "Five friends rent a cabin in the woods for one quiet weekend."
+              - "Night nurse #{hero} begins to hear children singing in the closed wing of the hospital."
+              - "After her sister disappears, #{hero} follows a trail of old cassette tapes into the forest."
+              - "A paranormal investigator, #{hero}, agrees to spend one night in the most haunted house in #{city}."
+              - "Every night at 3:33, the old doll in the attic changes position."
+            twist:
+              - "Something is waiting for them in the dark."
+              - "By the time they realize it, it is already inside."
+              - "No one who has heard the lullaby has lived to tell."
+              - "And it remembers every name."
+              - "The only rule: never answer when it knocks."
+          romance:
+            setup:
+              - "A burned-out architect, #{hero}, falls for a street musician during a rainy week in #{city}."
+              - "Two strangers keep missing each other at the same café every morning."
+              - "#{hero} returns home for her sister's wedding and runs straight into her first love."
+              - "A wedding planner who no longer believes in love is hired by her ex-fiancé."
+              - "A cynical food critic and a small-town baker are forced to share a tiny apartment in #{city}."
+            twist:
+              - "Love was never part of the plan."
+              - "But the past has a way of catching up."
+              - "They have ten days to decide if this is forever."
+              - "Sometimes the right person arrives at the wrong time."
+          sci_fi:
+            setup:
+              - "In 2147, a deep-space mining crew receives a distress signal from a ship that vanished a century ago."
+              - "An engineer named #{hero} wakes up from cryosleep forty years too early."
+              - "When the machines that run #{city} start making their own decisions, one programmer notices first."
+              - "The last colony on Mars loses contact with Earth on the day #{hero} is born."
+              - "#{hero}, a clone with someone else's memories, starts dreaming of a life she never lived."
+            twist:
+              - "Humanity's last hope lies in a message no one can decode."
+              - "The signal is not a warning. It is an invitation."
+              - "Machines will rise, and #{hero} may be the only one who can stop them."
+              - "But time is running out for everyone on board."
+          thriller:
+            setup:
+              - "A night-shift radio host, #{hero}, receives a call from a listener who claims to be watching her."
+              - "When her husband vanishes on their anniversary, #{hero} finds a second passport in his drawer."
+              - "A juror, #{hero}, becomes convinced that the defendant is innocent and the judge is lying."
+              - "A data analyst stumbles on a file that proves a series of accidents in #{city} were murders."
+              - "On a sleeper train across Europe, a passenger disappears and no one admits she was ever there."
+            twist:
+              - "Trust no one. Not even yourself."
+              - "Every answer only makes the truth more dangerous."
+              - "The killer is closer than anyone thinks."
+              - "And #{rival} knows exactly what they did last winter."
+          western:
+            setup:
+              - "A lone gunslinger rides into a dying silver town with a bounty sewn into his coat."
+              - "After her family's ranch is burned, #{hero} hunts the outlaws across three territories."
+              - "An aging sheriff, #{hero}, has one week left before retirement and one man left to hang."
+              - "A stagecoach carrying gold, a preacher and a murderer gets lost in the desert."
+              - "Two estranged brothers drive a herd of cattle through Comanche land."
+            twist:
+              - "In this land, justice is measured in bullets."
+              - "But #{rival} and his gang are already waiting at the river."
+              - "Only one of them will ride back home."
+              - "And the desert keeps every secret."
+
+      trailer:
+        when: ["THIS FALL", "THIS SUMMER", "THIS WINTER", "THIS SPRING", "THIS CHRISTMAS", "THIS HALLOWEEN", "NEXT SUMMER", "THIS YEAR", "ONE NIGHT ONLY", "THIS JULY", "COMING SOON"]
+        presents: ["A #{studio} PICTURE", "#{studio} PRESENTS", "FROM THE STUDIO THAT BROUGHT YOU #{other_title}", "FROM THE DIRECTOR OF #{other_title}", "FROM THE CREATORS OF #{other_title}", "BASED ON A TRUE STORY", "BASED ON THE BESTSELLING NOVEL"]
+        studio: [NORTHLIGHT, SILVERGATE, BLUE HARBOR, REDWOOD, IRONCLAD, PARAMOUNT HILLS, LUMEN, CROWN STREET, STARLINE, OAKWOOD]
+        starring: ["#{actor}", "STARRING #{actor}", "#{actor}", "AND #{actor}"]
+        ending: ["COMING SOON", "ONLY IN CINEMAS", "IN THEATERS #{when_short}", "STREAMING #{when_short}", "#{year}", "EXPERIENCE IT IN IMAX"]
+        when_short: ["THIS FALL", "THIS SUMMER", "THIS DECEMBER", "SOON", "THIS FRIDAY"]
+        series: ["A NEW ORIGINAL SERIES", "THE SERIES EVENT OF THE YEAR", "NEW SEASON", "ALL EPISODES STREAMING"]
+        hook:
+          action: ["NO RULES.", "NO MERCY.", "ONE LAST JOB.", "THEY TOOK EVERYTHING.", "NOW IT'S PERSONAL.", "THE CLOCK IS TICKING.", "NOBODY GETS OUT ALIVE.", "PAYBACK HAS A NAME."]
+          adventure: ["THE WORLD IS BIGGER THAN YOU THINK.", "EVERY MAP HAS A SECRET.", "ADVENTURE HAS NO LIMITS.", "BEYOND THE EDGE OF THE MAP.", "THE JOURNEY BEGINS.", "LEGENDS ARE REAL."]
+          comedy: ["WHAT COULD GO WRONG?", "WORST. WEEKEND. EVER.", "IT SEEMED LIKE A GOOD IDEA.", "FAMILY. CAN'T LIVE WITH THEM.", "THIS IS FINE.", "ONE WEDDING. ZERO PLANS."]
+          crime: ["EVERYONE HAS A PRICE.", "THE PERFECT CRIME.", "CRIME PAYS. UNTIL IT DOESN'T.", "TRUST IS A CURRENCY.", "SOMEBODY ALWAYS TALKS.", "ONE LAST SCORE."]
+          drama: ["SOME WOUNDS NEVER HEAL.", "HOME IS WHERE IT HURTS.", "EVERY FAMILY HAS SECRETS.", "IT'S NEVER TOO LATE.", "SOME GOODBYES ARE FOREVER.", "A STORY OF HOPE."]
+          family: ["ADVENTURE IS CALLING.", "BELIEVE IN MAGIC.", "THE WHOLE FAMILY IS IN.", "BIG HEART. TINY HERO.", "FRIENDS FOREVER.", "LET THE FUN BEGIN."]
+          fantasy: ["THE PROPHECY IS REAL.", "MAGIC HAS A PRICE.", "A KINGDOM WILL FALL.", "THE AGE OF DRAGONS RETURNS.", "ONE CROWN. ONE HEIR.", "DARKNESS AWAKENS."]
+          horror: ["DON'T LOOK BEHIND YOU.", "IT KNOWS YOUR NAME.", "NO ONE IS SAFE.", "SOMETHING IS WAITING.", "NEVER ANSWER THE DOOR.", "SLEEP IS NOT AN OPTION.", "FEAR HAS A NEW HOME."]
+          romance: ["SOME LOVE STORIES ARE WRITTEN IN THE STARS.", "LOVE WAS NEVER THE PLAN.", "ONE SUMMER. ONE CHANCE.", "FOLLOW YOUR HEART.", "SOMETIMES LOVE FINDS YOU.", "TWO HEARTS. ONE CITY."]
+          sci_fi: ["MACHINES WILL RISE.", "THE FUTURE IS NOW.", "WE ARE NOT ALONE.", "HUMANITY'S LAST HOPE.", "THE SIGNAL HAS BEEN RECEIVED.", "IN SPACE, NO ONE IS COMING."]
+          thriller: ["TRUST NO ONE.", "EVERYONE IS A SUSPECT.", "THE TRUTH WILL KILL YOU.", "SOMEONE IS WATCHING.", "NOTHING IS WHAT IT SEEMS.", "THE CLOCK IS RUNNING OUT."]
+          western: ["JUSTICE HAS A PRICE.", "THE WEST WAS NEVER WON.", "ONE TOWN. ONE GUN.", "RIDE OR DIE.", "VENGEANCE RIDES ALONE.", "THE LAW ENDS HERE."]
+
+      review:
+        publication: [The Daily Reel, Screen Weekly, Hollywood Ledger, Popcorn Post, CineFile, The Film Stage Review, Reel Talk Magazine, Midnight Matinee, The Silver Screen Gazette, Box Office Journal, Indie Lens, Cinema Chronicle, The Critic's Chair, Frame by Frame, Celluloid Times, Movie Night Monthly]
+        positive_open:
+          - "An absolute triumph from start to finish."
+          - "#{actor} delivers the performance of a lifetime."
+          - "#{title} is the most gripping film I have seen this year."
+          - "Beautifully shot, brilliantly acted and impossible to forget."
+          - "I walked in with low expectations and walked out a fan."
+          - "A bold, confident piece of filmmaking."
+          - "Funny, moving and surprisingly smart."
+          - "#{title} grabs you in the first minute and never lets go."
+          - "Every frame of this film feels deliberate."
+          - "A rare film that respects its audience."
+          - "Pure cinematic joy."
+          - "#{actor} and #{actor2} have electric chemistry."
+        positive_close:
+          - "Do not miss it on the big screen."
+          - "Easily one of the best films of the year."
+          - "I can't wait to watch it again."
+          - "The ending left the whole theater in silence."
+          - "The soundtrack alone is worth the ticket."
+          - "Five stars, no hesitation."
+          - "This is why we still go to the movies."
+          - "Bring tissues. Trust me."
+          - "A future classic."
+          - "Masterful."
+        mixed_open:
+          - "#{title} has big ambitions and only some of them land."
+          - "A solid, if predictable, ride."
+          - "#{actor} is great, but the script lets them down."
+          - "The first hour is excellent; the second is a mess."
+          - "Visually stunning, emotionally hollow."
+          - "Not bad, not great, perfectly watchable on a Sunday afternoon."
+          - "It tries a little too hard, but its heart is in the right place."
+          - "Fans of the genre will find plenty to enjoy."
+        mixed_close:
+          - "Worth a watch, just don't expect miracles."
+          - "Wait for streaming."
+          - "Three stars out of five."
+          - "I wanted to love it more than I did."
+          - "Good popcorn entertainment."
+          - "Flawed, but memorable."
+        negative_open:
+          - "None of it makes any sense to me."
+          - "Two hours I will never get back."
+          - "#{title} confuses noise for excitement."
+          - "Even #{actor} cannot save this sinking ship."
+          - "The plot has more holes than a fishing net."
+          - "I laughed, but I'm fairly sure it wasn't supposed to be funny."
+          - "A lifeless remake of better films."
+        negative_close:
+          - "Not good."
+          - "Skip it."
+          - "One star, and that's for the popcorn."
+          - "I checked my watch four times."
+          - "Hard pass."
+          - "Disappointing on every level."

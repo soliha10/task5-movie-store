@@ -1,0 +1,12 @@
+<div class="trailer" data-controller="trailer"
+     data-trailer-spec-value="<%= movie.trailer.to_json %>"
+     data-trailer-title-value="<%= movie.title %>">
+  <div class="trailer-stage" data-trailer-target="stage">
+    <%= render "movies/poster", movie: movie %>
+  </div>
+  <button type="button" class="trailer-play" data-trailer-target="play" data-action="trailer#play"
+          aria-label="<%= state.region.labels["play"] %>">
+    <i class="bi bi-play-fill"></i>
+  </button>
+  <div class="trailer-status small" data-trailer-target="status"></div>
+</div>

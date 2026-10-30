@@ -1,0 +1,12 @@
+<article class="movie-card" data-action="click->gallery#open" tabindex="0">
+  <div class="card-poster">
+    <%= render "movies/poster", movie: movie %>
+    <span class="card-index">#<%= movie.index %></span>
+  </div>
+  <div class="card-info">
+    <div class="card-title-line" title="<%= movie.title %>"><%= movie.title %></div>
+    <div class="card-meta"><%= movie.year %> · <%= movie.genre_name %><% if movie.series? %> · <%= state.region.labels["series"] %><% end %></div>
+    <div class="card-cast"><%= movie.cast.first(3).join(", ") %></div>
+  </div>
+  <template><%= render "movies/details", movie: movie %></template>
+</article>

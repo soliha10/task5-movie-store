@@ -1,0 +1,46 @@
+<% labels = state.region.labels %>
+<div data-controller="table">
+  <div class="table-responsive">
+    <table class="table movie-table align-middle mb-3">
+      <thead>
+        <tr>
+          <th class="chev-col"></th>
+          <th class="idx-col">#</th>
+          <th class="genre-col"><%= labels["genre"] %></th>
+          <th><%= labels["title"] %></th>
+          <th><%= labels["cast"] %></th>
+          <th class="text-end year-col"><%= labels["year"] %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% movies.each do |movie| %>
+          <tr class="movie-row" data-action="click->table#toggle" data-table-target="row" aria-expanded="false">
+            <td class="chev-col"><i class="bi bi-chevron-down"></i></td>
+            <td class="idx-col fw-semibold"><%= movie.index %></td>
+            <td class="genre-col"><%= movie.genre_name %></td>
+            <td class="title-cell">
+              <%= movie.title %>
+              <% if movie.series? %><span class="badge text-bg-light border ms-1"><%= labels["series"] %></span><% end %>
+            </td>
+            <td class="cast-cell"><%= movie.cast.join(", ") %></td>
+            <td class="text-end year-col"><%= movie.year %></td>
+          </tr>
+          <tr class="details-row d-none">
+            <td colspan="6">
+              <template><%= render "movies/details", movie: movie %></template>
+              <div class="details-slot"></div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+    <%= render "movies/pagination" %>
+    <a class="btn btn-sm btn-outline-secondary" href="<%= export_path(state.query(page: state.page)) %>" data-turbo="false"
+       title="Download the trailers of this page as a ZIP of MP4 files">
+      <i class="bi bi-file-earmark-zip"></i> Export page <%= state.page %> (ZIP)
+    </a>
+  </div>
+</div>

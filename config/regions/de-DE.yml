@@ -1,0 +1,29 @@
+# Regionsmetadaten für Deutschland. Die Texte kommen aus
+# config/locales/faker/movie_store.de.yml.
+code: de-DE
+name: "Deutsch (Deutschland)"
+faker_locale: de
+html_lang: de
+order: 2
+age_ratings: ["FSK 0", "FSK 6", "FSK 12", "FSK 12", "FSK 16", "FSK 16", "FSK 18"]
+labels:
+  genre: Genre
+  title: Titel
+  cast: Besetzung
+  year: Jahr
+  director: Regie
+  reviews: Kritiken
+  no_reviews: Noch keine Kritiken.
+  likes: Likes
+  minutes: Min.
+  season: Staffel
+  seasons: Staffeln
+  episodes: Folgen
+  series: Serie
+  play: Trailer abspielen
+  badges:
+    top10: Top 10
+    new: Neu
+    award: Preisgekrönt
+    exclusive: Exklusiv
+    uhd: 4K UHD

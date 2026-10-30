@@ -1,0 +1,29 @@
+# Region metadata. Add a new region by adding a file here plus
+# config/locales/faker/movie_store.<faker_locale>.yml — no code changes needed.
+code: uk-UA
+name: "Українська (Україна)"
+faker_locale: uk
+html_lang: uk
+order: 3
+age_ratings: ["0+", "6+", "12+", "12+", "16+", "16+", "18+"]
+labels:
+  genre: Жанр
+  title: Назва
+  cast: У ролях
+  year: Рік
+  director: Режисер
+  reviews: Рецензії
+  no_reviews: Рецензій поки немає.
+  likes: вподобань
+  minutes: хв
+  season: Сезон
+  seasons: сезонів
+  episodes: серій
+  series: Серіал
+  play: Дивитися трейлер
+  badges:
+    top10: Топ-10
+    new: Новинка
+    award: Лауреат премії
+    exclusive: Ексклюзив
+    uhd: 4K UHD

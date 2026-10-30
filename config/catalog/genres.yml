@@ -1,0 +1,14 @@
+# Language-neutral genre catalog: how often a genre appears and how its trailer looks/sounds.
+# Display names live in the locale files (movie_store.genres.<id>).
+action:    { weight: 12, ratings: [2, 6] }
+adventure: { weight: 7,  ratings: [1, 4] }
+comedy:    { weight: 12, ratings: [1, 5] }
+crime:     { weight: 8,  ratings: [3, 6] }
+drama:     { weight: 12, ratings: [1, 6] }
+family:    { weight: 6,  ratings: [0, 2] }
+fantasy:   { weight: 7,  ratings: [1, 4] }
+horror:    { weight: 9,  ratings: [4, 6] }
+romance:   { weight: 8,  ratings: [1, 4] }
+sci_fi:    { weight: 9,  ratings: [2, 5] }
+thriller:  { weight: 8,  ratings: [3, 6] }
+western:   { weight: 4,  ratings: [2, 5] }

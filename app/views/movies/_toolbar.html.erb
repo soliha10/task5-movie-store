@@ -1,0 +1,54 @@
+<%= form_with url: root_path, method: :get, id: "toolbar",
+      class: "toolbar sticky-top border-bottom",
+      data: { controller: "toolbar", turbo_frame: "results", turbo_action: "advance",
+              action: "change->toolbar#changed submit->toolbar#submitted" } do %>
+  <div class="container-xxl px-3 py-2 d-flex flex-wrap flex-lg-nowrap align-items-end gap-2 gap-lg-3">
+    <div class="brand d-none d-xl-flex align-items-center me-1">
+      <i class="bi bi-film"></i><span>ReelForge</span>
+    </div>
+
+    <div class="tool-field">
+      <label for="locale" class="form-label">Language</label>
+      <select name="locale" id="locale" class="form-select form-select-sm">
+        <% Region.all.each do |region| %>
+          <option value="<%= region.code %>" <%= "selected" if region.code == state.region.code %>><%= region.name %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="tool-field seed-field">
+      <label for="seed" class="form-label">Seed</label>
+      <div class="input-group input-group-sm">
+        <input type="text" name="seed" id="seed" value="<%= state.seed %>" inputmode="numeric"
+               class="form-control font-monospace" autocomplete="off" spellcheck="false"
+               data-toolbar-target="seed" data-action="input->toolbar#debounced">
+        <button type="button" class="btn btn-outline-secondary" title="Random seed" data-action="toolbar#randomSeed">
+          <i class="bi bi-shuffle"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="tool-field likes-field">
+      <label for="likes" class="form-label d-flex justify-content-between">
+        <span>Likes</span><output class="fw-semibold" data-toolbar-target="likesOutput"><%= state.likes %></output>
+      </label>
+      <input type="range" name="likes" id="likes" min="0" max="10" step="0.1" value="<%= state.likes %>"
+             class="form-range" data-toolbar-target="likes" data-action="input->toolbar#likesMoved">
+    </div>
+
+    <div class="tool-field reviews-field">
+      <label for="reviews" class="form-label">Reviews</label>
+      <input type="number" name="reviews" id="reviews" min="0" max="10" step="0.1" value="<%= state.reviews %>"
+             class="form-control form-control-sm" data-action="input->toolbar#debounced">
+    </div>
+
+    <div class="ms-auto d-flex align-items-end gap-2">
+      <div class="btn-group btn-group-sm" role="group" aria-label="View">
+        <input type="radio" class="btn-check" name="view" id="view-table" value="table" <%= "checked" if state.view == "table" %>>
+        <label class="btn btn-outline-primary" for="view-table" title="Table"><i class="bi bi-table"></i></label>
+        <input type="radio" class="btn-check" name="view" id="view-gallery" value="gallery" <%= "checked" if state.view == "gallery" %>>
+        <label class="btn btn-outline-primary" for="view-gallery" title="Gallery"><i class="bi bi-grid-3x3-gap-fill"></i></label>
+      </div>
+    </div>
+  </div>
+<% end %>

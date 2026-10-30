@@ -1,0 +1,421 @@
+de:
+  faker:
+    movie_store:
+      genres:
+        action: Action
+        adventure: Abenteuer
+        comedy: Komödie
+        crime: Krimi
+        drama: Drama
+        family: Familie
+        fantasy: Fantasy
+        horror: Horror
+        romance: Liebesfilm
+        sci_fi: Science-Fiction
+        thriller: Thriller
+        western: Western
+
+      # Namensmuster für Schauspieler und Regie. Name.* ruft Faker::Name im aktuellen Locale auf.
+      person:
+        - "#{Name.first_name} #{Name.last_name}"
+        - "#{Name.first_name} #{Name.last_name}"
+        - "#{Name.first_name} #{Name.last_name}"
+        - "#{Name.first_name} #{Name.last_name}"
+        - "#{Name.first_name} #{Name.last_name}"
+        - "#{Name.first_name} #{Name.last_name}"
+        - "#{Name.first_name} #{initial}. #{Name.last_name}"
+        - "#{Name.first_name} von #{Name.last_name}"
+        - "#{Name.first_name} #{Name.last_name}-#{Name.last_name}"
+        - "#{Name.first_name} #{Name.first_name} #{Name.last_name}"
+      stage_name:
+        - "DJ #{Name.last_name}"
+        - "MC #{Name.first_name}"
+        - "Graf #{Name.last_name}"
+        - "Herr #{Name.last_name}"
+        - "Frau #{Name.last_name}"
+        - "Dr. #{Name.last_name}"
+        - "Die kleine #{Name.last_name}"
+        - "Der große #{Name.last_name}"
+      first_name: [Anna, Lena, Marie, Sophie, Julia, Laura, Hannah, Lea, Katharina, Johanna, Clara, Paula, Greta, Ida, Charlotte, Emilia, Franziska, Sabine, Petra, Birgit, Monika, Ursula, Heike, Claudia, Nina, Svenja, Jana, Merle, Frieda, Leonie, Lukas, Jonas, Felix, Leon, Paul, Maximilian, Elias, Noah, Moritz, Jan, Tim, Florian, Tobias, Sebastian, Matthias, Stefan, Thomas, Michael, Andreas, Jürgen, Klaus, Wolfgang, Dieter, Uwe, Karl, Friedrich, Heinrich, Johannes, Benedikt, Til, Mads, Ole, Henning, Kai, Malte, Emre, Can, Deniz, Aylin, Mehmet, Dragan, Milena, Jakub]
+      last_name: [Müller, Schmidt, Schneider, Fischer, Weber, Meyer, Wagner, Becker, Schulz, Hoffmann, Schäfer, Koch, Bauer, Richter, Klein, Wolf, Schröder, Neumann, Schwarz, Zimmermann, Braun, Krüger, Hofmann, Hartmann, Lange, Schmitt, Werner, Krause, Meier, Lehmann, Köhler, Herrmann, König, Walter, Mayer, Huber, Kaiser, Fuchs, Peters, Lang, Scholz, Möller, Weiß, Jung, Hahn, Vogel, Friedrich, Keller, Günther, Frank, Berger, Winkler, Roth, Beck, Lorenz, Baumann, Franke, Albrecht, Brandt, Brückner, Sommer, Haas, Seidel, Ostermann, Liebig, Grünberg, Falkenstein, Rosenthal, Lindemann, Yilmaz, Kaya, Nowak, Kowalski, Petrović]
+      initial: [A, B, C, D, E, F, G, H, J, K, L, M, N, P, R, S, T, W]
+      character:
+        - "#{Name.first_name}"
+
+      title:
+        # Deutsche Titel brauchen Kongruenz von Artikel, Adjektiv und Nomen.
+        # Deshalb werden nur fertige Nominalphrasen (np), alleinstehende Nomen
+        # (noun) und komplette Titel (full) kombiniert, nie lose Adjektive.
+        templates:
+          - "#{full}"
+          - "#{full}"
+          - "#{full}"
+          - "#{full}"
+          - "#{np}"
+          - "#{np}"
+          - "#{np}"
+          - "#{np}"
+          - "#{np} #{place}"
+          - "#{np} #{place}"
+          - "#{np}: #{subtitle}"
+          - "#{full}: #{subtitle}"
+          - "#{full} #{sequel}"
+          - "#{np} #{sequel}"
+          - "#{noun}"
+          - "#{noun}"
+          - "#{noun} #{place}"
+          - "#{noun}: #{subtitle}"
+          - "#{noun} #{place_suffix}"
+          - "#{np} #{place_suffix}"
+        sequel: ["2", "2", "II", "III", "Reloaded", "– Die Rückkehr", "– Teil 2", "– Teil II", "– Das Finale", "– Die Rache", "– Der Anfang", "– Das Vermächtnis", "– Die Abrechnung", "– Jetzt erst recht"]
+        place:
+          - "im Nebel"
+          - "aus der Tiefe"
+          - "am Ende der Welt"
+          - "über Hamburg"
+          - "unter dem Eis"
+          - "hinter dem Mond"
+          - "im Schatten der Berge"
+          - "an der Ostsee"
+          - "in der Wüste"
+          - "auf der Flucht"
+          - "im Morgengrauen"
+          - "vor der Küste"
+          - "jenseits des Flusses"
+          - "in der letzten Nacht"
+          - "im Schwarzwald"
+          - "am Abgrund"
+          - "in der Stadt der Lügen"
+          - "auf dünnem Eis"
+          - "im Land der Wölfe"
+          - "aus dem Jenseits"
+          - "hinter verschlossenen Türen"
+          - "im Auge des Sturms"
+          - "über den Wolken"
+          - "an der Grenze"
+          - "in Berlin"
+          - "zwischen Himmel und Hölle"
+        place_suffix: ["um Mitternacht", "im Dunkeln", "bei Nacht", "in Flammen", "außer Kontrolle", "auf Abwegen", "im Paradies", "auf Hochtouren", "nach Einbruch der Dunkelheit", "im Kreuzfeuer", "in letzter Sekunde", "auf Leben und Tod"]
+        subtitle:
+          - "Die Abrechnung"
+          - "Endspiel"
+          - "Ein neuer Morgen"
+          - "Die letzte Stunde"
+          - "Das Erwachen"
+          - "Der Ursprung"
+          - "Kein Weg zurück"
+          - "Das verlorene Kapitel"
+          - "Die Rückkehr"
+          - "Roter Horizont"
+          - "Ins Feuer"
+          - "Letztes Licht"
+          - "Die Jagd beginnt"
+          - "Nacht des Blutmonds"
+          - "Die zweite Chance"
+          - "Der Anfang vom Ende"
+          - "Tag der Entscheidung"
+          - "Das Vermächtnis"
+          - "Die Legende lebt"
+          - "Stunde Null"
+        by_genre:
+          action:
+            # adj: unflektierte Grundformen, nicht in Vorlagen verwendet (Schlüsselparität mit en-US).
+            adj: [schnell, tödlich, eisern, gnadenlos, brennend, stählern, schwarz, letzt, wild, hart]
+            np: ["Der letzte Auftrag", "Die eiserne Faust", "Tödliche Stille", "Das schwarze Kommando", "Der lange Weg zurück", "Die rote Linie", "Kalter Stahl", "Das brennende Ufer", "Der stille Jäger", "Die verlorene Einheit", "Blutige Ernte", "Der zweite Schuss", "Die Nacht der Wölfe", "Das letzte Gefecht", "Der Mann ohne Namen", "Die Stunde des Söldners", "Schwarzer Regen", "Der gefährlichste Tag", "Die gnadenlose Jagd", "Das Gesetz der Straße", "Die tödliche Mission", "Heißes Pflaster", "Der Tag der Abrechnung", "Die letzte Patrone", "Das stählerne Herz", "Der Zorn des Kriegers", "Gefährliche Fracht"]
+            noun: [Vergeltung, Abrechnung, Feuersturm, Hinterhalt, Ausbruch, Belagerung, Kreuzfeuer, Vollgas, Gegenschlag, Sperrzone, Überfall, Fluchtpunkt, Einsatzbefehl, Todeszone, Blutgeld, Sprengsatz, Zugriff]
+            full: ["Kein Zurück mehr", "Null Uhr", "Bis zum letzten Mann", "Auge um Auge", "Zwölf Stunden Hölle", "Wer zuerst schießt", "Mit allen Mitteln", "Feuer frei", "Kein Erbarmen", "Unter Beschuss", "Achtundvierzig Stunden", "Ohne Rücksicht", "Im Fadenkreuz", "Zeit der Rache", "Nichts zu verlieren", "Volle Deckung", "Der Countdown läuft", "Rache ist süß", "Tod auf der Autobahn", "Lauf um dein Leben"]
+          adventure:
+            adj: [verloren, golden, vergessen, versteckt, endlos, versunken, uralt, geheim, gefroren, fern]
+            np: ["Die verlorene Stadt", "Das goldene Amulett", "Der vergessene Tempel", "Die Insel der tausend Stürme", "Das Geheimnis der Mumie", "Die versunkene Flotte", "Der Schatz des Kapitäns", "Die letzte Expedition", "Das smaragdgrüne Auge", "Der Fluch der Pharaonen", "Die Krone der Anden", "Der weiße Gipfel", "Das Erbe der Wikinger", "Die gläserne See", "Der eiserne Kompass", "Die Jäger des goldenen Falken", "Das Tal der Könige", "Die sieben Siegel", "Der letzte Entdecker", "Die Straße nach Samarkand", "Das Rätsel der Sphinx", "Die geheime Karte", "Der Leuchtturmwärter", "Das Herz des Dschungels", "Die Kinder des Monsuns", "Der Kartendieb", "Das Gold der Azteken"]
+            noun: [Expedition, Schatzsuche, Monsun, Schiffbruch, Dschungelfieber, Goldrausch, Gipfelsturm, Karawane, Wüstensturm, Inselreich, Seefahrt, Himmelsleiter, Odyssee, Entdeckerfieber, Schatzkarte, Wildwasser]
+            full: ["Jenseits des Riffs", "Sieben Gipfel", "Zehn Flüsse bis zum Meer", "Bis ans Ende der Welt", "Mit dem Wind nach Westen", "Allein im Amazonas", "Achtzig Tage Abenteuer", "Wo die Karte endet", "Abenteuer in Patagonien", "Gefangen am Kilimandscharo", "Auf der Spur der Inka", "Unter fremden Sternen", "Quer durch die Sahara", "Zwischen Eis und Feuer", "Kurs auf Madagaskar", "Hinter dem Horizont", "Auf Messers Schneide", "Abenteuer am Amazonas", "Einmal Timbuktu und zurück"]
+          comedy:
+            adj: [verrückt, peinlich, perfekt, glücklich, falsch, chaotisch, faul, schräg, total, spontan]
+            np: ["Die Hochzeit meines Chefs", "Der Junggesellenabschied", "Die Schwiegermutter aus der Hölle", "Der falsche Bräutigam", "Die chaotische Klassenfahrt", "Der Praktikant", "Die WG vom dritten Stock", "Das perfekte Desaster", "Der Opa aus Mallorca", "Die Nachbarn von nebenan", "Der Mann mit dem Lama", "Die Erbschaft", "Ein Schwein namens Gustav", "Das Familientreffen", "Die Rentner-Gang", "Der Elternabend", "Der Hochzeitscrasher", "Die Ferien meines Lebens", "Der Chaos-Papa", "Die Kaffeefahrt", "Das Klassentreffen", "Der Weihnachtsmann aus Versehen", "Die Tante aus Amerika", "Der Schrebergarten-Krieg", "Das peinlichste Wochenende", "Ein ganz normaler Montag"]
+            noun: [Klassentreffen, Kaffeefahrt, Junggesellenabschied, Elternabend, Hochzeitsplaner, Schwiegermonster, Betriebsausflug, Familienurlaub, Nachbarschaftsstreit, Campingplatz, Probezeit, Kegelabend, Polterabend, Rentnerparadies, Abschlussfahrt, Abschlussball]
+            full: ["Wo ist mein Auto, Alter?", "Mehr Mädels, bitte", "Nicht schon wieder", "Papa auf Rädern", "Halt mal kurz mein Lama", "Alles total in Ordnung", "Kein Bock auf Montag", "Oma macht Party", "Freitag ist Pizzatag", "Wer hat den Hund geklaut?", "Hilfe, die Schwiegereltern kommen!", "Mama hat heute frei", "Urlaub mit Hindernissen", "Zu blöd zum Lügen", "Onkel Günthers Boot", "Ruf doch mal Kevin an", "Männer sind auch nur Menschen", "Schatz, wir müssen reden", "Voll verplant", "Ein Bett für drei"]
+          crime:
+            adj: [schmutzig, kalt, blind, korrupt, still, bitter, gestohlen, falsch, krumm, dunkel]
+            np: ["Der stille Zeuge", "Das letzte Alibi", "Die schmutzige Wahrheit", "Der kalte Hafen", "Die blinde Justiz", "Das falsche Geständnis", "Der dritte Schlüssel", "Die schwarze Kasse", "Das gestohlene Gemälde", "Der lange Schatten", "Die Spur des Geldes", "Das Revier der Verlorenen", "Der Pate von St. Pauli", "Die letzte Beute", "Der Spitzel", "Das Schweigen der Brüder", "Der tote Winkel", "Die bittere Bilanz", "Der krumme Deal", "Das Hamburger Syndikat", "Die Nacht des Bankraubs", "Der Mann im grauen Mantel", "Die zweite Leiche", "Das rote Notizbuch", "Der unbestechliche Kommissar", "Die Witwe des Paten"]
+            noun: [Alibi, Geständnis, Schwarzgeld, Kronzeuge, Hehler, Erpressung, Spurensicherung, Beweislast, Mordkommission, Schutzgeld, Untersuchungshaft, Kopfgeld, Verrat, Razzia, Bankraub, Falschgeld]
+            full: ["Wer schweigt, lebt länger", "Mord am Kanal", "Tod in der Speicherstadt", "Das Geld liegt auf der Straße", "Nur ein Toter mehr", "Unter Brüdern", "Bis dass der Tod uns scheidet", "Kalt erwischt", "Ein Koffer voller Geld", "Die Bank gewinnt immer", "Niemand hat etwas gesehen", "Gestern war ich noch ehrlich", "Blei und Brillanten", "Ein letzter Coup", "Nachtschicht im Präsidium", "Mordsgeschäfte", "Auf frischer Tat", "Sieben Tage Schonfrist", "Leise rieselt das Blei"]
+          drama:
+            adj: [still, lang, verloren, leer, fremd, klein, letzt, zweit, alt, späte]
+            np: ["Die stillen Jahre", "Das Haus am See", "Der lange Sommer", "Die Tochter des Fischers", "Das letzte Lied", "Der Brief aus Breslau", "Die Kinder vom Hof", "Das verlorene Paradies", "Der Weg nach Hause", "Die zweite Frau", "Das Schweigen der Mütter", "Der Klavierlehrer", "Die Jahre danach", "Das kleine Glück", "Die Farbe der Erinnerung", "Die Witwe von Rügen", "Der leere Stuhl", "Die Zeit der Kirschblüten", "Das Lied der Wälder", "Der vergessene Bruder", "Die Schwestern", "Das andere Leben", "Die Erben des Hofes", "Der fremde Sohn", "Ein halbes Leben", "Späte Gnade"]
+            noun: [Heimkehr, Erbschaft, Abschied, Sehnsucht, Vergebung, Kindheit, Schweigen, Heimweh, Wendezeit, Nachlass, Familienfest, Lebenslinien, Zuversicht, Spätsommer, Erinnerungen, Elternhaus]
+            full: ["Was bleibt", "Bevor der Winter kommt", "Alles, was wir hatten", "Morgen ist auch ein Tag", "Wir sehen uns wieder", "Wo die Liebe hinfällt", "Ein Jahr ohne Vater", "Dort, wo wir herkommen", "Unsere besten Jahre", "Niemand weint für immer", "Zeit zu vergeben", "Leben und leben lassen", "Für immer jung", "Mein Vater, der Fremde", "Nach all den Jahren", "Zwischen den Zeilen", "Als das Eis brach", "Sag mir, wo du warst"]
+          family:
+            adj: [klein, mutig, magisch, fliegend, lustig, verzaubert, frech, wild, bunt, tapfer]
+            np: ["Der kleine Drache", "Die fliegende Kuh", "Das magische Baumhaus", "Die Weihnachtsretter", "Der kleine Roboter", "Die mutigen Fünf", "Das Geheimnis der Spielzeugfabrik", "Der Zauberer im Hausmeisterraum", "Der Pfannkuchen-Prinz", "Die Bande vom Bolzplatz", "Das große Ferienabenteuer", "Der verzauberte Wald", "Die Pony-Detektive", "Das Schloss der Kobolde", "Der Schneemann, der nicht schmelzen wollte", "Die Superhelden vom Spielplatz", "Der allerbeste Freund", "Die Schatzsucher von Wanne-Eickel", "Die Wichtel vom Dachboden", "Der fliegende Klassenraum", "Das sprechende Fahrrad", "Der Drachenflüsterer", "Die Zahnfee-Akademie", "Der freche Waschbär", "Die tapfere Prinzessin Pupsi"]
+            noun: [Ferienlager, Baumhaus, Zauberschule, Schneeballschlacht, Drachenfest, Ponyhof, Rabauken, Kinderbande, Glücksbringer, Wunderland, Spielzeugland, Sternschnuppe, Pfannkuchentag, Abenteuerspielplatz, Kuscheltieralarm]
+            full: ["Hilfe, mein Hund kann sprechen!", "Rettet Weihnachten!", "Oma kann zaubern", "Ein Drache zum Geburtstag", "Wir sind die Größten", "Freunde für immer", "Ab in die Ferien!", "Mein Freund, der Roboter", "Fünf Freunde und ein Pony", "Kakao und Kekse", "Lotta und der Mondhase", "Der Sommer, in dem wir fliegen lernten", "Pippo rettet den Zoo", "Nie wieder Hausaufgaben", "Ein Elefant im Wohnzimmer", "Opa ist ein Pirat", "Gute Nacht, kleiner Stern", "Mission Pausenhof", "Auf die Plätze, fertig, Pony!"]
+          fantasy:
+            adj: [dunkel, uralt, verflucht, golden, silbern, verboten, gefallen, ewig, gläsern, verborgen]
+            np: ["Die Krone der Schatten", "Das Schwert der Erinnerung", "Der letzte Drachenreiter", "Die Hexe vom Mondsee", "Das vergessene Königreich", "Der dunkle Thron", "Die Tochter des Zauberers", "Das Siegel der Sterne", "Der Fluch des Nebelwaldes", "Die Erben der Flamme", "Das Buch der tausend Namen", "Der silberne Wolf", "Die gläserne Burg", "Das Lied der Elfen", "Der Hüter des Tores", "Die Chroniken von Aldmar", "Das Zeitalter der Drachen", "Der gefallene Prinz", "Die letzte Mondhexe", "Der Ring der Ahnen", "Die verbotene Magie", "Das Reich unter dem Berg", "Die Prophezeiung von Elderon", "Der Stern von Myrdal", "Die Rabenkönigin", "Das ewige Feuer"]
+            noun: [Drachenblut, Schattenreich, Nebelland, Sternenfall, Runenzauber, Elfenkrieg, Hexenjagd, Feuerkrone, Mondzauber, Drachenzorn, Weltenbaum, Zwielicht, Totenbeschwörer, Schicksalsstein, Albenreich, Dämmerung]
+            full: ["Wo die Drachen schlafen", "Als die Sterne fielen", "Ein Königreich für einen Dieb", "Blut und Silber", "Feuer und Asche", "Der Wald hat tausend Augen", "Jenseits der Nebelberge", "Kein Zauber ohne Preis", "Schwert und Schatten", "Zwischen den Welten", "Hüter der Flamme", "Erwache, Drache", "Das Mädchen, das Drachen rief", "Nacht der tausend Monde", "Königin ohne Krone", "Wenn die Runen sprechen", "Ruf der Ahnen", "Ewig währt die Nacht"]
+          horror:
+            adj: [still, schwarz, verlassen, tot, böse, kalt, verflucht, blutig, alt, leer]
+            np: ["Die stille Nacht", "Das Haus am Waldrand", "Der schwarze Keller", "Die Puppe auf dem Dachboden", "Das Wiegenlied", "Der Fremde im Spiegel", "Die Toten von Wolfsgrund", "Das letzte Klopfen", "Der Fluch des Moores", "Die Kinder der Nacht", "Das Grauen", "Die verlassene Klinik", "Die Stimme im Funkgerät", "Das Ding im Kornfeld", "Der Mann in der Ecke", "Die dreizehnte Etage", "Das Böse im Wald", "Die Nonne von Heiligenbrunn", "Der Totengräber", "Das schwarze Band", "Die alte Mühle", "Das Kinderzimmer", "Der Hof der Raben", "Die Insel der Verdammten", "Der Schlafwandler", "Die Braut des Teufels"]
+            noun: [Albtraum, Besessenheit, Totenstille, Schattenmann, Spukhaus, Geisterstunde, Opfernacht, Totentanz, Leichenhalle, Wiedergänger, Wechselbalg, Blutmond, Dachboden, Hexenzirkel, Schlaflos, Fieberwahn]
+            full: ["Schau nicht hinter dich", "Wer klopft, stirbt", "Es weiß deinen Namen", "Mach nicht die Tür auf", "Drei Uhr dreiunddreißig", "Niemand hört dich schreien", "Sie kommen nachts", "Schlaf nicht ein", "Das Licht bleibt an", "Komm spielen", "Unter dem Dielenboden", "Lass sie nicht rein", "Wenn die Uhr zwölf schlägt", "Tot, aber nicht vergessen", "Hörst du das auch?", "Bleib im Haus", "Nicht allein", "Stille Wasser", "Es ist hinter dir"]
+          romance:
+            adj: [verliebt, süß, zärtlich, heimlich, ewig, sommerlich, groß, erst, zweit, romantisch]
+            np: ["Der Sommer mit dir", "Das Café am Marktplatz", "Die Hochzeit meiner besten Freundin", "Der Duft von Lavendel", "Die zweite große Liebe", "Der Mann meiner Träume", "Die Bäckerin vom Bodensee", "Ein Kuss im Schnee", "Der letzte Tanz", "Das Herz einer Fremden", "Die Rose von Sanssouci", "Ein Sommer in Florenz", "Der Liebesbrief", "Die Insel der Verliebten", "Das Lächeln der Fremden", "Die große Liebe", "Ein Herz für zwei", "Die Melodie der Liebe", "Der Duft von Zimt", "Die Braut im Regen", "Ein Tango für Clara", "Der Weinberg der Liebe", "Das Versprechen", "Die Frau vom Leuchtturm", "Die erste Liebe", "Ein Brief für Johanna"]
+            noun: [Herzklopfen, Liebeskummer, Schmetterlinge, Sommerliebe, Frühlingsgefühle, Hochzeitsfieber, Seitensprung, Liebesbrief, Herzensangelegenheit, Rendezvous, Verlobung, Sehnsuchtsort, Flitterwochen, Zweisamkeit, Liebesglück, Liebesgeflüster]
+            full: ["Für immer und ein Tag", "Zwei Herzen, eine Stadt", "Liebe auf den zweiten Blick", "Nur noch dieser Sommer", "Küss mich, Frosch", "Wo die Liebe wohnt", "Ich hab dich nie vergessen", "Plötzlich verliebt", "Zehn Tage für die Liebe", "Liebe geht durch den Magen", "Und dann kamst du", "Bleib doch bis Sonntag", "Mein Herz gehört dir", "Kein Plan für die Liebe", "Zwischen uns das Meer", "Verliebt in Venedig", "Alles nur aus Liebe", "Sag einfach ja", "Morgen küss ich dich"]
+          sci_fi:
+            adj: [künstlich, kalt, rot, fern, vergessen, neu, letzt, gläsern, dunkel, still]
+            np: ["Der rote Planet", "Die letzte Kolonie", "Das Signal", "Die Maschinen von morgen", "Der stille Orbit", "Die vergessene Station", "Das zweite Universum", "Der künstliche Mensch", "Die Stadt der Klone", "Das Projekt Prometheus", "Der Tag nach dem Licht", "Die Erben der Erde", "Das Echo der Sterne", "Der kalte Mond", "Die Raumstation Kepler", "Das Experiment", "Der letzte Mensch", "Die gläserne Zukunft", "Das schwarze Loch", "Der Androide", "Die neue Menschheit", "Der zwölfte Kontakt", "Das Gedächtnis der Maschine", "Die Kinder des Mars", "Der Schwarm", "Die dunkle Seite des Mondes"]
+            noun: [Kryoschlaf, Singularität, Hyperraum, Erstkontakt, Weltraumfieber, Mondbasis, Zeitsprung, Sternenstaub, Schwerelosigkeit, Exodus, Datenstrom, Orbit, Quantenfeld, Nullpunkt, Sternenkinder, Kollaps]
+            full: ["Wir sind nicht allein", "Jenseits von Andromeda", "Morgen gehört den Maschinen", "Zweihundert Jahre Stille", "Erde, Jahr Null", "Planet ohne Wiederkehr", "Kein Weg nach Hause", "Unter fremden Monden", "Code Omega", "Die Zukunft ist jetzt", "Mensch 2.0", "Ruf aus dem All", "Letzter Funkspruch", "Zurück zur Erde", "Wenn Maschinen träumen", "Fünf Lichtjahre bis zum Morgen", "Als die Erde schwieg", "Signal aus der Stille"]
+          thriller:
+            adj: [dunkel, gefährlich, falsch, blind, tödlich, geheim, unsichtbar, doppelt, verschwunden, kalt]
+            np: ["Die Frau im Zug", "Der stille Beobachter", "Das dunkle Geheimnis", "Die letzte Zeugin", "Der falsche Ehemann", "Die zweite Identität", "Das kalte Herz", "Der Fremde nebenan", "Die Stimme in der Nacht", "Die verschwundene Braut", "Der Geschworene", "Das tödliche Spiel", "Die Akte Lindemann", "Der Mann ohne Gesicht", "Die gefährliche Wahrheit", "Das blinde Vertrauen", "Der Nachtzug", "Die verlorene Erinnerung", "Das Schweigen der Nachbarn", "Der unsichtbare Gast", "Die geheime Akte", "Das Haus der Lügen", "Der doppelte Verrat", "Das letzte Telefonat", "Die Patientin", "Der zweite Pass"]
+            noun: [Paranoia, Doppelgänger, Verschwörung, Gedächtnisverlust, Täuschung, Abgrund, Nervenkrieg, Überwachung, Geiselnahme, Funkstille, Fallstrick, Fadenkreuz, Spiegelbild, Schuldfrage, Verdacht, Blackout]
+            full: ["Trau niemandem", "Sie sieht dich", "Wer bist du wirklich?", "Nichts ist, wie es scheint", "Die Uhr tickt", "Sag nichts", "Lauf, so schnell du kannst", "Bis du mir glaubst", "Ein Anruf genügt", "Du sollst nicht lügen", "Schweig oder stirb", "Vierundzwanzig Stunden bis Mitternacht", "Niemand wird dich finden", "Zwölf Tage im Juni", "Kein Zeuge, kein Mord", "Spiel nicht mit dem Feuer", "Mein Mann, der Fremde", "Ich weiß, was du getan hast"]
+          western:
+            adj: [einsam, staubig, gesetzlos, schnell, letzt, wild, alt, verloren, schwarz, heiß]
+            np: ["Der letzte Sheriff", "Die Rache des Fremden", "Das Gold von Sacramento", "Der einsame Reiter", "Die Spur der Geier", "Das Tal der Gesetzlosen", "Der Galgen von Dead Creek", "Die Bande der Brüder", "Der Revolvermann", "Die letzte Postkutsche", "Das Kopfgeld", "Der Mann aus Tombstone", "Die Stadt ohne Gesetz", "Der Ritt nach Westen", "Das Lied vom Staub", "Die Witwe von Silver Creek", "Der schwarze Mustang", "Die Hölle von El Paso", "Der Preis der Gerechtigkeit", "Das Pferd des Toten", "Die Schlucht der Klapperschlangen", "Der weiße Comanche", "Die Ranch am Fluss", "Der lange Ritt", "Der Prediger mit dem Colt", "Ein Fremder ohne Wiederkehr"]
+            noun: [Kopfgeld, Präriefeuer, Pulverdampf, Klapperschlange, Galgenfrist, Goldgräber, Viehtrieb, Saloon, Postkutsche, Revolverheld, Steckbrief, Grenzland, Silbermine, Wüstenwind, Blutrache]
+            full: ["Sechs Kugeln für Johnny", "Ein Sarg aus Gold", "Bleib im Sattel, Fremder", "Für eine Handvoll Silber", "Mittag in Tombstone", "Der Tod reitet mit", "Reite oder stirb", "Wo der Wind heult", "Gold, Blei und Whiskey", "Kein Gesetz westlich des Pecos", "Kugeln für den Prediger", "Rückkehr nach Red Rock", "Staub und Rache", "Heimweg durch die Prärie", "Sieben Tage bis zum Galgen", "Ein Strick für den Sheriff", "Pferde, Gold und Galgen", "Der Teufel trägt Sporen"]
+
+      plot:
+        by_genre:
+          action:
+            setup:
+              - "Als ein Routineeinsatz im Ausland schiefgeht, wird der Elitesoldat #{hero} von der eigenen Einheit zurückgelassen."
+              - "Eigentlich wollte #{hero} nach zwanzig Jahren im Geheimdienst nur noch angeln gehen – bis ein Paket ohne Absender vor der Tür liegt."
+              - "Nur #{hero}, eine in Ungnade gefallene Pilotin, kann ein entführtes Frachtflugzeug über #{city} noch zur Landung bringen."
+              - "#{hero} hat zwölf Stunden, um einen Kronzeugen quer durch #{city} zu bringen, während die halbe Unterwelt Jagd auf die beiden macht."
+              - "Nach einem Überfall, der in einem Blutbad endet, wird Fluchtwagenfahrer #{hero} zum meistgesuchten Menschen Europas."
+              - "Ein Hochhaus in #{city}, vierzig Geiseln, eine Söldnertruppe – und mittendrin #{hero}, der eigentlich nur zur Weihnachtsfeier wollte."
+            twist:
+              - "Doch die Befehle kommen ausgerechnet von ganz oben."
+              - "Jeder Verbündete hat seinen Preis, und #{rival} zahlt am besten."
+              - "Der einzige Ausweg führt mitten durch die Privatarmee von #{rival}."
+              - "Die Bombe ist erst der Anfang."
+              - "Und die Uhr tickt bereits."
+          adventure:
+            setup:
+              - "In einem Antiquariat in #{city} entdeckt die junge Kartographin #{hero} eine Karte, die es eigentlich gar nicht geben dürfte."
+              - "Der Schatzsucher #{hero} führt eine bunt zusammengewürfelte Truppe in einen Dschungel, den noch niemand lebend verlassen hat."
+              - "Als ein Forschungsschiff im Nordmeer spurlos verschwindet, bricht #{hero} auf, um den einzigen Überlebenden zu finden."
+              - "#{hero} erbt einen verfallenen Leuchtturm an der Nordsee und einen Schlüssel zu einer Tür, die nie jemand geöffnet hat."
+              - "Ein in Verruf geratener Archäologe aus #{city} bekommt eine letzte Chance, den verschollenen Sonnentempel zu finden."
+            twist:
+              - "Doch seit dem ersten Schritt folgt ihnen jemand."
+              - "Je weiter sie kommen, desto weniger gleicht die Karte der Welt, die sie kennen."
+              - "Ihr größter Rivale, #{rival}, ist ihnen längst einen Schritt voraus."
+              - "Und auf dem Schatz liegt ein Fluch, der nichts vergisst."
+          comedy:
+            setup:
+              - "Zwei beste Freundinnen buchen aus Versehen dieselbe Hochzeitslocation am selben Tag."
+              - "Mit einem frisierten Lebenslauf landet #{hero} plötzlich auf dem Chefsessel eines Start-ups in #{city}."
+              - "Der Familienurlaub an der Ostsee wird zum Desaster, als Oma mit dem Wohnmobil durchbrennt."
+              - "Pleite und verzweifelt lässt sich #{hero} auf eine Scheinbeziehung mit einem Reality-Star ein."
+              - "Nach dem Junggesellenabschied in #{city} wacht #{hero} mit einem Lama, einem Ehering und null Erinnerung auf."
+              - "Der völlig überforderte Familienvater #{hero} meldet sich bei einer Kochshow an, die er unmöglich gewinnen kann."
+            twist:
+              - "Was soll da schon schiefgehen?"
+              - "Richtig kompliziert wird es, als #{rival} nebenan einzieht."
+              - "Das einzige Problem: Bis Freitag darf niemand die Wahrheit erfahren."
+              - "Das Chaos ist natürlich vorprogrammiert."
+              - "Jetzt bleibt genau ein Wochenende, um alles geradezubiegen."
+          crime:
+            setup:
+              - "Der kleine Buchhalter #{hero} stößt auf ein Notizbuch, das die halbe Unterwelt von #{city} hinter Gitter bringen könnte."
+              - "Nach Jahren im Ausland kehrt Kommissar #{hero} nach #{city} zurück, um den Mord an einem alten Kollegen aufzuklären."
+              - "Vier Fremde planen den perfekten Bankraub – ausgerechnet in der Nacht des schwersten Sturms seit Jahrzehnten."
+              - "Als aus einem Museum in #{city} ein unbezahlbares Gemälde verschwindet, verdächtigt der Versicherungsdetektiv #{hero} einfach jeden."
+              - "Der ehrliche Polizist #{hero} wird verdeckt in das Familienimperium von #{rival} eingeschleust."
+            twist:
+              - "Doch in dieser Stadt hat jeder Zeuge seinen Preis."
+              - "Je tiefer #{hero} gräbt, desto näher führt die Spur nach Hause."
+              - "Einer von ihnen arbeitet längst für die Polizei."
+              - "Und das Geld war nie die eigentliche Beute."
+          drama:
+            setup:
+              - "Nach Jahren des Schweigens müssen sich Mutter und Tochter wiedersehen, als ein Unglück die Familie erschüttert."
+              - "Die pensionierte Lehrerin #{hero} erhält einen Brief von einer Schülerin, die sie seit dreißig Jahren nicht gesehen hat."
+              - "Nach dem Tod des Vaters kehren drei Geschwister auf den Familienhof bei #{city} zurück."
+              - "Eine junge Pianistin aus #{city} bekommt eine einzige Chance, am Konservatorium ihrer Träume vorzuspielen."
+              - "#{hero} verbringt einen letzten Sommer in dem Dorf, in dem einst alles zerbrochen ist."
+              - "Der verwitwete Fischer #{hero} nimmt eine Ausreißerin bei sich auf, die ihn an die eigene Tochter erinnert."
+            twist:
+              - "Alte Geheimnisse brechen auf, gerade als sie einander am meisten brauchen."
+              - "Nun müssen sie den Mut finden zu verzeihen, bevor es zu spät ist."
+              - "Doch manche Versprechen sind leichter gegeben als gehalten."
+              - "Was sie entdecken, verändert alles, was sie über ihre Herkunft zu wissen glaubten."
+          family:
+            setup:
+              - "Im Garten ihrer Oma entdeckt die neugierige #{hero} einen winzigen Drachen."
+              - "Als in #{city} kurz vor Heiligabend alle Lichter ausgehen, beschließen drei Kinder, Weihnachten zu retten."
+              - "#{hero} und ein sprechender Dackel machen sich auf die Suche nach dem größten Pfannkuchen der Welt."
+              - "Ein tollpatschiger Roboter flieht aus einer Spielzeugfabrik und zieht in das Baumhaus einer Familie ein."
+              - "Gleich am ersten Schultag in #{city} findet #{hero} heraus, dass der Hausmeister heimlich ein Zauberer ist."
+            twist:
+              - "Gemeinsam lernen sie, dass Freundschaft der größte Zauber von allen ist."
+              - "Doch so ein großes Geheimnis für sich zu behalten, ist schwerer als gedacht."
+              - "Jetzt müssen sie nach Hause kommen, bevor die Erwachsenen etwas merken."
+              - "Es wird der beste Sommer aller Zeiten."
+          fantasy:
+            setup:
+              - "In einem Königreich, das von Angst beherrscht wird, entdeckt die Stallmagd #{hero}, dass sie mit Drachen sprechen kann."
+              - "Als letzte der Mondhexen muss #{hero} eine gestohlene Krone vor einem uralten Orden schützen."
+              - "Als das Nordtor fällt, kehrt ein verbannter Prinz zurück, um den zerbrochenen Thron zurückzufordern."
+              - "Der Dieb #{hero} stiehlt ein Schwert, das sich an jede Hand erinnert, die es je geführt hat."
+              - "Alle hundert Jahre fallen die Sterne über dem Tal, und diesmal fällt die Wahl auf #{hero}."
+            twist:
+              - "Doch die Prophezeiung verbirgt eine dunklere Wahrheit."
+              - "Um den Krieg zu gewinnen, muss #{hero} einen Pakt mit #{rival} schließen, dem Feind von einst."
+              - "Und der Schatten im Wald erwacht."
+              - "Denn jede Magie hat ihren Preis."
+          horror:
+            setup:
+              - "Eine Familie zieht in einen abgelegenen Bauernhof bei #{city}, ohne zu ahnen, was unter den Dielen schläft."
+              - "Fünf Freunde mieten für ein ruhiges Wochenende eine Hütte tief im Wald."
+              - "In der Nachtschicht hört #{hero} plötzlich Kinder singen – im längst geschlossenen Flügel der Klinik."
+              - "Nach dem Verschwinden der Schwester folgt #{hero} einer Spur aus alten Kassetten in den Wald."
+              - "Der Parapsychologe #{hero} willigt ein, eine Nacht im unheimlichsten Haus von #{city} zu verbringen."
+              - "Jede Nacht um 3:33 Uhr sitzt die alte Puppe auf dem Dachboden an einer anderen Stelle."
+            twist:
+              - "In der Dunkelheit wartet etwas auf sie."
+              - "Als sie es bemerken, ist es längst im Haus."
+              - "Niemand, der das Wiegenlied gehört hat, hat überlebt."
+              - "Und es merkt sich jeden Namen."
+              - "Es gibt nur eine Regel: Niemals öffnen, wenn es klopft."
+          romance:
+            setup:
+              - "Während einer verregneten Woche in #{city} verliebt sich die ausgebrannte Architektin #{hero} in einen Straßenmusiker."
+              - "Zwei Fremde verpassen sich jeden Morgen im selben Café um wenige Minuten."
+              - "Zur Hochzeit ihrer Schwester kehrt #{hero} nach Hause zurück und läuft direkt der ersten großen Liebe in die Arme."
+              - "Eine Hochzeitsplanerin, die längst nicht mehr an die Liebe glaubt, wird ausgerechnet von ihrem Ex-Verlobten engagiert."
+              - "Ein zynischer Restaurantkritiker und eine Bäckerin vom Land müssen sich in #{city} eine winzige Wohnung teilen."
+            twist:
+              - "Verlieben stand eigentlich nicht auf dem Plan."
+              - "Doch die Vergangenheit holt sie schneller ein als gedacht."
+              - "Zehn Tage bleiben ihnen, um herauszufinden, ob es für immer ist."
+              - "Manchmal kommt der richtige Mensch einfach zur falschen Zeit."
+          sci_fi:
+            setup:
+              - "Im Jahr 2147 empfängt die Crew eines Bergbauschiffs einen Notruf von einem Raumschiff, das vor hundert Jahren verschwand."
+              - "Die Ingenieurin #{hero} erwacht vierzig Jahre zu früh aus dem Kryoschlaf."
+              - "Als die Maschinen, die #{city} steuern, eigene Entscheidungen treffen, bemerkt es zuerst eine einzige Programmiererin."
+              - "Am Tag, an dem #{hero} geboren wird, verliert die letzte Kolonie auf dem Mars den Kontakt zur Erde."
+              - "#{hero}, ein Klon mit fremden Erinnerungen, beginnt von einem Leben zu träumen, das es nie gegeben hat."
+            twist:
+              - "Die letzte Hoffnung der Menschheit liegt in einer Botschaft, die niemand entschlüsseln kann."
+              - "Das Signal ist keine Warnung. Es ist eine Einladung."
+              - "Die Maschinen erheben sich, und nur #{hero} kann sie noch aufhalten."
+              - "Doch an Bord läuft allen die Zeit davon."
+          thriller:
+            setup:
+              - "Die Radiomoderatorin #{hero} bekommt in der Nachtsendung den Anruf eines Hörers, der behauptet, sie gerade zu beobachten."
+              - "Als ihr Mann am Hochzeitstag verschwindet, findet #{hero} in seiner Schublade einen zweiten Reisepass."
+              - "Als Schöffe ist #{hero} bald überzeugt, dass der Angeklagte unschuldig ist und die Richterin lügt."
+              - "Eine Datenanalystin aus #{city} stößt auf eine Datei, die beweist, dass eine Reihe von Unfällen in Wahrheit Morde waren."
+              - "Im Nachtzug von #{city} nach Wien verschwindet eine Passagierin, und niemand will sie je gesehen haben."
+            twist:
+              - "Traue niemandem. Nicht einmal dir selbst."
+              - "Jede Antwort macht die Wahrheit nur noch gefährlicher."
+              - "Der Täter ist näher, als alle denken."
+              - "Und #{rival} weiß genau, was im letzten Winter geschehen ist."
+          western:
+            setup:
+              - "Ein einsamer Revolvermann reitet in eine sterbende Silberstadt, ein Kopfgeld in den Mantel genäht."
+              - "Nachdem die Ranch ihrer Familie niedergebrannt wurde, jagt #{hero} die Banditen durch drei Territorien."
+              - "Dem alternden Sheriff #{hero} bleibt eine Woche bis zum Ruhestand und ein letzter Mann, der hängen soll."
+              - "Eine Postkutsche mit Gold, einem Prediger und einem Mörder verirrt sich in der Wüste."
+              - "Zwei verfeindete Brüder treiben eine Rinderherde durch das Land der Comanchen."
+            twist:
+              - "In diesem Land wird Gerechtigkeit in Kugeln gemessen."
+              - "Doch #{rival} und seine Bande warten bereits am Fluss."
+              - "Nur einer von ihnen wird nach Hause reiten."
+              - "Und die Wüste bewahrt jedes Geheimnis."
+
+      trailer:
+        when: ["DIESEN HERBST", "DIESEN SOMMER", "DIESEN WINTER", "DIESEN FRÜHLING", "ZU WEIHNACHTEN", "ZU HALLOWEEN", "NÄCHSTEN SOMMER", "NOCH IN DIESEM JAHR", "NUR EINE NACHT", "AB JULI", "DEMNÄCHST"]
+        presents: ["EIN #{studio} FILM", "#{studio} PRÄSENTIERT", "VOM STUDIO VON #{other_title}", "VOM REGISSEUR VON #{other_title}", "VON DEN MACHERN VON #{other_title}", "NACH EINER WAHREN BEGEBENHEIT", "NACH DEM BESTSELLER-ROMAN", "IN ZUSAMMENARBEIT MIT #{studio}"]
+        studio: [NORDLICHT, SILBERTOR, BLAUE BUCHT, ELBFILM, EISENWERK, LICHTSPIEL, KRONENSTRASSE, STERNWARTE, EICHENHAIN, ALSTER PICTURES]
+        starring: ["#{actor}", "MIT #{actor}", "#{actor}", "UND #{actor}", "IN DER HAUPTROLLE #{actor}"]
+        ending: ["DEMNÄCHST", "NUR IM KINO", "IM KINO #{when_short}", "IM STREAM #{when_short}", "AB #{when_short} IM KINO", "#{year}", "ERLEBEN SIE ES IN IMAX"]
+        when_short: ["DIESEN HERBST", "DIESEN SOMMER", "IM DEZEMBER", "BALD", "DIESEN DONNERSTAG"]
+        series: ["EINE NEUE ORIGINAL-SERIE", "DAS SERIEN-EVENT DES JAHRES", "NEUE STAFFEL", "ALLE FOLGEN JETZT IM STREAM"]
+        hook:
+          action: ["KEINE REGELN.", "KEINE GNADE.", "EIN LETZTER AUFTRAG.", "SIE HABEN IHM ALLES GENOMMEN.", "JETZT WIRD ES PERSÖNLICH.", "DIE UHR TICKT.", "NIEMAND KOMMT LEBEND RAUS.", "RACHE HAT EINEN NAMEN."]
+          adventure: ["DIE WELT IST GRÖSSER, ALS DU DENKST.", "JEDE KARTE HAT EIN GEHEIMNIS.", "ABENTEUER KENNT KEINE GRENZEN.", "JENSEITS DES KARTENRANDS.", "DIE REISE BEGINNT.", "LEGENDEN SIND WAHR."]
+          comedy: ["WAS SOLL SCHON SCHIEFGEHEN?", "SCHLIMMSTES. WOCHENENDE. ALLER ZEITEN.", "ES KLANG NACH EINER GUTEN IDEE.", "FAMILIE. MAN KANN SIE SICH NICHT AUSSUCHEN.", "ALLES BESTENS.", "EINE HOCHZEIT. NULL PLAN."]
+          crime: ["JEDER HAT SEINEN PREIS.", "DAS PERFEKTE VERBRECHEN.", "VERBRECHEN LOHNT SICH. BIS ES SICH NICHT MEHR LOHNT.", "VERTRAUEN IST EINE WÄHRUNG.", "IRGENDWER REDET IMMER.", "EIN LETZTER COUP."]
+          drama: ["MANCHE WUNDEN HEILEN NIE.", "HEIMAT KANN WEHTUN.", "JEDE FAMILIE HAT IHRE GEHEIMNISSE.", "ES IST NIE ZU SPÄT.", "MANCHE ABSCHIEDE SIND FÜR IMMER.", "EINE GESCHICHTE VOLLER HOFFNUNG."]
+          family: ["DAS ABENTEUER RUFT.", "GLAUB AN DIE MAGIE.", "SPASS FÜR DIE GANZE FAMILIE.", "GROSSES HERZ. KLEINER HELD.", "FREUNDE FÜR IMMER.", "LASST DEN SPASS BEGINNEN."]
+          fantasy: ["DIE PROPHEZEIUNG IST WAHR.", "MAGIE HAT IHREN PREIS.", "EIN KÖNIGREICH WIRD FALLEN.", "DAS ZEITALTER DER DRACHEN KEHRT ZURÜCK.", "EINE KRONE. EIN ERBE.", "DIE DUNKELHEIT ERWACHT."]
+          horror: ["SCHAU NICHT HINTER DICH.", "ES KENNT DEINEN NAMEN.", "NIEMAND IST SICHER.", "ETWAS WARTET.", "ÖFFNE NIEMALS DIE TÜR.", "SCHLAFEN IST KEINE OPTION.", "DIE ANGST HAT EIN NEUES ZUHAUSE."]
+          romance: ["MANCHE LIEBESGESCHICHTEN STEHEN IN DEN STERNEN.", "VERLIEBEN WAR NIE DER PLAN.", "EIN SOMMER. EINE CHANCE.", "FOLGE DEINEM HERZEN.", "MANCHMAL FINDET DICH DIE LIEBE.", "ZWEI HERZEN. EINE STADT."]
+          sci_fi: ["DIE MASCHINEN ERHEBEN SICH.", "DIE ZUKUNFT IST JETZT.", "WIR SIND NICHT ALLEIN.", "DIE LETZTE HOFFNUNG DER MENSCHHEIT.", "DAS SIGNAL WURDE EMPFANGEN.", "IM ALL KOMMT NIEMAND ZU HILFE."]
+          thriller: ["TRAU NIEMANDEM.", "JEDER IST VERDÄCHTIG.", "DIE WAHRHEIT WIRD DICH TÖTEN.", "JEMAND BEOBACHTET DICH.", "NICHTS IST, WIE ES SCHEINT.", "DIE ZEIT LÄUFT AB."]
+          western: ["GERECHTIGKEIT HAT IHREN PREIS.", "DER WESTEN WURDE NIE GEWONNEN.", "EINE STADT. EIN REVOLVER.", "REITE ODER STIRB.", "DIE RACHE REITET ALLEIN.", "HIER ENDET DAS GESETZ."]
+
+      review:
+        publication: [Filmspiegel, Kinoblatt, Leinwand Aktuell, Der Filmkurier, Celluloid-Rundschau, Kino & Kritik, Popcorn-Post, Die Filmwoche, Hamburger Kinoanzeiger, Abendlicht Magazin, Filmdienst Nord, Lichtspielhaus Journal, Szene & Schnitt, Münchner Filmblatt, Der Vorführraum, Programmkino Monatsheft]
+        positive_open:
+          - "Ein echter Triumph vom ersten bis zum letzten Bild."
+          - "#{actor} liefert die Rolle des Lebens ab."
+          - "#{title} ist der packendste Film, den ich dieses Jahr gesehen habe."
+          - "Wunderschön fotografiert, großartig gespielt und unvergesslich."
+          - "Ich bin mit niedrigen Erwartungen hineingegangen und als Fan wieder herausgekommen."
+          - "Ein mutiges, selbstbewusstes Stück Kino."
+          - "Witzig, berührend und überraschend klug."
+          - "#{title} packt einen in der ersten Minute und lässt nicht mehr los."
+          - "Jede Einstellung wirkt hier genau durchdacht."
+          - "Endlich mal ein Film, der sein Publikum ernst nimmt."
+          - "Pure Kinofreude."
+          - "Zwischen #{actor} und #{actor2} knistert es gewaltig."
+          - "So mitreißend war deutsches Kino lange nicht mehr."
+        positive_close:
+          - "Unbedingt auf der großen Leinwand ansehen."
+          - "Mit Abstand einer der besten Filme des Jahres."
+          - "Ich will ihn sofort noch einmal sehen."
+          - "Nach dem Ende war es im ganzen Saal mucksmäuschenstill."
+          - "Allein der Soundtrack ist das Eintrittsgeld wert."
+          - "Fünf Sterne, ohne Zögern."
+          - "Genau deshalb gehen wir noch ins Kino."
+          - "Taschentücher nicht vergessen. Glauben Sie mir."
+          - "Ein künftiger Klassiker."
+          - "Meisterhaft."
+          - "Prädikat: besonders wertvoll."
+        mixed_open:
+          - "#{title} hat große Ambitionen, aber nur ein Teil davon geht auf."
+          - "Solide, wenn auch vorhersehbare Unterhaltung."
+          - "#{actor} spielt stark, doch das Drehbuch lässt die Figur im Stich."
+          - "Die erste Stunde ist hervorragend, die zweite ein einziges Durcheinander."
+          - "Optisch umwerfend, emotional leider hohl."
+          - "Nicht schlecht, nicht großartig – genau richtig für einen verregneten Sonntagnachmittag."
+          - "Der Film will ein bisschen zu viel, aber das Herz sitzt am rechten Fleck."
+          - "Fans des Genres kommen durchaus auf ihre Kosten."
+          - "Gute Ansätze, die irgendwo zwischen Drehbuch und Schnitt verloren gehen."
+        mixed_close:
+          - "Kann man sich ansehen, Wunder sollte man aber nicht erwarten."
+          - "Lieber auf den Stream warten."
+          - "Drei von fünf Sternen."
+          - "Ich wollte ihn mehr mögen, als ich es am Ende tat."
+          - "Gutes Popcornkino."
+          - "Mit Schwächen, aber sehenswert."
+          - "Für einen Fernsehabend reicht es allemal."
+        negative_open:
+          - "Nichts davon ergibt für mich irgendeinen Sinn."
+          - "Zwei Stunden meines Lebens, die ich nie zurückbekomme."
+          - "#{title} verwechselt Lärm mit Spannung."
+          - "Nicht einmal #{actor} kann dieses sinkende Schiff retten."
+          - "Die Handlung hat mehr Löcher als ein Schweizer Käse."
+          - "Ich habe gelacht, aber ich bin ziemlich sicher, dass das nicht beabsichtigt war."
+          - "Ein lebloser Abklatsch besserer Filme."
+          - "Selten hat sich ein Kinoabend so in die Länge gezogen."
+        negative_close:
+          - "Nicht gut."
+          - "Bitte meiden."
+          - "Ein Stern, und der ist fürs Popcorn."
+          - "Ich habe viermal auf die Uhr geschaut."
+          - "Danke, nein."
+          - "Auf ganzer Linie enttäuschend."
+          - "Da ist der Tatort am Sonntag spannender."

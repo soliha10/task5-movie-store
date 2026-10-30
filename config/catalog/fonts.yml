@@ -1,0 +1,22 @@
+# Display fonts for trailer typography. All of them cover Latin, Latin-ext and Cyrillic.
+# family: Google Fonts family name; weights: weights to load; mood: genres the font suits.
+- { family: "Oswald", weights: [500, 700], moods: [action, thriller, sci_fi, crime, war, drama] }
+- { family: "Russo One", weights: [400], moods: [action, sci_fi] }
+- { family: "Unbounded", weights: [700, 900], moods: [sci_fi, action, comedy] }
+- { family: "Montserrat", weights: [800, 900], moods: [action, thriller, comedy, crime, adventure] }
+- { family: "Playfair Display", weights: [700, 900], moods: [drama, romance, crime, thriller] }
+- { family: "Cormorant Garamond", weights: [600, 700], moods: [drama, horror, fantasy, romance] }
+- { family: "Yeseva One", weights: [400], moods: [romance, drama, fantasy] }
+- { family: "Prata", weights: [400], moods: [drama, fantasy, western] }
+- { family: "Ruslan Display", weights: [400], moods: [fantasy, western, horror] }
+- { family: "Kelly Slab", weights: [400], moods: [western, adventure, crime] }
+- { family: "Rubik Mono One", weights: [400], moods: [comedy, action, family] }
+- { family: "Lobster", weights: [400], moods: [comedy, romance, family] }
+- { family: "Comfortaa", weights: [700], moods: [family, comedy] }
+- { family: "Marck Script", weights: [400], moods: [romance, drama] }
+- { family: "Philosopher", weights: [700], moods: [fantasy, adventure, sci_fi] }
+- { family: "PT Serif", weights: [700], moods: [drama, horror, crime, thriller] }
+- { family: "Tenor Sans", weights: [400], moods: [drama, romance, sci_fi, thriller] }
+- { family: "Ruda", weights: [900], moods: [action, adventure, western] }
+- { family: "Russo One", weights: [400], moods: [war, action] }
+- { family: "Kurale", weights: [400], moods: [horror, fantasy, western] }

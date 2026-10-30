@@ -1,0 +1,5 @@
+<% poster = movie.trailer[:poster] || {} %>
+<div class="poster genre-<%= movie.genre %>" style="<%= poster[:style] %>">
+  <% if poster[:image] %><img src="<%= poster[:image] %>" alt="" loading="lazy" style="<%= poster[:filter] %>"><% end %>
+  <div class="poster-title" style="<%= poster[:title_style] %>"><%= movie.title %></div>
+</div>

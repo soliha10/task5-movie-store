@@ -1,0 +1,29 @@
+# Region metadata. Add a new region by adding a file here plus
+# config/locales/faker/movie_store.<faker_locale>.yml — no code changes needed.
+code: en-US
+name: English (USA)
+faker_locale: en-US
+html_lang: en
+order: 1
+age_ratings: ["G", "PG", "PG-13", "PG-13", "R", "R", "NC-17"]
+labels:
+  genre: Genre
+  title: Title
+  cast: Cast
+  year: Year
+  director: Director
+  reviews: Reviews
+  no_reviews: No reviews yet.
+  likes: likes
+  minutes: min
+  season: Season
+  seasons: seasons
+  episodes: episodes
+  series: Series
+  play: Play trailer
+  badges:
+    top10: Top 10
+    new: New
+    award: Award Winner
+    exclusive: Exclusive
+    uhd: 4K UHD

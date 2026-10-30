@@ -1,0 +1,22 @@
+<%= render "movies/toolbar" %>
+
+<main class="container-xxl px-3 py-3">
+  <%= turbo_frame_tag "results", data: { turbo_action: "advance" } do %>
+    <% if state.view == "gallery" %>
+      <%= render "movies/gallery", movies: @movies %>
+    <% else %>
+      <%= render "movies/table", movies: @movies %>
+    <% end %>
+  <% end %>
+</main>
+
+<div class="modal fade" id="movie-modal" tabindex="-1" aria-hidden="true" data-gallery-target="modal">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header border-0 pb-0">
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0" id="movie-modal-body"></div>
+    </div>
+  </div>
+</div>

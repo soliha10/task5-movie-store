@@ -1,0 +1,3 @@
+<%= turbo_frame_tag "batch_#{state.page}", class: "batch-frame" do %>
+  <%= render "movies/batch", movies: @movies, page: state.page %>
+<% end %>
